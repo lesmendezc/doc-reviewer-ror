@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  resume: MyText
+  general_purpose: MyText
+  specific_purpose: MyText
+  problem_definition: MyText
+  keywords: MyString
+
+two:
+  title: MyString
+  resume: MyText
+  general_purpose: MyText
+  specific_purpose: MyText
+  problem_definition: MyText
+  keywords: MyString

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @paper.title %>
+</p>
+
+<p>
+  <strong>Resume:</strong>
+  <%= @paper.resume %>
+</p>
+
+<p>
+  <strong>General purpose:</strong>
+  <%= @paper.general_purpose %>
+</p>
+
+<p>
+  <strong>Specific purpose:</strong>
+  <%= @paper.specific_purpose %>
+</p>
+
+<p>
+  <strong>Problem definition:</strong>
+  <%= @paper.problem_definition %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @paper.keywords %>
+</p>
+
+<%= link_to 'Edit', edit_paper_path(@paper) %> |
+<%= link_to 'Back', papers_path %>
