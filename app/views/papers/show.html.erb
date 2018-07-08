@@ -30,5 +30,9 @@
   <%= @paper.keywords %>
 </p>
 
+<p>
+  <%= image_tag @paper.pdf_file.preview(resize: "300x300") %>
+</p>
+
 <%= link_to 'Edit', edit_paper_path(@paper) %> |
 <%= link_to 'Back', papers_path %>
