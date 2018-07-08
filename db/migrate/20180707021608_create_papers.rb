@@ -6,7 +6,6 @@ class CreatePapers < ActiveRecord::Migration[5.2]
       t.text :general_purpose
       t.text :specific_purpose
       t.text :problem_definition
-      t.string :keywords
 
       t.timestamps
     end

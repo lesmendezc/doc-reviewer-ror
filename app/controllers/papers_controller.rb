@@ -69,6 +69,6 @@ class PapersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paper_params
-      params.require(:paper).permit(:title, :resume, :general_purpose, :specific_purpose, :problem_definition, :keywords, :pdf_file)
+      params.require(:paper).permit(:title, :resume, :general_purpose, :specific_purpose, :problem_definition, :tag_list, :pdf_file)
     end
 end
