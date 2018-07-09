@@ -13,14 +13,14 @@
 
   <div class="row">
     <div class="input-field">
-      <%= form.label :title, 'Título' %>
+      <%= form.label :title, 'Título', class: "active" %>
       <%= form.text_field :title, type: "text", class: "validate" %>
     </div>
   </div>
 
   <div class="row">
     <div class="input-field">
-      <%= form.label :resume, 'Resumen' %>
+      <%= form.label :resume, 'Resumen', class: "active" %>
       <%= form.text_area :resume, :class => 'materialize-textarea' %>
     </div>
   </div>
@@ -31,27 +31,27 @@
       <%= form.file_field :pdf_file, {accept: "application/pdf" } %>
     </div>
     <div class="file-path-wrapper">
-      <input type="text" class="file-path validate" placeholder="Elija un archivo">
+      <%= text_field_tag nil, (form.object.pdf_file.filename), {id: nil, class: 'file-path validate'} %>
     </div>
   </div>
 
   <div class="row">
     <div class="input-field">
-      <%= form.label :general_purpose, 'Objetivo general' %>
+      <%= form.label :general_purpose, 'Objetivo general', class: "active" %>
       <%= form.text_area :general_purpose, :class => 'materialize-textarea' %>
     </div>
   </div>
 
   <div class="row">
     <div class="input-field">
-      <%= form.label :specific_purpose, 'Objetivos específicos' %>
+      <%= form.label :specific_purpose, 'Objetivos específicos', class: "active" %>
       <%= form.text_area :specific_purpose, class: "materialize-textarea" %>
     </div>
   </div>
 
   <div class="row">
     <div class="input-field">
-      <%= form.label :problem_definition, 'Definición del problema' %>
+      <%= form.label :problem_definition, 'Definición del problema', class: "active" %>
       <%= form.text_area :problem_definition, class: "materialize-textarea" %>
     </div>
   </div>
@@ -59,12 +59,13 @@
   <div class="row">
     <div class="input-field">
       <%= form.label :tag_list, 'Palabras clave', class: "active" %>
-      <%= form.text_field :tag_list, placeholder: "Separar con una coma...", type: "text", class: "validate" %>
+      <%= form.text_field :tag_list, placeholder: "Separar con una coma...", 
+            type: "text", class: "validate", :value => @paper.tag_list.join(', ') %>
     </div>
   </div>
 
   <button class="btn-small waves-effect waves-light" type="submit" name="action">
-    <%= form.submit "Crear", class: "white-text" %>
+    <%= form.submit "Editar", class: "white-text" %>
     <i class="material-icons right">send</i>
   </button>
 <% end %>

@@ -4,6 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 gem 'mini_magick'
+gem 'jquery-rails'
+gem 'materialize-sass', '~> 1.0.0.rc2'
+gem 'material_icons'
 gem 'acts-as-taggable-on', '~> 6.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
