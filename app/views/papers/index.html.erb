@@ -1,32 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Papers</h1>
+<h3 align="center">Documentos</h3>
+
+<%= link_to 'Nuevo', new_paper_path, class: "btn-small waves-effect right" %>
+<br><br>
 
 <table>
-  <thead>
+  <thead class="header-row">
     <tr>
-      <th>Title</th>
-      <th>Resume</th>
-      <th>General purpose</th>
-      <th>Specific purpose</th>
-      <th>Problem definition</th>
-      <th>Keywords</th>
-      <th colspan="3"></th>
+      <th>No.</th>
+      <th>Título</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @papers.each do |paper| %>
+    <% @papers.each_with_index do |paper, index| %>
       <tr>
-        <td><%= paper.title %></td>
-        <td><%= paper.resume %></td>
-        <td><%= paper.general_purpose %></td>
-        <td><%= paper.specific_purpose %></td>
-        <td><%= paper.problem_definition %></td>
-        <td><%= paper.tag_list %></td>
-        <td><%= link_to 'Show', paper %></td>
-        <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
-        <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= index+1 %></td>
+        <td class="title-row"><%= link_to paper.title, paper, class: 'link-to-text' %></td>
+        <td><a href="#" class="waves-effect btn-floating btn-small grey"><i class="material-icons">info</i></a></td>
+        <td><a href="#" class="waves-effect btn-floating btn-small grey"><i class="material-icons">picture_as_pdf</i></a></td>
+        <td><a href="#" class="waves-effect btn-floating btn-small grey"><i class="material-icons">search</i></a></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +31,3 @@
 
 <br>
 
-<%= link_to 'New Paper', new_paper_path %>

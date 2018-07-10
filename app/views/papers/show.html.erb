@@ -1,38 +1,55 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @paper.title %>
-</p>
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title"><strong><%= @paper.title %></strong></span>
+        </div>
+        
+        <div class="divider"></div>
 
-<p>
-  <strong>Resume:</strong>
-  <%= @paper.resume %>
-</p>
+        <div class="row">
+          <div class="col s8 offset-s1">
+          
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+              </thead>
 
-<p>
-  <strong>General purpose:</strong>
-  <%= @paper.general_purpose %>
-</p>
+              <tbody>
+                <tr>
+                  <td><strong>Resumen:</strong></td>
+                  <td><%= @paper.resume %></td>
+                </tr>
+                <tr>
+                  <td><strong>Objetivo general:</strong></td>
+                  <td><%= @paper.general_purpose %></td>
+                </tr>
+                <tr>
+                  <td><strong>Objetivos específicos:</strong></td>
+                  <td><%= @paper.specific_purpose %></td>
+                </tr>
+                <tr>
+                  <td><strong>Definición del problema:</strong></td>
+                  <td><%= @paper.problem_definition %></td>
+                </tr>
+                <tr>
+                  <td><strong>Palabras clave:</strong></td>
+                  <td><%= @paper.tag_list %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-<p>
-  <strong>Specific purpose:</strong>
-  <%= @paper.specific_purpose %>
-</p>
+        <div class="card-action">
+          <%= link_to "Descargar documento", rails_blob_path(@paper.pdf_file, disposition: "attachment") %>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Problem definition:</strong>
-  <%= @paper.problem_definition %>
-</p>
-
-<p>
-  <strong>Keywords:</strong>
-  <%= @paper.tag_list %>
-</p>
-
-<p>
-  <%= image_tag @paper.pdf_file.preview(resize: "300x300") %>
-</p>
-
-<%= link_to 'Edit', edit_paper_path(@paper) %> |
-<%= link_to 'Back', papers_path %>
