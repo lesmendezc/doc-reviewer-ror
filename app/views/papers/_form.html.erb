@@ -9,21 +9,13 @@
 
 
         <%= form_with(model: paper, local: true) do |form| %>
-          <% if paper.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(paper.errors.count, "error") %> prohibited this paper from being saved:</h2>
-
-              <ul>
               <% paper.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
+                <%= javascript_tag "M.toast({html: '#{message}', classes: 'red lighten-2 rounded'}, 5000)" %>
               <% end %>
-              </ul>
-            </div>
-          <% end %>
 
           <div class="row">
             <div class="input-field">
-              <%= form.label :title, 'Título' %>
+              <%= form.label :title, 'Título *' %>
               <%= form.text_field :title, type: "text", class: "validate" %>
             </div>
           </div>
