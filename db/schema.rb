@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2018_07_25_002858) do
     t.text "general_purpose"
     t.text "specific_purpose"
     t.text "problem_definition"
+    t.integer "comments_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
