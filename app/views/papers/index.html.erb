@@ -23,7 +23,7 @@
         <td class="title-row"><%= link_to paper.title, paper, class: 'link-to-text' %></td>
         <td><a href="#" class="waves-effect btn-floating btn-small grey"><i class="material-icons">info</i></a></td>
         <td><a href="#" class="waves-effect btn-floating btn-small grey"><i class="material-icons">picture_as_pdf</i></a></td>
-        <td><a href="#" class="waves-effect btn-floating btn-small grey"><i class="material-icons">search</i></a></td>
+        <td><%= link_to 'Comments', paper_comments_path(paper)%></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,0 +1,9 @@
+<br>
+<%= @paper.comments.count %> comments
+
+<% @comments.each do |comment| %>
+    <%= comment.commentary %>
+<% end %>
+
+<br>
+<%= render 'comments/form' %>
