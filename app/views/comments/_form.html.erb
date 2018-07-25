@@ -1,8 +1,23 @@
-<%= form_for([@paper, @paper.comments.build]) do |form| %>
-    <div class="field">
-        <%= form.label :commentary %>
-        <%= form.text_field :commentary %>
-    </div>
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card brown lighten-5">
+            <div class="card-content">
+                <%= form_for([@paper, @paper.comments.build]) do |form| %>
+                    <div class="row">
+                        <div class="input-field">
+                            <i class="material-icons prefix">message</i>
+                            <%= form.text_area :commentary, class: "materialize-textarea", id: "textarea1" %>
+                            <label for="textarea1">Deja tu comentario aquí</label>
+                        </div>
+                    </div>
 
-    <%= form.submit %>
-<% end %>
+                    <div class="center-align">
+                        <button class="waves-light waves-effect btn-small">
+                            <%= form.submit "Añadir comentario", class: "white-text" %>
+                        </button>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

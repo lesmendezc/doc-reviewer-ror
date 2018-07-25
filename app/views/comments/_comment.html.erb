@@ -1,0 +1,13 @@
+<div class="row flex">
+    <div class="col s12 center-align green lighten-3"><strong>Comentario <%= comment.id %></strong></div>
+    <div class="col s2 green lighten-5"><strong>Comentario:</strong></div>
+    <div class="col s10 green lighten-5"><%= comment.commentary %></div>
+    <div class="col s2 green lighten-5"><strong>Fecha:</strong></div>
+    <div class="col s10 green lighten-5"><%= comment.created_at.strftime("%b %d, %H:%M") %></div>
+</div>
+
+<!--div class="comments-box">
+    <div class="comment green lighten-3 z-depth-1">
+        <p class="comment-body"><%= comment.commentary %></p>
+    </div>
+</div-->

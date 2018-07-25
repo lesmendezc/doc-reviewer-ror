@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     def create
         @paper = Paper.find(params[:paper_id])
         @comment = @paper.comments.create(comment_params)
+        redirect_to paper_comments_path(@paper)
     end
 
     def comment_params
