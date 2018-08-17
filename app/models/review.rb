@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
-  belongs_to :paper
   has_many :questions
+  accepts_nested_attributes_for :questions
 end

@@ -1,0 +1,19 @@
+<h3 align="center">Revisiones</h3>
+
+<%= link_to 'Crear revisión', new_review_path, class: "btn-small waves-effect right" %>
+    
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @reviews.each do |review| %>
+            <tr>
+                <td><%= review.name %></td>
+                <td><%= link_to "Ver", review %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

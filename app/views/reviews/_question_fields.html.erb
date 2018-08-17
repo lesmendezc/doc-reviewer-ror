@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="input-field">
+        <%= f.label :question_name, "Pregunta" %> <br>
+        <%= f.text_field :question_name, type: "text", class: "validate" %>
+    </div>
+</div>
+
+<%= f.fields_for :answers do |builder| %>
+    <%= render 'answer_fields', f: builder %>
+<% end %>

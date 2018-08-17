@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_08_03_133740) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "question_id"
+    t.string "answer_content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
@@ -61,6 +62,7 @@ ActiveRecord::Schema.define(version: 2018_08_03_133740) do
 
   create_table "questions", force: :cascade do |t|
     t.string "question_name"
+    t.string "description"
     t.integer "review_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -69,6 +71,7 @@ ActiveRecord::Schema.define(version: 2018_08_03_133740) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "paper_id"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["paper_id"], name: "index_reviews_on_paper_id"

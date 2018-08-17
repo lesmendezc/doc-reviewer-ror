@@ -1,0 +1,13 @@
+<%= form_for @review do |f| %>
+  <div class="row">
+    <div class="input-field">
+        <%= f.label :name, 'Nombre' %><br />
+        <%= f.text_field :name, type: "text", class: "validate" %>
+    </div>
+  </div>
+  <%= f.fields_for :questions do |builder| %>
+    <%= render "question_fields", f: builder %>
+  <% end %>
+  
+  <%= f.submit "Crear" %>
+<% end %>

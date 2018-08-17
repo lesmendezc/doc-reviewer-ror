@@ -1,6 +1,5 @@
 class Paper < ApplicationRecord
     has_many :comments
-    has_many :reviews
     has_one_attached :pdf_file
     acts_as_taggable
 

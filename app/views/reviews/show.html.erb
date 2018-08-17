@@ -1,0 +1,14 @@
+<%= @review.name %>
+
+<ol class="questions">
+    <% @review.questions.each do |question| %>
+        <li>
+            <%= question.question_name %>
+            <ol>
+                <% question.answers.each do |answer| %>
+                    <li><%= answer.answer_content %></li>
+                <% end %>
+            </ol>
+        </li>
+    <% end %>
+</ol>
