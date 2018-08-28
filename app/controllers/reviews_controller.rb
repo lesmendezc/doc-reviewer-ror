@@ -10,10 +10,10 @@ class ReviewsController < ApplicationController
 
     def new
         @review = Review.new
-        2.times do
-            question = @review.questions.build
-            2.times { question.answers.build }
-        end
+        @review.questions.build
+        # 2.times do
+        #     2.times { question.answers.build }
+        # end
     end
 
     def create
@@ -31,25 +31,20 @@ class ReviewsController < ApplicationController
 
     def update
         @review = Review.find(params[:id])
-        if @review.update_attributes(params[:review])
+        if @review.update(review_params)
             redirect_to @review, notice: "Revisión editada."
         else
-            render 'edit'
+            render :edit
         end
     end
 
     def destroy
-        @review = Review.find(params[:id])
-        @review.destroy
-        redirect_to reviews_url, notice: "Revisión eliminada."
+        @review = Review.find(params[:id]).destroy
+        redirect_to reviews_path, notice: "Revisión eliminada."
     end
 
     private
-        def set_review
-            @review = Review.find(params[:id])
-        end
-
-        def review_params
-            params.require(:review).permit(:name, questions_attributes: [:id, :question_name, answers_attributes: [:id, :answer_content]])
-        end
+    def review_params
+        params.require(:review).permit(:name, questions_attributes: [:id, :title, :answer_type, :_destroy, answers_attributes: [:id, :answer_content, :_destroy]])
+    end
 end

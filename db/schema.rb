@@ -61,8 +61,9 @@ ActiveRecord::Schema.define(version: 2018_08_03_133740) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "question_name"
+    t.string "title"
     t.string "description"
+    t.string "answer_type"
     t.integer "review_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,13 +1,17 @@
 <%= form_for @review do |f| %>
   <div class="row">
     <div class="input-field">
-        <%= f.label :name, 'Nombre' %><br />
+        <%= f.label :name, 'Título' %>
         <%= f.text_field :name, type: "text", class: "validate" %>
     </div>
   </div>
   <%= f.fields_for :questions do |builder| %>
     <%= render "question_fields", f: builder %>
   <% end %>
+
+  <%= link_to_add_fields "Añadir pregunta", f, :questions %> <br>
   
-  <%= f.submit "Crear" %>
+  <button class="btn-flat waves-effect grey lighten-1" type="submit">
+    <%= f.submit (@review.new_record? ? 'Crear' : 'Editar') %>
+  </button>
 <% end %>

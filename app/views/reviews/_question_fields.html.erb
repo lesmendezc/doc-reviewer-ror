@@ -1,10 +1,28 @@
-<div class="row">
-    <div class="input-field">
-        <%= f.label :question_name, "Pregunta" %> <br>
-        <%= f.text_field :question_name, type: "text", class: "validate" %>
+<div class="fields">
+    <div class="row">
+        <div class="input-field col s8">
+            <%= f.label :title, "Pregunta" %>
+            <%= f.text_field :title, type: "text", class: "validate" %>
+            <%= f.hidden_field :_destroy %>
+            <%= link_to "Quitar", '#', class: "remove_fields" %>
+        </div>
+        <div class="input-field col s4" id="answer">
+            <%= f.label :answer_type, "Tipo de respuesta", class: "active" %>
+            <%= f.select :answer_type, ['Texto','Escala'], include_blank: true %>
+        </div>
+    </div>
+
+    <%= f.fields_for :answers do |builder| %>
+        <%= render 'answer_fields', f: builder %>
+    <% end %>
+
+    <div id="add_answer">
+        <%= link_to_add_fields "Añadir respuesta", f, :answers %>
     </div>
 </div>
 
-<%= f.fields_for :answers do |builder| %>
-    <%= render 'answer_fields', f: builder %>
-<% end %>
+<script>
+    $(document).ready(function(){
+        $('select').formSelect();
+    });
+</script>

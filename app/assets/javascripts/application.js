@@ -14,5 +14,29 @@
 //= require rails-ujs
 //= require materialize
 //= require activestorage
-//= require turbolinks
 //= require_tree .
+
+// $(document).ready(function(){
+//     $("#answer").change(function() {
+//       var optionSelected = $(this).find("option:selected");
+//       var valueSelected = optionSelected.val();
+//       var textSelected = optionSelected.text();
+//       if (textSelected == 'Texto')
+//           $("#add_answer").hide();
+//       else
+//           $("#add_answer").show();
+//     });
+// });
+
+$(function() {
+    $("#add_answer").hide();
+    $("#answer").change(function() {
+        $(this).find("option:selected").each(function(){
+            var optVal = $(this).attr("value");
+            if(optVal=='Escala')
+                $("#add_answer").show();
+            else
+                $("#add_answer").hide();
+        })
+    });
+})

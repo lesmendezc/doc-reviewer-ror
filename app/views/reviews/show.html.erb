@@ -3,7 +3,7 @@
 <ol class="questions">
     <% @review.questions.each do |question| %>
         <li>
-            <%= question.question_name %>
+            <%= question.title %>
             <ol>
                 <% question.answers.each do |answer| %>
                     <li><%= answer.answer_content %></li>
