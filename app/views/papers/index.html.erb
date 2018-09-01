@@ -2,7 +2,10 @@
 
 <h3 align="center">Documentos</h3>
 
-<%= link_to 'Nuevo', new_paper_path, class: "btn-small waves-effect right" %>
+<%= link_to new_paper_path, class: "btn-small waves-effect right" do %>
+  <i class="material-icons left">add</i>
+  Añadir
+<% end %>
 <br><br>
 
 <table>
@@ -32,7 +35,7 @@
             <i class="material-icons">search</i>
           <% end %>
         </td>
-        <td><a href="#" class="waves-effect btn-floating btn-small grey"><i class="material-icons">add_box</i></a></td>
+        <td><a href="/reviews/1" class="waves-effect btn-floating btn-small grey"><i class="material-icons">add_box</i></a></td>
       </tr>
     <% end %>
   </tbody>

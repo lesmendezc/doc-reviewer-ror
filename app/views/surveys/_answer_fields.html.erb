@@ -1,0 +1,14 @@
+<div class="fields">
+    <div class="row">
+        <div class="input-field col s10">
+            <%= f.label :answer_content, "Respuesta" %>
+            <%= f.text_field :answer_content, type: "text", class: "validate" %>
+        </div>
+        <div class="input field col s2">
+            <%= f.hidden_field :_destroy %>
+            <%= link_to '#', class: "remove_fields btn-small red lighten-3 waves-effect" do %>
+                <i class="material-icons">close</i>
+            <%end%>
+        </div>
+    </div>
+</div>

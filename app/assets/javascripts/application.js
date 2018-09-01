@@ -16,18 +16,6 @@
 //= require activestorage
 //= require_tree .
 
-// $(document).ready(function(){
-//     $("#answer").change(function() {
-//       var optionSelected = $(this).find("option:selected");
-//       var valueSelected = optionSelected.val();
-//       var textSelected = optionSelected.text();
-//       if (textSelected == 'Texto')
-//           $("#add_answer").hide();
-//       else
-//           $("#add_answer").show();
-//     });
-// });
-
 $(function() {
     $("#add_answer").hide();
     $("#answer").change(function() {

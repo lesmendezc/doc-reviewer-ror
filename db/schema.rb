@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_03_133740) do
+ActiveRecord::Schema.define(version: 2018_09_01_042137) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -64,18 +64,16 @@ ActiveRecord::Schema.define(version: 2018_08_03_133740) do
     t.string "title"
     t.string "description"
     t.string "answer_type"
-    t.integer "review_id"
+    t.integer "survey_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["review_id"], name: "index_questions_on_review_id"
+    t.index ["survey_id"], name: "index_questions_on_survey_id"
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.integer "paper_id"
+  create_table "surveys", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["paper_id"], name: "index_reviews_on_paper_id"
   end
 
   create_table "taggings", force: :cascade do |t|
