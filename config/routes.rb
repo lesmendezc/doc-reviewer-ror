@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :papers do
     resources :comments
+    resources :reviews
   end
 
   resources :surveys

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_01_042137) do
+ActiveRecord::Schema.define(version: 2018_09_01_053256) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -68,6 +68,20 @@ ActiveRecord::Schema.define(version: 2018_09_01_042137) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["survey_id"], name: "index_questions_on_survey_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "relevance"
+    t.string "problem_def"
+    t.string "general_def"
+    t.string "specific_def"
+    t.string "confidence"
+    t.text "general_evaluation"
+    t.text "personal_message"
+    t.integer "paper_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["paper_id"], name: "index_reviews_on_paper_id"
   end
 
   create_table "surveys", force: :cascade do |t|

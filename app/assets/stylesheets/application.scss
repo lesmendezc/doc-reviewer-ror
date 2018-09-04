@@ -17,3 +17,18 @@
 
  @import "materialize";
  @import "materialize/extras/nouislider";
+
+ .c-form { background-color: #e4e1d3; }
+ .card-content span { color: grey; }
+ .divider { background-color: grey; }
+
+[type="radio"]:checked + span:after, 
+[type="radio"].with-gap:checked + span:before,
+[type="radio"].with-gap:checked + span:after {
+  border: 2px solid #1976d2;
+}
+
+[type="radio"]:checked + span:after, 
+[type="radio"].with-gap:checked + span:after {
+  background-color: #1976d2;
+}

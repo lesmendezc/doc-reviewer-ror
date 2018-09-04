@@ -35,7 +35,11 @@
             <i class="material-icons">search</i>
           <% end %>
         </td>
-        <td><a href="/reviews/1" class="waves-effect btn-floating btn-small grey"><i class="material-icons">add_box</i></a></td>
+        <td>
+          <%= link_to new_paper_review_path(paper), class: "waves-effect btn-floating btn-small grey" do %>
+            <i class="material-icons">add_box</i>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
