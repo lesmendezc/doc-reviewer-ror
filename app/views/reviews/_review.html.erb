@@ -1,0 +1,23 @@
+<div class="row flex">
+    <div class="col s12 center-align grey lighten-3"><strong>Revisión <%= review_counter+1 %></strong></div>
+    <div class="col s4 blue lighten-5"><strong>Documento:</strong></div>
+    <div class="col s8 blue lighten-5"><%= review.paper_id %></div>
+    <div class="col s4 indigo lighten-5"><strong>Título:</strong></div>
+    <div class="col s8 indigo lighten-5"><%= @paper.title %></div>
+    <div class="col s4 blue lighten-5"><strong>Fecha:</strong></div>
+    <div class="col s8 blue lighten-5"><%= review.created_at.strftime("%b %d, %H:%M") %></div>
+    <div class="col s4 indigo lighten-5"><strong>Relevancia:</strong></div>
+    <div class="col s8 indigo lighten-5"><%= review.relevance %></div>
+    <div class="col s4 blue lighten-5"><strong>Definición del problema:</strong></div>
+    <div class="col s8 blue lighten-5"><%= review.problem_def %></div>
+    <div class="col s4 indigo lighten-5"><strong>Definición del objetivo general:</strong></div>
+    <div class="col s8 indigo lighten-5"><%= review.general_def %></div>
+    <div class="col s4 blue lighten-5"><strong>Definición de los objetivos específicos:</strong></div>
+    <div class="col s8 blue lighten-5"><%= review.specific_def %></div>
+    <div class="col s4 indigo lighten-5"><strong>Confidencia del revisor:</strong></div>
+    <div class="col s8 indigo lighten-5"><%= review.confidence %></div>
+    <div class="col s4 blue lighten-5"><strong>Evaluación general:</strong></div>
+    <div class="col s8 blue lighten-5"><%= review.general_evaluation %></div>
+    <div class="col s4 indigo lighten-5"><strong>Mensaje personal al profesor de la materia:</strong></div>
+    <div class="col s8 indigo lighten-5"><%= review.personal_message %></div>
+</div>
