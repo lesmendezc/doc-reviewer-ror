@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   root 'papers#index'
 
   resources :papers do
