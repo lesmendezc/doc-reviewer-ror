@@ -8,6 +8,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.string :confidence
       t.text :general_evaluation
       t.text :personal_message
+      t.boolean :is_edited
       t.references :paper, foreign_key: true
 
       t.timestamps

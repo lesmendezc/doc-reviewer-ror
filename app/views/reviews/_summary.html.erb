@@ -1,0 +1,43 @@
+<table class="striped">
+    <thead>
+        <tr class="summary-header">
+            <th></th>
+            <th>Fecha</th>
+            <th>Revisor</th>
+            <th>Nota final</th>
+            <th class="vertical"><div>Relevancia</div></th>
+            <th class="vertical"><div>Definición del problema</div></th>
+            <th class="vertical"><div>Definición del objetivo general</div></th>
+            <th class="vertical"><div>Definición de los objetivos esp.</div></th>
+            <th class="vertical"><div>Confidencia del revisor</div></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @paper.reviews.each_with_index do |review, index| %>
+            <tr class="reviews">
+                <td>Revisión <%= index+1 %></td>
+                <td><%= review.created_at.strftime("%b %d") %></td>
+                <td></td>
+                <td><%= review.get_total() %></td>
+                <td><%= review.get_relevance() %></td>
+                <td><%= review.get_problem_def() %></td>
+                <td></td>
+                <td><%= review.get_specific_def() %></td>
+                <td></td>
+            </tr>
+        <% end %>
+        <% @paper.comments.each_with_index do |comment, index| %>
+            <tr class="comments">
+                <td>Comentario <%= index+1 %></td>
+                <td><%= comment.created_at.strftime("%b %d") %></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        <% end %>    
+    </tbody>
+</table>

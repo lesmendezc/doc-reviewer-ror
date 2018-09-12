@@ -32,3 +32,39 @@
 [type="radio"].with-gap:checked + span:after {
   background-color: #1976d2;
 }
+
+th.vertical div {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  margin-left: -10em;
+  margin-right: -10em;
+}
+
+th.vertical {
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  width: 3em;
+}
+
+table { border-collapse: collapse; }
+tr { border: none; }
+th, td {
+  border-right: solid 1px rgb(196, 191, 191); 
+  border-left: solid 1px rgb(196, 191, 191);
+}
+
+thead tr.summary-header { 
+  background-color: rgb(233, 231, 231); 
+  height: 250px;
+}
+tbody tr.reviews { background-color: #E3EDE4; }
+tbody tr.reviews:nth-child(odd) { background-color: #EBF7EB !important; }
+tbody tr.comments { background-color: #F5F8C1; }
+tbody tr.comments:nth-child(odd) { background-color: #F7FCDE !important;}
+
+tr.reviews td, tr.comments { line-height: 6px;}
