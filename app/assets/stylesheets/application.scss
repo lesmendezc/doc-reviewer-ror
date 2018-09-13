@@ -51,9 +51,9 @@ th.vertical {
   width: 3em;
 }
 
-table { border-collapse: collapse; }
-tr { border: none; }
-th, td {
+.summary { border-collapse: collapse; }
+.summary tr { border: none; }
+.summary th, .summary td {
   border-right: solid 1px rgb(196, 191, 191); 
   border-left: solid 1px rgb(196, 191, 191);
 }
@@ -67,4 +67,17 @@ tbody tr.reviews:nth-child(odd) { background-color: #EBF7EB !important; }
 tbody tr.comments { background-color: #F5F8C1; }
 tbody tr.comments:nth-child(odd) { background-color: #F7FCDE !important;}
 
-tr.reviews td, tr.comments { line-height: 6px;}
+tr.reviews td, tr.comments { line-height: 0;}
+
+.head-rev { background-color: #E4E3E2; }
+.fir-rw { background-color: #E6EDFA; }
+.sec-rw { background-color: #DDE4F3; }
+
+.fr { background-color: #ebebeb; }
+.sr { background-color: #F5F5F3; }
+
+.pdf-sm {
+  height: 24px;
+  line-height: 24px;
+  padding: 0 0.5rem;
+}
