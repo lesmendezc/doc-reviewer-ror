@@ -1,12 +1,18 @@
 <div class="row flex">
-    <div class="col s12 center-align head-rev"><strong>Revisión <%= review_counter+1 %></strong></div>
+    <div class="col s12 center-align head-rev">
+        <%= link_to edit_paper_review_path(@paper, review), class: 'link-to-text' do %>
+            <strong>
+                Revisión <%= review_counter+1 %>
+            </strong>
+        <% end %>
+    </div>
     <div class="col s4 fir-rw"><strong>Documento:</strong></div>
     <div class="col s8 fir-rw"><%= review.paper_id %></div>
     <div class="col s4 sec-rw"><strong>Título:</strong></div>
     <div class="col s8 sec-rw"><%= @paper.title %></div>
     <div class="col s4 fir-rw"><strong>Fecha:</strong></div>
     <div class="col s8 fir-rw"><%= review.created_at.strftime("%b %d, %H:%M") %></div>
-    <div class="col s4 sec-rw"><strong>Relevancia:</strong></div>
+    <div class="col s4 sec-rw"><strong>Relevancia del tema:</strong></div>
     <div class="col s8 sec-rw"><%= review.relevance %></div>
     <div class="col s4 fir-rw"><strong>Definición del problema:</strong></div>
     <div class="col s8 fir-rw"><%= review.problem_def %></div>

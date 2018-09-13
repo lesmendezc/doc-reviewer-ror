@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
 
     def new
         @paper = Paper.find(params[:paper_id])
+        @review = @paper.reviews.build
     end
 
     def create
@@ -17,6 +18,18 @@ class ReviewsController < ApplicationController
     def show
         @paper = Paper.find(params[:paper_id])
         @review = @paper.reviews.find(params[:id])
+    end
+
+    def edit
+        @paper = Paper.find(params[:paper_id])
+        @review = @paper.reviews.find(params[:id])
+    end
+
+    def update
+        @paper = Paper.find(params[:paper_id])
+        @review = @paper.reviews.find(params[:id])
+        @paper.reviews.create(review_params)
+        redirect_to paper_comments_path(@paper)
     end
 
     private
