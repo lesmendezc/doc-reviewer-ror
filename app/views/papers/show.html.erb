@@ -1,55 +1,46 @@
-<p id="notice"><%= notice %></p>
-
-<div class="row">
-    <div class="col s12 m8 offset-m2">
-      <div class="card">
-        <div class="card-content">
-          <span class="card-title"><strong><%= @paper.title %></strong></span>
-        </div>
-        
-        <div class="divider"></div>
-
-        <div class="row">
-          <div class="col s8 offset-s1">
-          
-              <table>
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th></th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td><strong>Resumen:</strong></td>
-                  <td><%= @paper.resume %></td>
-                </tr>
-                <tr>
-                  <td><strong>Objetivo general:</strong></td>
-                  <td><%= @paper.general_purpose %></td>
-                </tr>
-                <tr>
-                  <td><strong>Objetivos específicos:</strong></td>
-                  <td><%= @paper.specific_purpose %></td>
-                </tr>
-                <tr>
-                  <td><strong>Definición del problema:</strong></td>
-                  <td><%= @paper.problem_definition %></td>
-                </tr>
-                <tr>
-                  <td><strong>Palabras clave:</strong></td>
-                  <td><%= @paper.tag_list %></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="card-action">
-          <%= link_to "Descargar documento", rails_blob_path(@paper.pdf_file, disposition: "attachment") %>
-        </div>
-      </div>
-    </div>
-  </div>
-
+<table class="striped paper-show">
+  <tr class="paper-title">
+    <td colspan="2"><strong>Documento <%= @paper.id %></strong></td>
+  </tr>
+  <tr>
+    <th><strong>Título:</strong></th>
+    <td><%= @paper.title %></td>
+  </tr>
+  <tr>
+    <th><strong>Documento:</strong></th>
+    <td>
+      <%= link_to rails_blob_path(@paper.pdf_file, disposition: "attachment"), 
+        class: "btn-flat pdf-sm" do %>
+         <i class="material-icons">picture_as_pdf</i>
+       <%end%>
+    </td>
+  </tr>
+  <tr>
+    <th><strong>Resumen:</strong></th>
+    <td><%= @paper.resume %></td>
+  </tr>
+  <tr>
+    <th><strong>Objetivo general:</strong></th>
+    <td><%= @paper.general_purpose %></td>
+  </tr>
+  <tr>
+    <th><strong>Objetivos específicos:</strong></th>
+    <td><%= @paper.specific_purpose %></td>
+  </tr>
+  <tr>
+    <th><strong>Definición del problema:</strong></th>
+    <td><%= @paper.problem_definition %></td>
+  </tr>
+  <tr>
+    <th><strong>Palabras clave:</strong></th>
+    <td><%= @paper.tag_list %></td>
+  </tr>
+  <tr>
+    <th><strong>Presentado:</strong></th>
+    <td><%= @paper.created_at.strftime("%b %d, %H:%M") %></td>
+  </tr>
+  <tr>
+      <th><strong>Última actualización:</strong></th>
+      <td><%= @paper.updated_at.strftime("%b %d, %H:%M") %></td>
+    </tr>
+</table>

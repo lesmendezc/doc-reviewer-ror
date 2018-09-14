@@ -51,9 +51,9 @@ th.vertical {
   width: 3em;
 }
 
-.summary { border-collapse: collapse; }
-.summary tr { border: none; }
-.summary th, .summary td {
+.summary, .paper-show { border-collapse: collapse; }
+.summary tr, .paper-show tr { border: none; }
+.summary th, .summary td, .paper-show th, .paper-show td {
   border-right: solid 1px rgb(196, 191, 191); 
   border-left: solid 1px rgb(196, 191, 191);
 }
@@ -83,3 +83,10 @@ tr.reviews td, tr.comments { line-height: 0;}
 }
 
 .link-to-text { color: black; }
+
+.paper-show th { width: 30%; }
+.paper-show tr { background-color: #F3FEFF; }
+.paper-show tr:nth-child(odd) { background-color: #DFF8F5 !important; }
+.paper-show tr:first-child { background-color: #E4E3E2 !important; }
+
+.paper-title td { text-align: center; }

@@ -1,6 +1,9 @@
 class Review < ApplicationRecord
   belongs_to :paper
 
+  validates :relevance, presence: true
+  validates :problem_def, presence: true
+
   def get_relevance()
     return self.relevance[0].to_i
   end
@@ -22,6 +25,6 @@ class Review < ApplicationRecord
   end
 
   def get_total()
-    return get_relevance()+get_problem_def()+get_specific_def()
+    return get_relevance()+get_problem_def()+get_general_def()+get_specific_def()+get_confidence()
   end
 end

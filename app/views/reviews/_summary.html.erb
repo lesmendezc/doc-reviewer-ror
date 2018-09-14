@@ -22,9 +22,9 @@
                 <td><%= review.get_total() %></td>
                 <td><%= review.get_relevance() %></td>
                 <td><%= review.get_problem_def() %></td>
-                <td></td>
+                <td><%= review.get_general_def() %></td>
                 <td><%= review.get_specific_def() %></td>
-                <td></td>
+                <td><%= review.get_confidence() %></td>
             </tr>
         <% end %>
         <% @paper.comments.each_with_index do |comment, index| %>
