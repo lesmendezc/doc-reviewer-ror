@@ -1,0 +1,45 @@
+<nav class="blue darken-2">
+      <div class="container">
+          <div class="nav-wrapper">
+              <ul class="right hide-on-med-and-down">
+                  <li>
+                      <a href="#!" class="dropdown-trigger" data-target="dropdown2">
+                          <%= current_user.name %> <%= current_user.lastname %>
+                          <i class="material-icons right">arrow_drop_down</i>
+                      </a>
+                  </li>
+              </ul>
+              <!--a href="/" class="brand-logo right">Logo</a-->
+              <ul id="nav-mobile" class="left hide-on-med-and-down">
+                  <li><a href="/papers">Documentos</a></li>
+                  <li>
+                    <a href="#!" class="dropdown-trigger" data-target="usuarios-drop">
+                        Usuarios
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+<ul id="dropdown2" class="dropdown-content">
+    <li>
+        <%= link_to edit_user_password_path do  %>
+            Cambiar contraseña
+            <i class="material-icons right">settings</i>
+        <%end%>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+          Salir
+          <i class="material-icons right">directions_run</i>
+      <% end %>
+    </li>
+</ul>
+
+<ul id="usuarios-drop" class="dropdown-content">
+    <li><%= link_to "Lista de usuarios", users_path %></li>
+    <li><%= link_to "Crear usuario", new_user_path %></li>
+</ul>

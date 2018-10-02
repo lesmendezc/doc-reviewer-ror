@@ -9,8 +9,8 @@
           </h4>
 
 
-          <%= form_with(model: paper, local: true) do |form| %>
-                <% paper.errors.full_messages.each do |message| %>
+          <%= form_for([@event, @paper]) do |form| %>
+                <% @paper.errors.full_messages.each do |message| %>
                   <%= javascript_tag "M.toast({html: '#{message}', classes: 'red lighten-2 rounded'}, 5000)" %>
                 <% end %>
 

@@ -1,9 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :paper
 
-  validates :relevance, presence: true
-  validates :problem_def, presence: true
-
   def get_relevance()
     return self.relevance[0].to_i
   end

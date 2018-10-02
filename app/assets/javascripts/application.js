@@ -27,4 +27,15 @@ $(function() {
                 $("#add_answer").hide();
         })
     });
+
+    $('.dropdown-trigger').dropdown({
+        coverTrigger: false,
+        constrainWidth: false,
+        alignment: 'right'
+    });
+
+    
+    $('select').formSelect();
+
+    $('.datepicker').datepicker();
 })

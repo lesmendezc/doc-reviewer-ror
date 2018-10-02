@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h3 align="center">Documentos</h3>
 
-<%= link_to new_paper_path, class: "btn-small waves-effect right" do %>
+<%= link_to new_event_paper_path, class: "btn-small waves-effect right" do %>
   <i class="material-icons left">add</i>
   Añadir
 <% end %>
@@ -23,7 +21,7 @@
     <% @papers.each_with_index do |paper, index| %>
       <tr>
         <td><%= index+1 %></td>
-        <td class="title-row"><%= link_to paper.title, paper, class: 'link-to-text' %></td>
+        <td class="title-row"><%= link_to paper.title, event_paper_path(@event, paper), class: 'link-to-text' %></td>
         <td>
           <%= link_to rails_blob_path(paper.pdf_file, disposition: "inline"), 
            class: "waves-effect btn-floating btn-small grey", target: "_blank" do %>
@@ -31,12 +29,12 @@
           <%end%>
         </td>
         <td>
-          <%= link_to paper_comments_path(paper), class: "waves-effect btn-floating btn-small grey" do %>
+          <%= link_to event_paper_comments_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
             <i class="material-icons">search</i>
           <% end %>
         </td>
         <td>
-          <%= link_to new_paper_review_path(paper), class: "waves-effect btn-floating btn-small grey" do %>
+          <%= link_to new_event_paper_review_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
             <i class="material-icons">add_box</i>
           <% end %>
         </td>

@@ -1,31 +1,64 @@
-<h2>Crear cuenta</h2>
+<div class="row">
+  <div class="col s12 m8 offset-m2">
+    <div class="card brown lighten-5">
+      <div class="card-content">
+        <h2 class="center-align">Crear cuenta</h2><br>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
 
-  <div class="input-field">
-    <%= f.label :email, 'Correo electrónico' %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <div class="input-field">
+            <%= f.label :name, 'Nombre' %>
+            <%= f.text_field :name, type: "text", class: "validate", autofocus: true %>
+          </div>
+
+          <div class="input-field">
+            <%= f.label :lastname, 'Apellidos' %>
+            <%= f.text_field :lastname, type: "text", class: "validate" %>
+          </div>
+
+          <div class="input-field">
+            <%= f.label :ci, 'CI' %>
+            <%= f.text_field :ci, type: "text", class: "validate" %>
+          </div>
+
+          <div class="input-field">
+            <%= f.label :phone, 'Celular' %>
+            <%= f.text_field :phone, type: "text", class: "validate" %>
+          </div>
+
+          <div class="input-field">
+            <%= f.label :career, 'Carrera' %>
+            <%= f.text_field :career, type: "text", class: "validate" %>
+          </div>
+
+          <div class="input-field">
+            <%= f.label :email, 'Correo electrónico' %>
+            <%= f.email_field :email, autocomplete: "email" %>
+          </div>
+
+          <div class="input-field">
+            <%= f.label :password, 'Contraseña' %>
+            <% if @minimum_password_length %>
+            <!--em>(<%= @minimum_password_length %> characters minimum)</em-->
+            <% end %>
+            <%= f.password_field :password, autocomplete: "new-password" %>
+          </div>
+
+          <div class="input-field">
+            <%= f.label :password_confirmation, 'Repetir contraseña' %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          </div>
+
+          <div class="actions">
+            <%= button_tag(class: 'btn-small waves-effect waves-light') do %>
+              Registrar
+              <% end %>
+          </div>
+        <% end %><br>
+
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
   </div>
-
-  <div class="input-field">
-    <%= f.label :password, 'Contraseña' %>
-    <% if @minimum_password_length %>
-    <!--em>(<%= @minimum_password_length %> characters minimum)</em-->
-    <% end %>
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="input-field">
-    <%= f.label :password_confirmation, 'Repetir contraseña' %>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= button_tag(class: 'btn-small waves-effect waves-light') do %>
-      Registrar
-      <% end %>
-  </div>
-<% end %><br>
-
-<%= render "devise/shared/links" %>
+</div>

@@ -8,6 +8,9 @@ class CreatePapers < ActiveRecord::Migration[5.2]
       t.text :problem_definition
       t.integer :comments_count, default: 0
 
+      t.references :user, foreign_key: true
+      t.references :event, foreign_key: true
+
       t.timestamps
     end
 

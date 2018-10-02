@@ -1,18 +1,25 @@
 class ReviewsController < ApplicationController
     def index
-        @paper = Paper.find(params[:paper_id])
+        @event = Event.find(params[:event_id])
+        @paper = @event.papers.find(params[:paper_id])
         @reviews = @paper.reviews
     end
 
     def new
-        @paper = Paper.find(params[:paper_id])
-        @review = @paper.reviews.build
+        @event = Event.find(params[:event_id])
+        @paper = @event.papers.find(params[:paper_id])
+        @review = @paper.reviews.new
     end
 
     def create
-        @paper = Paper.find(params[:paper_id])
-        @review = @paper.reviews.create(review_params)
-        redirect_to paper_comments_path(@paper)
+        @event = Event.find(params[:event_id])
+        @paper = @event.papers.find(params[:paper_id])
+        @review = @paper.reviews.new(review_params)
+        if @review.save
+            redirect_to event_paper_comments_path(@event)
+        else
+            render :new
+        end
     end
 
     def show
@@ -21,15 +28,17 @@ class ReviewsController < ApplicationController
     end
 
     def edit
-        @paper = Paper.find(params[:paper_id])
+        @event = Event.find(params[:event_id])
+        @paper = @event.papers.find(params[:paper_id])
         @review = @paper.reviews.find(params[:id])
     end
 
     def update
-        @paper = Paper.find(params[:paper_id])
+        @event = Event.find(params[:event_id])
+        @paper = @event.papers.find(params[:paper_id])
         @review = @paper.reviews.find(params[:id])
         @paper.reviews.create(review_params)
-        redirect_to paper_comments_path(@paper)
+        redirect_to event_paper_comments_path(@event)
     end
 
     private

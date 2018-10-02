@@ -1,15 +1,11 @@
-<nav class="blue darken-2">
-    <div class="container">
-        <div class="nav-wrapper">
-            <%= link_to destroy_user_session_path, method: :delete, class: 'right' do %>
-                Salir
-                <i class="material-icons right">directions_run</i>
-            <% end %>
-            <!--a href="/" class="brand-logo right">Logo</a-->
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="/">Documentos</a></li>
-            </ul>
-        </div>
-    </div>
-  </nav>
-  <br>
+<% if current_user && current_user.estudiante? %>
+    <%= render 'layouts/student' %><br>
+<% end %>
+
+<% if current_user && current_user.admin? %>
+  <%= render 'layouts/admin' %><br>
+<% end %>
+
+<% if current_user && current_user.docente? %>
+  <%= render 'layouts/professor' %><br>
+<% end %>

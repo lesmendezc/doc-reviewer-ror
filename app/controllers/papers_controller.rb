@@ -5,17 +5,22 @@ class PapersController < ApplicationController
   # GET /papers
   # GET /papers.json
   def index
-    @papers = Paper.all
+    @event = Event.find(params[:event_id])
+    @papers = @event.papers
+    # @user_papers = current_user.papers.all
   end
 
   # GET /papers/1
   # GET /papers/1.json
   def show
+    @event = Event.find(params[:event_id])
+    @paper = @event.papers.find(params[:id])
   end
 
   # GET /papers/new
   def new
-    @paper = Paper.new
+    @event = Event.find(params[:event_id])
+    @paper = @event.papers.new
   end
 
   # GET /papers/1/edit
@@ -25,17 +30,20 @@ class PapersController < ApplicationController
   # POST /papers
   # POST /papers.json
   def create
-    @paper = Paper.new(paper_params)
+    @event = Event.find(params[:event_id])
+    @paper = @event.papers.new(paper_params)
 
-    respond_to do |format|
+    # respond_to do |format|
       if @paper.save
-        format.html { redirect_to @paper, notice: 'Paper was successfully created.' }
-        format.json { render :show, status: :created, location: @paper }
+        redirect_to event_papers_path(@event)
+        # format.html { redirect_to @paper, notice: 'Paper was successfully created.' }
+        # format.json { render :show, status: :created, location: @paper }
       else
-        format.html { render :new }
-        format.json { render json: @paper.errors, status: :unprocessable_entity }
+        render 'new'
+        # format.html { render :new }
+        # format.json { render json: @paper.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   # PATCH/PUT /papers/1

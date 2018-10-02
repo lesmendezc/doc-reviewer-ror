@@ -2,12 +2,16 @@
     <div class="col s12 m8 offset-m2">
         <div class="card c-form">
             <div class="card-content">
-                <%= form_for([@paper, @review]) do |form| %>
+                <%= form_for([@event, @paper, @review]) do |form| %>
+                    <% @review.errors.full_messages.each do |message| %>
+                        <%= message %>
+                    <%end%>
+                    
                     <div>
                         <strong>Relevancia del tema (*)</strong><br><br>
                         <label><%= form.radio_button :relevance, "3 (muy relevante)", class: 'with-gap' %><span>3: muy relevante</span></label><br>
                         <label><%= form.radio_button :relevance, "2 (relevante)", class: 'with-gap' %><span>2: relevante</span></label><br>
-                        <label><%= form.radio_button :relevance, "1 (irelevante)", class: 'with-gap' %><span>1: irrelevante</span></label>
+                        <label><%= form.radio_button :relevance, "1 (irrelevante)", class: 'with-gap' %><span>1: irrelevante</span></label>
                     </div><br>
                     <div class="divider"></div><br>
                     <div>

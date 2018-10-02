@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_07_032651) do
+ActiveRecord::Schema.define(version: 2018_09_28_145404) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -49,6 +49,16 @@ ActiveRecord::Schema.define(version: 2018_09_07_032651) do
     t.index ["paper_id"], name: "index_comments_on_paper_id"
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "semester"
+    t.integer "year"
+    t.string "name"
+    t.string "career"
+    t.date "limit_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "papers", force: :cascade do |t|
     t.string "title"
     t.text "resume"
@@ -56,8 +66,12 @@ ActiveRecord::Schema.define(version: 2018_09_07_032651) do
     t.text "specific_purpose"
     t.text "problem_definition"
     t.integer "comments_count", default: 0
+    t.integer "user_id"
+    t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_papers_on_event_id"
+    t.index ["user_id"], name: "index_papers_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -78,6 +92,7 @@ ActiveRecord::Schema.define(version: 2018_09_07_032651) do
     t.string "confidence"
     t.text "general_evaluation"
     t.text "personal_message"
+    t.boolean "is_edited"
     t.integer "paper_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -123,6 +138,12 @@ ActiveRecord::Schema.define(version: 2018_09_07_032651) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "lastname"
+    t.integer "ci"
+    t.string "phone"
+    t.string "career"
+    t.integer "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

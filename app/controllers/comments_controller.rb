@@ -1,14 +1,16 @@
 class CommentsController < ApplicationController
 
     def index
-        @paper = Paper.find(params[:paper_id])
+        @event = Event.find(params[:event_id])
+        @paper = @event.papers.find(params[:paper_id])
         @comments = @paper.comments
     end
         
     def create
-        @paper = Paper.find(params[:paper_id])
+        @event = Event.find(params[:event_id])
+        @paper = @event.papers.find(params[:paper_id])
         @comment = @paper.comments.create(comment_params)
-        redirect_to paper_comments_path(@paper)
+        redirect_to event_paper_comments_path(@event)
     end
 
     def comment_params
