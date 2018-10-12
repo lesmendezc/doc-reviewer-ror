@@ -1,6 +1,39 @@
-<%= form_for(@user) do |f| %>
-    <%= f.text_field :name, placeholder: "nombre" %>
-    <%= f.text_field :lastname, placeholder: "apellido" %>
+<h3 class="align center">Crear usuario</h3>
+<%= form_for (@user) do |f| %>
+    <div class="input-field">
+        <%= f.label :name, 'Nombre' %>
+        <%= f.text_field :name, class: 'validate' %>
+    </div>
+
+    <div class="input-field">
+        <%= f.label :lastname, 'Apellidos' %>
+        <%= f.text_field :lastname, class: 'validate' %>
+    </div>
+
+    <div class="input-field">
+        <%= f.label :career, 'Carrera', class: 'active' %>
+        <%= form.select :career, ['Ing. Sistemas', 'Ing. Ambiental', 'Ing. Civil', 'Ing. Mecatronica'] %>
+    </div>
+
+    <div class="input-field">
+        <%= f.label :phone, 'Celular' %>
+        <%= f.text_field :phone, class: 'validate' %>
+    </div>
+
+    <div class="input-field">
+        <%= f.label :role, 'Rol', class: 'active' %>
+        <%= f.select :role, ['estudiante','tutor','relator','admin'], include_blank: true %>
+    </div>
+
+    <div class="input-field">
+        <%= f.label :email, 'Correo electrónico' %>
+        <%= f.text_field :email, class: 'validate' %>
+    </div>
+
+    <div class="input-field">
+        <%= f.label :password, 'Contraseña' %>
+        <%= f.text_field :password, class: 'validate' %>
+    </div>
 
     <%= f.submit %>
 <% end %>

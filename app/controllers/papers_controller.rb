@@ -25,6 +25,8 @@ class PapersController < ApplicationController
 
   # GET /papers/1/edit
   def edit
+    @event = Event.find(params[:event_id])
+    @paper = @event.papers.find(params[:id])
   end
 
   # POST /papers
@@ -49,15 +51,17 @@ class PapersController < ApplicationController
   # PATCH/PUT /papers/1
   # PATCH/PUT /papers/1.json
   def update
-    respond_to do |format|
-      if @paper.update(paper_params)
-        format.html { redirect_to @paper, notice: 'Paper was successfully updated.' }
-        format.json { render :show, status: :ok, location: @paper }
+    @event = Event.find(params[:event_id])
+    # respond_to do |format|
+      if @event.papers.update(paper_params)
+        redirect_to event_papers_path(@event)
+        # format.html { redirect_to @paper, notice: 'Paper was successfully updated.' }
+        # format.json { render :show, status: :ok, location: @paper }
       else
         format.html { render :edit }
         format.json { render json: @paper.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   # DELETE /papers/1
@@ -78,6 +82,6 @@ class PapersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paper_params
-      params.require(:paper).permit(:title, :resume, :general_purpose, :specific_purpose, :problem_definition, :tag_list, :pdf_file)
+      params.require(:paper).permit(:title, :resume, :general_purpose, :specific_purpose, :problem_definition, :tag_list, :pdf_file, :user_id)
     end
 end

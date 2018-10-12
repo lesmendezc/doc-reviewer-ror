@@ -9,3 +9,7 @@
 <% if current_user && current_user.docente? %>
   <%= render 'layouts/professor' %><br>
 <% end %>
+
+<% if current_user && current_user.tutor? || current_user && current_user.relator? %>
+  <%= render 'layouts/tutors' %><br>
+<% end %>

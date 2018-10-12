@@ -1,29 +1,56 @@
-<div class="row flex">
-    <div class="col s12 center-align head-rev">
-        <%= link_to edit_event_paper_review_path(@event,@paper,review), class: 'link-to-text' do %>
-            <strong>
-                Revisión <%= review_counter+1 %>
-            </strong>
-        <% end %>
-    </div>
-    <div class="col s4 fir-rw"><strong>Documento:</strong></div>
-    <div class="col s8 fir-rw"><%= review.paper_id %></div>
-    <div class="col s4 sec-rw"><strong>Título:</strong></div>
-    <div class="col s8 sec-rw"><%= @paper.title %></div>
-    <div class="col s4 fir-rw"><strong>Fecha:</strong></div>
-    <div class="col s8 fir-rw"><%= review.created_at.strftime("%b %d, %H:%M") %></div>
-    <div class="col s4 sec-rw"><strong>Relevancia del tema:</strong></div>
-    <div class="col s8 sec-rw"><%= review.relevance %></div>
-    <div class="col s4 fir-rw"><strong>Definición del problema:</strong></div>
-    <div class="col s8 fir-rw"><%= review.problem_def %></div>
-    <div class="col s4 sec-rw"><strong>Definición del objetivo general:</strong></div>
-    <div class="col s8 sec-rw"><%= review.general_def %></div>
-    <div class="col s4 fir-rw"><strong>Definición de los objetivos específicos:</strong></div>
-    <div class="col s8 fir-rw"><%= review.specific_def %></div>
-    <div class="col s4 sec-rw"><strong>Confidencia del revisor:</strong></div>
-    <div class="col s8 sec-rw"><%= review.confidence %></div>
-    <div class="col s4 fir-rw"><strong>Evaluación general:</strong></div>
-    <div class="col s8 fir-rw"><%= review.general_evaluation %></div>
-    <div class="col s4 sec-rw"><strong>Mensaje personal al profesor de la materia:</strong></div>
-    <div class="col s8 sec-rw"><%= review.personal_message %></div>
-</div>
+<table class=" <%= review.is_edited? ? 'review-edited' : 'review-show' %>">
+    <tr class="paper-title">
+        <td colspan="2">
+            <% if (review.is_new==true && review.is_edited==false) || (review.is_new==true && review.is_edited==true) %>
+                <strong>Revisión <%= review.id %> <%= review.is_edited? ? '(editado)' : '' %></strong>
+            <% elsif (review.is_new==false && review.is_edited==false) %>
+                <strong>Revisión <%= review.copy_id %> <%= review.is_edited? ? '(editado)' : '' %></strong>
+            <% end %>
+        </td>
+    </tr>
+    <tr class="thin-row">
+        <th>Miembro tribunal:</th>
+        <td><%= review.user.name %> <%= review.user.lastname %></td>
+    </tr>
+    <tr class="thin-row">
+        <th>Documento:</th>
+        <td><%= review.paper_id %></td>
+    </tr>
+    <tr class="thin-row">
+        <th>Título:</th>
+        <td><%= @paper.title %></td>
+    </tr>
+    <tr class="thin-row">
+        <th>Fecha:</th>
+        <td><%= review.created_at.strftime("%b %d, %H:%M") %></td>
+    </tr>
+    <tr class="thin-row">
+        <th>Relevancia del tema:</th>
+        <td><%= review.relevance %></td>
+    </tr>
+    <tr class="thin-row">
+        <th>Definición del problema:</th>
+        <td><%= review.problem_def %></td>
+    </tr>
+    <tr class="thin-row">
+        <th>Definición del objetivo general:</th>
+        <td><%= review.general_def %></td>
+    </tr>
+    <tr class="thin-row">
+        <th>Definición de los objetivos específicos:</th>
+        <td><%= review.specific_def %></td>
+    </tr>
+    <tr class="thin-row">
+        <th>Confidencia del revisor:</th>
+        <td><%= review.confidence %></td>
+    </tr>
+    <tr>
+        <th>Evaluación general:</th>
+        <td><%= review.general_evaluation %></td>
+    </tr>
+    <tr>
+        <th>Mensaje personal al profesor de la materia:</th>
+        <td><%= review.personal_message %></td>
+    </tr>
+</table>
+<br>

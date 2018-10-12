@@ -51,12 +51,13 @@ th.vertical {
   width: 3em;
 }
 
-.summary, .paper-show { border-collapse: collapse; }
-.summary tr, .paper-show tr { border: none; }
-.summary th, .summary td, .paper-show th, .paper-show td {
+.summary, .paper-show, .review-show, .review-edited { border-collapse: collapse; }
+.summary tr, .paper-show tr, .review-show tr, .review-edited tr { border: none; }
+.summary th, .summary td, .paper-show th, .paper-show td, .review-show th, .review-show td, .review-edited th, .review-edited td {
   border-right: solid 1px rgb(196, 191, 191); 
   border-left: solid 1px rgb(196, 191, 191);
 }
+.review-edited { border-bottom: solid 1px rgb(196, 191, 191); }
 
 thead tr.summary-header { 
   background-color: rgb(233, 231, 231); 
@@ -67,7 +68,9 @@ tbody tr.reviews:nth-child(odd) { background-color: #EBF7EB !important; }
 tbody tr.comments { background-color: #F5F8C1; }
 tbody tr.comments:nth-child(odd) { background-color: #F7FCDE !important;}
 
-tr.reviews td, tr.comments { line-height: 0;}
+tr.reviews td, tr.comments, tr.review_edited, tr.thin-row { line-height: 0;}
+
+tbody tr.review_edited { background-color: white; }
 
 .head-rev { background-color: #E4E3E2; }
 .fir-rw { background-color: #E6EDFA; }
@@ -90,3 +93,23 @@ tr.reviews td, tr.comments { line-height: 0;}
 .paper-show tr:first-child { background-color: #E4E3E2 !important; }
 
 .paper-title td { text-align: center; }
+
+.review-show th { width: 35%; }
+.review-show tr { background-color: #E6EDFA; }
+.review-show tr:nth-child(odd) { background-color: #DDE4F3 !important; }
+.review-show tr:first-child { 
+  background-color: #E4E3E2 !important;
+  line-height: 0;
+}
+
+.review-edited th { width: 35%; }
+.review-edited tr { background-color: white; }
+.review-edited tr:first-child { 
+  background-color: #E4E3E2 !important; 
+  line-height: 0;
+}
+
+.edit-sm {
+  height: 0px;
+  line-height: 0px;
+}

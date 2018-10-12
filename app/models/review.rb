@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :paper
+  belongs_to :user
 
   def get_relevance()
     return self.relevance[0].to_i
@@ -19,6 +20,10 @@ class Review < ApplicationRecord
 
   def get_confidence()
     return self.confidence[0].to_i
+  end
+
+  def get_general_evaluation()
+    return self.general_evaluation[0].to_i
   end
 
   def get_total()

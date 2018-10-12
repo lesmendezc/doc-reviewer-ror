@@ -1,5 +1,7 @@
 <div class="row flex">
     <div class="col s12 center-align green lighten-3"><strong>Comentario <%= comment_counter+1 %></strong></div>
+    <div class="col s2 green lighten-5"><strong>Miembro tribunal:</strong></div>
+    <div class="col s10 green lighten-5"><%= comment.user.name %> <%= comment.user.lastname %></div>
     <div class="col s2 green lighten-5"><strong>Comentario:</strong></div>
     <div class="col s10 green lighten-5"><%= comment.commentary %></div>
     <div class="col s2 green lighten-5"><strong>Fecha:</strong></div>

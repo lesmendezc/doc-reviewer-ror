@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     # authorize! :manage, User
     # @user.save
-    if @user.save(:validate => false)
+    if @user.save
       redirect_to users_path
     else
       render 'new'
@@ -23,6 +23,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :lastname)
+    params.require(:user).permit(:name, :lastname, :career, :phone, :role, :email, :password)
   end
 end

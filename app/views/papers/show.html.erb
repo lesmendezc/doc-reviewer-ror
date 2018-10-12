@@ -7,6 +7,10 @@
     <td><%= @paper.title %></td>
   </tr>
   <tr>
+    <th><strong>Autor:</strong></th>
+    <td><%= @paper.user.name %> <%= @paper.user.lastname %></td>
+  </tr>
+  <tr>
     <th><strong>Documento:</strong></th>
     <td>
       <%= link_to rails_blob_path(@paper.pdf_file, disposition: "attachment"), 

@@ -23,10 +23,17 @@
   </div>
 </div>
 
-  <div class="input-field">
-    <%= form.label :name, 'Nombre' %>
+<div class="row">
+  <div class="input-field col s6">
+    <%= form.label :name, 'Nombre del evento' %>
     <%= form.text_field :name, class: "validate" %>
   </div>
+  <div class="input-field col s6">
+    <%= form.label :career, 'Carrera', class: 'active' %>
+    <%= form.select :career, ['Ing. Sistemas', 'Ing. Ambiental', 'Ing. Civil', 'Ing. Mecatronica'], include_blank: true %>
+  </div>
+</div>
+
 
   <div class="input-field">
     <%= form.label :limit_date, 'Fecha límite de recepción de documentos' %>

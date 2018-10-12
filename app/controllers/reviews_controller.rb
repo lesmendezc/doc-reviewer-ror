@@ -37,12 +37,13 @@ class ReviewsController < ApplicationController
         @event = Event.find(params[:event_id])
         @paper = @event.papers.find(params[:paper_id])
         @review = @paper.reviews.find(params[:id])
+        @review.update(is_edited: true, copy_id: @review.id)
         @paper.reviews.create(review_params)
         redirect_to event_paper_comments_path(@event)
     end
 
     private
     def review_params
-        params.require(:review).permit(:relevance, :problem_def, :general_def, :specific_def, :confidence, :general_evaluation, :personal_message)
+        params.require(:review).permit(:relevance, :problem_def, :general_def, :specific_def, :confidence, :general_evaluation, :general_evaluation_text, :personal_message, :is_edited, :user_id, :copy_id, :is_new)
     end
 end

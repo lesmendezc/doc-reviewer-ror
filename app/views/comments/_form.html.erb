@@ -11,6 +11,8 @@
                         </div>
                     </div>
 
+                    <%= form.hidden_field :user_id, value: current_user.id %>
+
                     <div class="center-align">
                         <button class="waves-light waves-effect btn-small">
                             <%= form.submit "Añadir comentario", class: "white-text" %>

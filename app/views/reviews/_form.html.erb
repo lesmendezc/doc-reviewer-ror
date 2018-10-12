@@ -51,9 +51,17 @@
                     </div><br>
                     <div class="divider"></div><br>
                     <strong>Evaluación general (*)</strong><br><br>
+                    <div>
+                        <label><%= form.radio_button :general_evaluation, "5 (excelente)", class: 'with-gap' %><span>5: excelente</span></label><br>
+                        <label><%= form.radio_button :general_evaluation, "4 (bueno)", class: 'with-gap' %><span>4: bueno</span></label><br>
+                        <label><%= form.radio_button :general_evaluation, "3 (justo)", class: 'with-gap' %><span>3: justo</span></label><br>
+                        <label><%= form.radio_button :general_evaluation, "2 (pobre)", class: 'with-gap' %><span>2: pobre</span></label><br>
+                        <label><%= form.radio_button :general_evaluation, "1 (muy pobre)", class: 'with-gap' %><span>1: muy pobre</span></label>
+                    </div><br>
+                    
                     <div class="input-field">
-                        <%= form.label :general_evaluation, 'Escriba su evaluación general aquí' %>
-                        <%= form.text_area :general_evaluation, class: 'materialize-textarea' %>
+                        <%= form.label :general_evaluation_text, 'Escriba su evaluación general aquí' %>
+                        <%= form.text_area :general_evaluation_text, class: 'materialize-textarea' %>
                     </div><br>
                     <div class="divider"></div><br>
                     <strong>Mensaje personal al profesor de la materia</strong><br><br>
@@ -61,6 +69,8 @@
                         <%= form.label :personal_message, 'Escriba su mensaje personal aquí' %>
                         <%= form.text_area :personal_message, class: 'materialize-textarea' %>
                     </div><br>
+
+                    <%= form.hidden_field :user_id, value: current_user.id %>
 
                     <div class="center-align">
                         <%= button_tag(class: "btn-small waves-effect waves-light") do %>

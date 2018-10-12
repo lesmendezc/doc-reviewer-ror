@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, :controller => "users"
+  resources :users
   resources :surveys
 
   # get "users/new_user" => "users#new_user", as: :users_new_user

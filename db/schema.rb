@@ -44,9 +44,11 @@ ActiveRecord::Schema.define(version: 2018_09_28_145404) do
   create_table "comments", force: :cascade do |t|
     t.text "commentary"
     t.integer "paper_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["paper_id"], name: "index_comments_on_paper_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -90,13 +92,19 @@ ActiveRecord::Schema.define(version: 2018_09_28_145404) do
     t.string "general_def"
     t.string "specific_def"
     t.string "confidence"
-    t.text "general_evaluation"
+    t.string "general_evaluation"
+    t.text "general_evaluation_text"
     t.text "personal_message"
-    t.boolean "is_edited"
+    t.boolean "is_edited", default: false
+    t.integer "counter"
+    t.integer "copy_id"
+    t.boolean "is_new", default: true
     t.integer "paper_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["paper_id"], name: "index_reviews_on_paper_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "surveys", force: :cascade do |t|

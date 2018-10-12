@@ -28,8 +28,8 @@
           </div>
 
           <div class="input-field">
-            <%= f.label :career, 'Carrera' %>
-            <%= f.text_field :career, type: "text", class: "validate" %>
+            <%= f.label :career, 'Carrera', class: 'active' %>
+            <%= form.select :career, ['Ing. Sistemas', 'Ing. Ambiental', 'Ing. Civil', 'Ing. Mecatronica'] %>
           </div>
 
           <div class="input-field">
