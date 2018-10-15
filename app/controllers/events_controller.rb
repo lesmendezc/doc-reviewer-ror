@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    @events_by_career = Event.where(:career => current_user.career)
   end
 
   # GET /events/1
@@ -70,6 +71,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:semester, :year, :name, :limit_date)
+      params.require(:event).permit(:semester, :year, :name, :limit_date, :career)
     end
 end

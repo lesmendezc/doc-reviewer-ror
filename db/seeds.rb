@@ -9,5 +9,6 @@
 users = User.create([{name: 'Admin', role: 'admin', email: 'admin@gmail.com', password: '123456'},
     { name: 'Juan Pablo', lastname: 'Sandoval', role: 'docente', email: 'juampi@gmail.com', password: '123456'},
     { name: 'Maria', lastname: 'Vargas', role: 'tutor', email: 'maria1@gmail.com', password: '123456'},
+    { name: 'Victor', lastname: 'Vazquez', role: 'relator', email: 'victor@gmail.com', password: '123456'},
     { name: 'Pepito', lastname: 'Perez', career: 'comercial', phone: '4433221', email: 'pepito@gmail.com', password: '123456', role: 'estudiante'}
 ])

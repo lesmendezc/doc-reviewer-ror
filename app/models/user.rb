@@ -12,6 +12,10 @@ class User < ApplicationRecord
     self.role ||= :estudiante
   end
 
+  def complete_name
+    "#{name} #{lastname}"
+  end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

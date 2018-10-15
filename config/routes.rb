@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :papers do
       resources :comments
       resources :reviews
+      resources :assingments
     end
   end
 

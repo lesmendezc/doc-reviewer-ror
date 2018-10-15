@@ -48,3 +48,23 @@
     <td><%= @paper.updated_at.strftime("%b %d, %H:%M") %></td>
   </tr>
 </table>
+
+<br><br>
+<h4>Tribunal</h4>
+
+<% if @assingment.present? %>
+  <table class="striped">
+    <tr>
+      <th width="25%">Director:</th>
+      <td><%= User.find(@assingment.director_id).name %></td>
+    </tr>
+    <tr>
+      <th>Tutor:</th>
+      <td><%= User.find(@assingment.tutor_id).name %></td>
+    </tr>
+    <tr>
+      <th>Relator:</th>
+      <td><%= User.find(@assingment.relator_id).name %></td>
+    </tr>
+  </table>
+<% end %>

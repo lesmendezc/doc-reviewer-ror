@@ -38,4 +38,5 @@ $(function() {
     $('select').formSelect();
 
     $('.datepicker').datepicker();
+    $('.materialize-textarea').trigger('autoresize');
 })

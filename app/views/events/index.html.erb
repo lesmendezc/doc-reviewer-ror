@@ -4,6 +4,7 @@
   <thead class="header-row">
     <tr>
       <th>Nombre</th>
+      <th>Carrera</th>
       <th>Semestre</th>
       <th>Año</th>
       <th colspan="3"></th>
@@ -11,15 +12,24 @@
   </thead>
 
   <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= link_to event.name, event_papers_path(event), class: 'link-to-text' %></td>
-        <td><%= event.semester %></td>
-        <td><%= event.year %></td>
-        <!--td><%= link_to 'Mostrar', event %></td>
-        <td><%= link_to 'Editar', edit_event_path(event) %></td>
-        <td><%= link_to 'Eliminar', event, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
-      </tr>
+    <% if current_user.estudiante? %>
+      <% @events_by_career.each do |event| %>
+        <tr>
+          <td><%= link_to event.name, event_papers_path(event), class: 'link-to-text' %></td>
+          <td><%= event.career %></td>
+          <td><%= event.semester %></td>
+          <td><%= event.year %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= link_to event.name, event_papers_path(event), class: 'link-to-text' %></td>
+          <td><%= event.career %></td>
+          <td><%= event.semester %></td>
+          <td><%= event.year %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

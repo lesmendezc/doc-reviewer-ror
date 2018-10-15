@@ -7,7 +7,7 @@ class PapersController < ApplicationController
   def index
     @event = Event.find(params[:event_id])
     @papers = @event.papers
-    # @user_papers = current_user.papers.all
+    @papers_by_user = current_user.papers
   end
 
   # GET /papers/1
@@ -15,6 +15,7 @@ class PapersController < ApplicationController
   def show
     @event = Event.find(params[:event_id])
     @paper = @event.papers.find(params[:id])
+    @assingment = @paper.assingment
   end
 
   # GET /papers/new
