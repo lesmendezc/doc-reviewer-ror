@@ -1,5 +1,5 @@
 <h3 class="align center">Crear usuario</h3>
-<%= form_for (@user) do |f| %>
+<%= form_for User.new, url: create_user_path do |f| %>
     <div class="input-field">
         <%= f.label :name, 'Nombre' %>
         <%= f.text_field :name, class: 'validate' %>

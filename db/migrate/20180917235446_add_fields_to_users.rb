@@ -6,5 +6,7 @@ class AddFieldsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :phone, :string
     add_column :users, :career, :string
     add_column :users, :role, :integer
+    add_column :users, :username, :string
+    add_column :users, :admin_role, :boolean, default: false
   end
 end
