@@ -11,6 +11,10 @@
     <td><%= @paper.user.name %> <%= @paper.user.lastname %></td>
   </tr>
   <tr>
+    <th><strong>Link Google Docs:</strong></th>
+    <td><%= @paper.google_docs_link %></td>
+  </tr>
+  <tr>
     <th><strong>Documento:</strong></th>
     <td>
       <%= link_to rails_blob_path(@paper.pdf_file, disposition: "attachment"), 
@@ -21,19 +25,19 @@
   </tr>
   <tr>
     <th><strong>Resumen:</strong></th>
-    <td><%= @paper.resume %></td>
+    <td><%= simple_format(@paper.resume) %></td>
   </tr>
   <tr>
     <th><strong>Objetivo general:</strong></th>
-    <td><%= @paper.general_purpose %></td>
+    <td><%= simple_format(@paper.general_purpose) %></td>
   </tr>
   <tr>
     <th><strong>Objetivos específicos:</strong></th>
-    <td><%= @paper.specific_purpose %></td>
+    <td><%= simple_format(@paper.specific_purpose) %></td>
   </tr>
   <tr>
     <th><strong>Definición del problema:</strong></th>
-    <td><%= @paper.problem_definition %></td>
+    <td><%= simple_format(@paper.problem_definition) %></td>
   </tr>
   <tr>
     <th><strong>Palabras clave:</strong></th>
@@ -50,9 +54,9 @@
 </table>
 
 <br><br>
-<h4>Tribunal</h4>
 
 <% if @assingment.present? %>
+  <h4>Tribunal</h4>
   <table class="striped">
     <tr>
       <th width="25%">Director:</th>

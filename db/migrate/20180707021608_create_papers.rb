@@ -6,6 +6,7 @@ class CreatePapers < ActiveRecord::Migration[5.2]
       t.text :general_purpose
       t.text :specific_purpose
       t.text :problem_definition
+      t.string :google_docs_link
       t.integer :comments_count, default: 0
 
       t.references :user, foreign_key: true

@@ -3,7 +3,7 @@
     <div class="col s2 green lighten-5"><strong>Miembro tribunal:</strong></div>
     <div class="col s10 green lighten-5"><%= comment.user.name %> <%= comment.user.lastname %></div>
     <div class="col s2 green lighten-5"><strong>Comentario:</strong></div>
-    <div class="col s10 green lighten-5"><%= comment.commentary %></div>
+    <div class="col s10 green lighten-5"><%= simple_format(comment.commentary) %></div>
     <div class="col s2 green lighten-5"><strong>Fecha:</strong></div>
     <div class="col s10 green lighten-5"><%= comment.created_at.strftime("%b %d, %H:%M") %></div>
 </div>

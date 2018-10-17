@@ -14,6 +14,7 @@
 //= require rails-ujs
 //= require materialize
 //= require activestorage
+//= require toastr
 //= require_tree .
 
 $(function() {
@@ -37,6 +38,83 @@ $(function() {
     
     $('select').formSelect();
 
-    $('.datepicker').datepicker();
+    $('.datepicker').datepicker({
+        minDate: new Date()
+    });
     $('.materialize-textarea').trigger('autoresize');
+
+    $('#new_review').validate(
+        {
+            rules: {
+                'review[relevance]': "required",
+                'review[problem_def]': "required",
+                'review[general_def]': "required",
+                'review[specific_def]': "required",
+                'review[confidence]': "required",
+                'review[general_evaluation]': "required",
+                'review[general_evaluation_text]': "required"
+            },
+            messages: {
+                'review[relevance]': { required: "Debe elegir una opción <br/>" },
+                'review[problem_def]': { required: "Debe elegir una opción <br/>" },
+                'review[general_def]': { required: "Debe elegir una opción <br/>" },
+                'review[specific_def]': { required: "Debe elegir una opción <br/>" },
+                'review[confidence]': { required: "Debe elegir una opción <br/>" },
+                'review[general_evaluation]': { required: "Debe elegir una opción <br/>" },
+                'review[general_evaluation_text]': { required: "Campo obligatorio <br/>" }
+            },
+            errorPlacement: function(error, element) {
+                if (element.attr("type") == "radio") {
+                    error.prependTo(element.parent());
+                }else{
+                    error.insertBefore(element.parent());
+                }
+            }
+        });
+
+    $('#new_paper').validate({
+        rules: {
+            'paper[title]': 'required',
+            'paper[google_docs_link]': 'required',
+            'paper[resume]': 'required',
+            'paper[problem_definition]': 'required',
+            'paper[general_purpose]': 'required',
+            'paper[specific_purpose]': 'required'
+        },
+        messages: {
+            'paper[title]': { required: 'Campo obligatorio'},
+            'paper[google_docs_link]': {required: 'Introduzca el link a su documento en Google Docs'},
+            'paper[resume]': {required: 'Campo obligatorio'},
+            'paper[problem_definition]': {required: 'Campo obligatorio'},
+            'paper[general_purpose]': {required:'Campo obligatorio'},
+            'paper[specific_purpose]': {required:'Campo obligatorio'}
+        },
+        errorElement : 'div',
+        errorPlacement: function(error, element) {
+            error.insertAfter(element);
+        }
+    });
+
+    $('.edit_paper').validate({
+        rules: {
+            'paper[title]': 'required',
+            'paper[google_docs_link]': 'required',
+            'paper[resume]': 'required',
+            'paper[problem_definition]': 'required',
+            'paper[general_purpose]': 'required',
+            'paper[specific_purpose]': 'required'
+        },
+        messages: {
+            'paper[title]': { required: 'Campo obligatorio'},
+            'paper[google_docs_link]': {required: 'Introduzca el link a su documento en Google Docs'},
+            'paper[resume]': {required: 'Campo obligatorio'},
+            'paper[problem_definition]': {required: 'Campo obligatorio'},
+            'paper[general_purpose]': {required:'Campo obligatorio'},
+            'paper[specific_purpose]': {required:'Campo obligatorio'}
+        },
+        errorElement : 'div',
+        errorPlacement: function(error, element) {
+            error.insertAfter(element);
+        }
+    });
 })

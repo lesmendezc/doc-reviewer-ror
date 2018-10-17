@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'toastr-rails'
 gem 'mini_magick'
 gem 'jquery-rails'
 gem 'materialize-sass', '~> 1.0.0.rc2'

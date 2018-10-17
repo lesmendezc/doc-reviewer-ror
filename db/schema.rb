@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2018_10_12_005638) do
     t.text "general_purpose"
     t.text "specific_purpose"
     t.text "problem_definition"
+    t.string "google_docs_link"
     t.integer "comments_count", default: 0
     t.integer "user_id"
     t.integer "event_id"
