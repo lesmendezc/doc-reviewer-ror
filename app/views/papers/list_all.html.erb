@@ -1,0 +1,24 @@
+<h3 align="center">Documentos</h3><br>
+
+<table>
+  <thead class="header-row">
+    <tr>
+      <th>No.</th>
+      <th>Título</th>
+      <th>Estudiante</th>
+      <th>Carrera</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @papers.each_with_index do |paper, index| %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td><%= link_to paper.title, event_paper_path(paper.event_id, paper), class: 'link-to-text' %></td>
+          <td><%= paper.user.name %> <%= paper.user.lastname %></td>
+          <td><%= paper.user.career %></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table><br>
+

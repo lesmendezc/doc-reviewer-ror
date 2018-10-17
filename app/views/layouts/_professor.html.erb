@@ -12,6 +12,12 @@
 
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="/events">Eventos</a></li>
+                <li>
+                    <a href="#!" class="dropdown-trigger" data-target="docs-drop">
+                        Documentos
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                  </li>
             </ul>
         </div>
     </div>
@@ -31,4 +37,9 @@
           <i class="material-icons right">directions_run</i>
       <% end %>
     </li>
+</ul>
+<ul id="docs-drop" class="dropdown-content">
+    <li><a href="/documents">Lista documentos</a></li>
+    <li><a href="/assigned_tutor">Documentos asignados como tutor</a></li>
+    <li><a href="/assigned_relator">Documentos asignados como relator</a></li>
 </ul>

@@ -2,7 +2,7 @@
     <div class="col s12 m8 offset-m2">
         <div class="card brown lighten-5">
             <div class="card-content">
-                <h3 class="center-align">Asignar Tribunal</h3>
+                <h3 class="center-align">Editar Tribunal</h3>
                 <%= form_for([@event, @paper, @assingment]) do |form| %>
                     <div>
                         <%= form.label :director_id, 'Director' %>
@@ -19,7 +19,7 @@
 
                     <div class="center-align">
                         <%= button_tag(class: "btn-small waves-effect waves-light") do %>
-                            Asignar tribunal
+                            Editar tribunal
                         <% end %>
                     </div>
                 <% end %>

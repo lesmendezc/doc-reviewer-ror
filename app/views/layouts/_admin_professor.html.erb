@@ -23,7 +23,12 @@
                         <i class="material-icons right">arrow_drop_down</i>
                     </a>
                   </li>
-                  <li><a href="/documents">Documentos</a></li>
+                  <li>
+                    <a href="#!" class="dropdown-trigger" data-target="docs-drop">
+                        Documentos
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                  </li>
               </ul>
           </div>
       </div>
@@ -49,8 +54,12 @@
     <li><%= link_to "Lista de usuarios", users_path %></li>
     <li><%= link_to "Crear usuario", new_user_path %></li>
 </ul>
-
 <ul id="events-drop" class="dropdown-content">
     <li><%= link_to "Lista de eventos", events_path %></li>
     <li><%= link_to "Crear evento", new_event_path %></li>
+</ul>
+<ul id="docs-drop" class="dropdown-content">
+    <li><a href="/documents">Lista documentos</a></li>
+    <li><a href="/assigned_tutor">Documentos asignados como tutor</a></li>
+    <li><a href="/assigned_relator">Documentos asignados como relator</a></li>
 </ul>

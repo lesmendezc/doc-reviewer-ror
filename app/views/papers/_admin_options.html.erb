@@ -1,21 +1,45 @@
-<td>
-    <%= link_to rails_blob_path(paper.pdf_file, disposition: "inline"), 
-        class: "waves-effect btn-floating btn-small grey", target: "_blank" do %>
-        <i class="material-icons">visibility</i>
-    <%end%>
-</td>
-<td>
-    <%= link_to event_paper_comments_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
-        <i class="material-icons">search</i>
-    <% end %>
-</td>
-<td>
-    <%= link_to new_event_paper_review_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
-        <i class="material-icons">add_box</i>
-    <% end %>
-</td>
-<td>
-    <%= link_to new_event_paper_assingment_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
-        <i class="material-icons">group</i>
-    <% end %>
-</td>
+<table>
+  <thead class="header-row">
+    <tr>
+      <th>No.</th>
+      <th>Título</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @papers.each_with_index do |paper, index| %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td class="title-row"><%= link_to paper.title, event_paper_path(@event, paper), class: 'link-to-text' %></td>
+          <td>
+            <%= link_to rails_blob_path(paper.pdf_file, disposition: "inline"), 
+                class: "waves-effect btn-floating btn-small grey", target: "_blank" do %>
+                <i class="material-icons">visibility</i>
+            <%end%>
+          </td>
+          <td>
+              <%= link_to event_paper_comments_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
+                  <i class="material-icons">search</i>
+              <% end %>
+          </td>
+          <td>
+              <%= link_to new_event_paper_review_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
+                  <i class="material-icons">add_box</i>
+              <% end %>
+          </td>
+          <td>
+                <% if paper.assingment.present? %>
+                    <%= link_to edit_event_paper_assingment_path(@event, paper, paper.assingment), class: "waves-effect btn-floating btn-small grey" do %>
+                        <i class="material-icons">playlist_add_check</i>
+                    <% end %>
+                <% else %>
+                    <%= link_to new_event_paper_assingment_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
+                        <i class="material-icons">group_add</i>
+                    <% end %>
+                <% end %>
+          </td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>

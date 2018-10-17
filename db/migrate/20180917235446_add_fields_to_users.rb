@@ -8,5 +8,8 @@ class AddFieldsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :role, :integer
     add_column :users, :username, :string
     add_column :users, :admin_role, :boolean, default: false
+    add_column :users, :tutor_role, :boolean
+    add_column :users, :relator_role, :boolean
+    add_column :users, :professor_role, :boolean
   end
 end

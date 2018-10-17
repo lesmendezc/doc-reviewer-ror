@@ -2,91 +2,13 @@
 
 <% if current_user.estudiante? %>
   <%= link_to new_event_paper_path, class: "btn-small waves-effect right" do %>
-    <i class="material-icons left">add</i>
-    Añadir
-  <% end %>
+      <i class="material-icons left">add</i>
+      Añadir
+  <% end %><br><br>
+  <%= render partial: 'student_options', collection: @papers_by_user %>
 <% end %>
-<br><br>
-
-<table>
-  <thead class="header-row">
-    <tr>
-      <th>No.</th>
-      <th>Título</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% if current_user.estudiante? %>
-      <% @papers_by_user.each_with_index do |paper, index| %>
-        <tr>
-          <td><%= index+1 %></td>
-          <td class="title-row"><%= link_to paper.title, event_paper_path(@event, paper), class: 'link-to-text' %></td>
-          <td>
-            <%= link_to rails_blob_path(paper.pdf_file, disposition: "inline"), 
-                class: "waves-effect btn-floating btn-small grey", target: "_blank" do %>
-                <i class="material-icons">visibility</i>
-            <%end%>
-          </td>
-        </tr>
-      <% end %>
-    <% end %>
-    <% if current_user.tutor? || current_user.relator? %>
-      <% @papers.each_with_index do |paper, index| %>
-        <tr>
-          <td><%= index+1 %></td>
-          <td class="title-row"><%= link_to paper.title, event_paper_path(@event, paper), class: 'link-to-text' %></td>
-          <td>
-            <%= link_to rails_blob_path(paper.pdf_file, disposition: "inline"), 
-                class: "waves-effect btn-floating btn-small grey", target: "_blank" do %>
-                <i class="material-icons">visibility</i>
-            <%end%>
-          </td>
-          <td>
-              <%= link_to event_paper_comments_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
-                  <i class="material-icons">search</i>
-              <% end %>
-          </td>
-          <td>
-              <%= link_to new_event_paper_review_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
-                  <i class="material-icons">add_box</i>
-              <% end %>
-          </td>
-        </tr>
-      <% end %>
-    <% end %>
-    <% if current_user.admin? || current_user.docente? %>
-      <% @papers.each_with_index do |paper, index| %>
-        <tr>
-          <td><%= index+1 %></td>
-          <td class="title-row"><%= link_to paper.title, event_paper_path(@event, paper), class: 'link-to-text' %></td>
-          <td>
-            <%= link_to rails_blob_path(paper.pdf_file, disposition: "inline"), 
-                class: "waves-effect btn-floating btn-small grey", target: "_blank" do %>
-                <i class="material-icons">visibility</i>
-            <%end%>
-          </td>
-          <td>
-              <%= link_to event_paper_comments_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
-                  <i class="material-icons">search</i>
-              <% end %>
-          </td>
-          <td>
-              <%= link_to new_event_paper_review_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
-                  <i class="material-icons">add_box</i>
-              <% end %>
-          </td>
-          <td>
-              <%= link_to new_event_paper_assingment_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
-                  <i class="material-icons">group</i>
-              <% end %>
-          </td>
-        </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+<% if current_user.admin? %>
+  <%= render partial: 'admin_options', collection: @papers %>
+<% elsif current_user.docente? %>
+  <%= render partial: 'professors_options', collection: @papers %>
+<% end %>

@@ -2,14 +2,12 @@
     <%= render 'layouts/student' %><br>
 <% end %>
 
-<% if current_user && current_user.admin? %>
+<% if current_user && current_user.admin? && current_user.professor_role? %>
+  <%= render 'layouts/admin_professor' %><br>
+<% elsif current_user && current_user.docente? && current_user.admin_role? %>
+  <%= render 'layouts/admin_professor' %><br>
+<% elsif current_user && current_user.admin? || current_user && current_user.admin_role? %>
   <%= render 'layouts/admin' %><br>
-<% end %>
-
-<% if current_user && current_user.docente? %>
+<% elsif current_user && current_user.docente? || current_user && current_user.professor_role? %>
   <%= render 'layouts/professor' %><br>
-<% end %>
-
-<% if current_user && current_user.tutor? || current_user && current_user.relator? %>
-  <%= render 'layouts/tutors' %><br>
 <% end %>

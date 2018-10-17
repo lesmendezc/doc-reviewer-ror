@@ -1,0 +1,59 @@
+<h3 class="align center">Editar usuario</h3>
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card brown lighten-5">
+            <div class="card-content">
+                <%= form_for @user do |f| %>
+                    <div class="input-field">
+                        <%= f.label :name, 'Nombre' %>
+                        <%= f.text_field :name, class: 'validate' %>
+                    </div>
+
+                    <div class="input-field">
+                        <%= f.label :lastname, 'Apellidos' %>
+                        <%= f.text_field :lastname, class: 'validate' %>
+                    </div>
+
+                    <div class="input-field">
+                        <%= f.label :username, 'Nombre de usuario' %>
+                        <%= f.text_field :username, class: 'validate' %>
+                    </div>
+
+                    <div class="input-field">
+                        <%= f.label :career, 'Carrera', class: 'active' %>
+                        <%= f.select :career, ['Ing. Sistemas', 'Ing. Ambiental', 'Ing. Civil', 'Ing. Mecatronica'], include_blank: true %>
+                    </div>
+
+                    <div class="input-field">
+                        <%= f.label :phone, 'Celular' %>
+                        <%= f.text_field :phone, class: 'validate' %>
+                    </div><br>
+                    
+                    <label for="add_role">Añadir rol: </label>&emsp;
+                    <% if @usuario.admin? %>
+                        <label>
+                            <%= f.check_box :professor_role %>
+                            <span>Docente</span>
+                        </label><br><br>
+                    <% elsif @usuario.docente? %>
+                        <label>
+                            <%= f.check_box :admin_role %>
+                            <span>Administrador</span>
+                        </label><br><br>
+                    <% end %>
+
+                    <div class="input-field">
+                        <%= f.label :email, 'Correo electrónico' %>
+                        <%= f.text_field :email, class: 'validate' %>
+                    </div>
+                    
+                    <div class="align center">
+                        <%= button_tag(class: 'btn-small waves-effect waves-light') do %>
+                            Editar usuario
+                        <% end %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

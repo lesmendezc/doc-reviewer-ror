@@ -16,6 +16,20 @@ class AssingmentsController < ApplicationController
         end
     end
 
+    def edit
+        @event = Event.find(params[:event_id])
+        @paper = @event.papers.find(params[:paper_id])
+        @assingment = Assingment.find(params[:id])
+    end
+
+    def update
+        @event = Event.find(params[:event_id])
+        @paper = @event.papers.find(params[:paper_id])
+        @assingment = Assingment.find(params[:id])
+        @assingment.update(assingment_params)
+        redirect_to event_papers_path(@event)
+    end
+
     def show
         @event = Event.find(params[:event_id])
         @paper = @event.papers.find(params[:paper_id])
