@@ -75,16 +75,12 @@ $(function() {
     $('#new_paper').validate({
         rules: {
             'paper[title]': 'required',
-            'paper[google_docs_link]': 'required',
-            'paper[resume]': 'required',
             'paper[problem_definition]': 'required',
             'paper[general_purpose]': 'required',
             'paper[specific_purpose]': 'required'
         },
         messages: {
             'paper[title]': { required: 'Campo obligatorio'},
-            'paper[google_docs_link]': {required: 'Introduzca el link a su documento en Google Docs'},
-            'paper[resume]': {required: 'Campo obligatorio'},
             'paper[problem_definition]': {required: 'Campo obligatorio'},
             'paper[general_purpose]': {required:'Campo obligatorio'},
             'paper[specific_purpose]': {required:'Campo obligatorio'}
@@ -98,16 +94,12 @@ $(function() {
     $('.edit_paper').validate({
         rules: {
             'paper[title]': 'required',
-            'paper[google_docs_link]': 'required',
-            'paper[resume]': 'required',
             'paper[problem_definition]': 'required',
             'paper[general_purpose]': 'required',
             'paper[specific_purpose]': 'required'
         },
         messages: {
             'paper[title]': { required: 'Campo obligatorio'},
-            'paper[google_docs_link]': {required: 'Introduzca el link a su documento en Google Docs'},
-            'paper[resume]': {required: 'Campo obligatorio'},
             'paper[problem_definition]': {required: 'Campo obligatorio'},
             'paper[general_purpose]': {required:'Campo obligatorio'},
             'paper[specific_purpose]': {required:'Campo obligatorio'}
