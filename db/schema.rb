@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2018_10_12_005638) do
     t.string "answer_content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
   create_table "assingments", force: :cascade do |t|
@@ -48,7 +47,6 @@ ActiveRecord::Schema.define(version: 2018_10_12_005638) do
     t.integer "paper_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["paper_id"], name: "index_assingments_on_paper_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -57,8 +55,6 @@ ActiveRecord::Schema.define(version: 2018_10_12_005638) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["paper_id"], name: "index_comments_on_paper_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -83,8 +79,6 @@ ActiveRecord::Schema.define(version: 2018_10_12_005638) do
     t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_papers_on_event_id"
-    t.index ["user_id"], name: "index_papers_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -94,7 +88,6 @@ ActiveRecord::Schema.define(version: 2018_10_12_005638) do
     t.integer "survey_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["survey_id"], name: "index_questions_on_survey_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -114,8 +107,6 @@ ActiveRecord::Schema.define(version: 2018_10_12_005638) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["paper_id"], name: "index_reviews_on_paper_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "surveys", force: :cascade do |t|

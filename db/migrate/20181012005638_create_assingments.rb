@@ -4,7 +4,8 @@ class CreateAssingments < ActiveRecord::Migration[5.2]
       t.integer :director_id
       t.integer :tutor_id
       t.integer :relator_id
-      t.references :paper, foreign_key: true
+
+      t.integer :paper_id
 
       t.timestamps
     end

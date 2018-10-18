@@ -14,8 +14,8 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.integer :copy_id
       t.boolean :is_new, default: true
 
-      t.references :paper, foreign_key: true
-      t.references :user, foreign_key: true
+      t.integer :paper_id
+      t.integer :user_id
 
       t.timestamps
     end

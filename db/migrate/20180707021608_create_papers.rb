@@ -9,8 +9,8 @@ class CreatePapers < ActiveRecord::Migration[5.2]
       t.string :google_docs_link
       t.integer :comments_count, default: 0
 
-      t.references :user, foreign_key: true
-      t.references :event, foreign_key: true
+      t.integer :user_id
+      t.integer :event_id
 
       t.timestamps
     end
