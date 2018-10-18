@@ -5,10 +5,10 @@
       <i class="material-icons left">add</i>
       Añadir
   <% end %><br><br>
-  <%= render partial: 'student_options', collection: @papers_by_user %>
+  <%= render partial: 'student_options', object: @papers_by_user %>
 <% end %>
 <% if current_user.admin? %>
-  <%= render partial: 'admin_options', collection: @papers %>
+  <%= render partial: 'admin_options', object: @papers %>
 <% elsif current_user.docente? %>
-  <%= render partial: 'professors_options', collection: @papers %>
+  <%= render partial: 'professors_options', object: @papers %>
 <% end %>

@@ -52,13 +52,14 @@ th.vertical {
   width: 3em;
 }
 
-.summary, .paper-show, .review-show, .review-edited { border-collapse: collapse; }
-.summary tr, .paper-show tr, .review-show tr, .review-edited tr { border: none; }
-.summary th, .summary td, .paper-show th, .paper-show td, .review-show th, .review-show td, .review-edited th, .review-edited td {
+.summary, .paper-show, .review-show, .review-edited, .assign-table { border-collapse: collapse; }
+.summary tr, .paper-show tr, .review-show tr, .review-edited tr, .assign-table tr { border: none; }
+.summary th, .summary td, .paper-show th, .paper-show td, .review-show th, .review-show td, 
+.review-edited th, .review-edited td, .assign-table th, .assign-table td {
   border-right: solid 1px rgb(196, 191, 191); 
   border-left: solid 1px rgb(196, 191, 191);
 }
-.review-edited { border-bottom: solid 1px rgb(196, 191, 191); }
+.review-edited, .paper-show, .assign-table, .trib th { border-bottom: solid 1px rgb(196, 191, 191); }
 
 thead tr.summary-header { 
   background-color: rgb(233, 231, 231); 
@@ -94,6 +95,7 @@ tbody tr.review_edited { background-color: white; }
 .paper-show tr:first-child { background-color: #E4E3E2 !important; }
 
 .paper-title td { text-align: center; }
+.paper-title th { text-align: center; }
 
 .review-show th { width: 35%; }
 .review-show tr { background-color: #E6EDFA; }

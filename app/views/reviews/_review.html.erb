@@ -52,7 +52,7 @@
     </tr>
     <tr>
         <th>Mensaje confidencial al profesor de la materia:</th>
-        <td><%= current_user.docente? ? simple_format(review.personal_message) : '' %></td>
+        <td><%= current_user.admin? ? simple_format(review.personal_message) : '' %></td>
     </tr>
 </table>
 <br>

@@ -53,11 +53,10 @@ class PapersController < ApplicationController
   # PATCH/PUT /papers/1.json
   def update
     @event = Event.find(params[:event_id])
+    @paper = @event.papers.find(params[:id])
     # respond_to do |format|
-      if @event.papers.update(paper_params)
+      if @paper.update(paper_params)
         redirect_to event_papers_path(@event)
-        # format.html { redirect_to @paper, notice: 'Paper was successfully updated.' }
-        # format.json { render :show, status: :ok, location: @paper }
       else
         format.html { render :edit }
         format.json { render json: @paper.errors, status: :unprocessable_entity }

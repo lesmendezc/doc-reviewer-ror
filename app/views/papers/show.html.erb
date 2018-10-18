@@ -56,19 +56,38 @@
 <br><br>
 
 <% if @assingment.present? %>
-  <h4>Tribunal</h4>
-  <table class="striped">
-    <tr>
-      <th width="25%">Director:</th>
-      <td><%= User.find(@assingment.director_id).name %></td>
-    </tr>
-    <tr>
-      <th>Tutor:</th>
-      <td><%= User.find(@assingment.tutor_id).name %></td>
-    </tr>
-    <tr>
-      <th>Relator:</th>
-      <td><%= User.find(@assingment.relator_id).name %></td>
-    </tr>
+  <table class="striped assign-table">
+    <thead class="header-row">
+      <tr class="paper-title trib">
+        <th colspan="4">Tribunal</th>
+      </tr>
+      <tr>
+        <th>Rol del miembro</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Correo electrónico</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Director</td>
+        <td><%= User.find(@assingment.director_id).name %></td>
+        <td><%= User.find(@assingment.director_id).lastname %></td>
+        <td><%= User.find(@assingment.director_id).email %></td>
+      </tr>
+      <tr>
+        <td>Tutor</td>
+        <td><%= User.find(@assingment.tutor_id).name %></td>
+        <td><%= User.find(@assingment.tutor_id).lastname %></td>
+        <td><%= User.find(@assingment.tutor_id).email %></td>
+      </tr>
+      <tr>
+        <td>Relator</td>
+        <td><%= User.find(@assingment.relator_id).name %></td>
+        <td><%= User.find(@assingment.relator_id).lastname %></td>
+        <td><%= User.find(@assingment.relator_id).email %></td>
+      </tr>
+    </tbody>
   </table>
 <% end %>
+<br><br>
