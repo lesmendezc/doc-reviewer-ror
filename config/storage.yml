@@ -18,17 +18,7 @@ local:
 google:
   service: GCS
   project: doc-reviewer
-  credentials:
-    type: "service_account"
-    project_id: "doc-reviewer-1"
-    private_key_id: "219d32034435b3f5644897c63965d501dbf3409e",
-    private_key: "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDOLVGlKQcnniWL\nZ8NNGwBV1pUey5ty0wU5bzBXQapPPFLHjiGs2z34hQyNVhM/KX5qDVyUlpDFbFA8\nlWT6WXCUpg13xva4nz+8jkZTYtbORsjmjAclb7zPubuGRL6kaR9HM1PXhkGhvgD/\nHzFR/usrIFjFMZCxVGrVidUEE5/jT4BceAQfaA9DY8wHP6JnZj2vVqYjXlKvEsGt\ntqnrLO8mUUuI7BTOyF0SjY//gjjZzqQx9hhfqFNBr3w4B7qknfPPtRVWWpILTZFU\nydD8MHIsp1u31F5m3XYHtgPhHPz2jvEsvEaMQRbTXdFbKcUwE4CtVLyNkHAcoWp1\nY5PqZXnZAgMBAAECggEAEmT6rsiNSdyTLu/P/dYV3pKpdTjnIoRvJ+OipXZHUpBo\nNkOY/4oD6mM8bnOqfe0eySluBBe2zNZQBkex3aATKj/yXahTpL8YeaMb5R6hWX/5\nNpBxpsZkSwggEeeaNqLmVnze0xC4VEzWW+yVguJCavOU1+sHJLsKWQjWB2oUzrvF\nEZHOqoqyac7Iqn+lHp18u664i9OHk3nXcom49/SNptwAA+ngYHhQnxU6qqflDXf8\nf00TgSPr7U+VKKKttySl0B+ordNtJTM4H8Te0KMNIV7pKTVB4xQ+1v03AYdo8kMn\nELSC1iK9DriGKx84seShaXYNumspstan67Sj4k4NsQKBgQDouhgECb6bglbol/uz\nNPX7cpu9iYOufMlIXq2aNmhKdLxBExyMA5xZYpONbuXjVWjTZ/5JGx582uP8xoey\nRpgg4NH7RXM3f1l/42Bn7znz/PAjqhsbB3Ge5hMIgIshceTXIob12zeW8wgPeBfn\n4yBPaHxYodrXx4Bthf4JaU953QKBgQDiy4lddXGLBk5/o/d2QbE3uMqpF2u4mWDF\nFKo/qasMIpoJodFF4LoK+1V75Jse8o3sJAxwpJR5TvRe5ycMzBPhWQpiSXeIZ2wb\neEk0RQ4O9XBEWfnAZxPW/WG+yuaZ0GerGYHTDKZo6fEa03dGMzD1BPH+wtIXvcx/\nQv906+tmLQKBgA/l7pAQDlpXPBKll0c1vfwQZz06cKlx0tpDxX48a0Fy2g1j/dY+\nxOaCSmwmAERYaFHQz9k0pg+HcH2rHkf6dJgCY7XTl7xZ0cZfxQ00lXPqeoklLLba\n+lMNio1RIrAFNMnRjQCsmg6QyaMs5A0uQd3K2HvBis6kzUwuFB2WeRxtAoGAMCvL\nIW6wjzbntXS+Ov/5BDzbzs6KssrhIvsgriT7j7hJv4H/UThKS8rWfVoxGIGsY1vE\nyKgsYRfED+RJBw7RqiufaQDxwqc07yC9a7y/H65CCkKSKau7Kw7mk//Euybo3g6s\n5IbrUZ1e+LOxwdddrq0+OT5oIWLO7LjuSYdSmIECgYAs4RrCzlx7Fnf0swmQqkXH\nmTwgsbKwlnlum9gZX9cTAQrsPkvOYTNzAgSqW283YuJYrp06H9CcoRjhWxwz+GW4\nuxcwDsvXfWF3QsU1gLKWmMgOUanK3/dZA1xV//KoeaOIxYaxA4RhRLXD8mkwOP10\nY3ZaXVB2xH4hJ2iq7M5pLA==\n-----END PRIVATE KEY-----\n",
-    client_email: "doc-reviewer-service@doc-reviewer-1.iam.gserviceaccount.com",
-    client_id: "109367297229198271143",
-    auth_uri: "https://accounts.google.com/o/oauth2/auth",
-    token_uri: "https://oauth2.googleapis.com/token",
-    auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
-    client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/doc-reviewer-service%40doc-reviewer-1.iam.gserviceaccount.com"
+  credentials: <%= Rails.root.join("config/keyfile.json") %>
   bucket: doc-reviewer-bucket
 
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
