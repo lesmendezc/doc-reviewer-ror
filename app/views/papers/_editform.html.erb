@@ -29,13 +29,6 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="input-field">
-              <%= form.label :resume, 'Resumen', class: "active" %>
-              <%= form.text_area :resume, :class => 'materialize-textarea' %>
-            </div>
-          </div>
-
           <div class="file-field input-field">
             <div class="btn blue lighten-2">
               <span><i class="material-icons">picture_as_pdf</i></span>
@@ -43,6 +36,20 @@
             </div>
             <div class="file-path-wrapper">
               <%= text_field_tag nil, (form.object.pdf_file.filename), {id: nil, class: 'file-path validate'} %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field">
+              <%= form.label :resume, 'Resumen', class: "active" %>
+              <%= form.text_area :resume, :class => 'materialize-textarea' %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field">
+              <%= form.label :problem_definition, 'Formulación del problema', class: "active" %>
+              <%= form.text_area :problem_definition, class: "materialize-textarea" %>
             </div>
           </div>
 
@@ -57,13 +64,6 @@
             <div class="input-field">
               <%= form.label :specific_purpose, 'Objetivos específicos', class: "active" %>
               <%= form.text_area :specific_purpose, class: "materialize-textarea" %>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="input-field">
-              <%= form.label :problem_definition, 'Definición del problema', class: "active" %>
-              <%= form.text_area :problem_definition, class: "materialize-textarea" %>
             </div>
           </div>
 

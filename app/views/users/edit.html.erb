@@ -28,14 +28,20 @@
                         <%= f.label :phone, 'Celular' %>
                         <%= f.text_field :phone, class: 'validate' %>
                     </div><br>
+
+                    <div class="input-field">
+                        <%= f.label :role, 'Rol', class: 'active' %>
+                        <%= f.select :role, ['estudiante','admin','docente'], include_blank: true %>
+                    </div>
                     
-                    <label for="add_role">Añadir rol: </label>&emsp;
                     <% if @usuario.admin? %>
+                        <label for="add_role">Añadir rol: </label>&emsp;
                         <label>
                             <%= f.check_box :professor_role %>
                             <span>Docente</span>
                         </label><br><br>
                     <% elsif @usuario.docente? %>
+                        <label for="add_role">Añadir rol: </label>&emsp;
                         <label>
                             <%= f.check_box :admin_role %>
                             <span>Administrador</span>

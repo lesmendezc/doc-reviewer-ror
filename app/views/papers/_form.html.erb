@@ -45,7 +45,7 @@
 
             <div class="row">
               <div class="input-field">
-                <%= form.label :problem_definition, 'Definición del problema *' %>
+                <%= form.label :problem_definition, 'Formulación del problema *' %>
                 <%= form.text_area :problem_definition, class: "materialize-textarea" %>
               </div>
             </div>
@@ -75,7 +75,7 @@
             <%= form.hidden_field :user_id, value: current_user.id %>
 
             <button class="btn-small waves-effect waves-light" type="submit" name="action">
-              <%= form.submit "Crear", class: "white-text" %>
+              <%= form.submit "Registrar", class: "white-text" %>
               <i class="material-icons right">send</i>
             </button>
           <% end %>

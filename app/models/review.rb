@@ -27,6 +27,6 @@ class Review < ApplicationRecord
   end
 
   def get_total()
-    return get_relevance()+get_problem_def()+get_general_def()+get_specific_def()+get_confidence()+get_general_evaluation()
+    return get_relevance()+get_problem_def()+get_general_def()+get_specific_def()+get_general_evaluation()
   end
 end
