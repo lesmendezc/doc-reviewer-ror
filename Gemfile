@@ -13,7 +13,6 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'devise'
 gem 'cancancan', '~> 2.0'
 
-gem "google-cloud-storage", "~> 1.11"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
@@ -72,6 +71,7 @@ end
 
 group :production do
   gem 'pg'
+  gem "google-cloud-storage", "~> 1.11"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
