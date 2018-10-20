@@ -17,9 +17,9 @@ local:
 # Remember not to checkin your GCS keyfile to a repository
 google:
   service: GCS
-  project: doc-reviewer
-  credentials: <%= Rails.root.join("config/gcs.keyfile") %>
-  bucket: doc-reviewer-bucket
+  project: your_project
+  credentials: <%= Rails.root.join("config/keyfile.json") %>
+  bucket: your_own_bucket
 
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
