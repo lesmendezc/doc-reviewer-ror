@@ -7,7 +7,7 @@ class PapersController < ApplicationController
   def index
     @event = Event.find(params[:event_id])
     @papers = @event.papers
-    @papers_by_user = current_user.papers
+    @papers_by_user = @papers.where(:user_id => current_user.id)
   end
 
   # GET /papers/1
