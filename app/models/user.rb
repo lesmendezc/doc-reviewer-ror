@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :reviews
   
-  enum role: [:estudiante, :tutor, :relator, :docente, :admin]
+  enum role: [:estudiante, :tutor, :relator, :docente, :admin, :director]
 
 
   def login

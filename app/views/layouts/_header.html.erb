@@ -6,7 +6,7 @@
   <%= render 'layouts/admin_professor' %><br>
 <% elsif current_user && current_user.docente? && current_user.admin_role? %>
   <%= render 'layouts/admin_professor' %><br>
-<% elsif current_user && current_user.admin? || current_user && current_user.admin_role? %>
+<% elsif current_user && current_user.admin? || current_user && current_user.admin_role? || current_user && current_user.director? %>
   <%= render 'layouts/admin' %><br>
 <% elsif current_user && current_user.docente? || current_user && current_user.professor_role? %>
   <%= render 'layouts/professor' %><br>
