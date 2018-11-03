@@ -5,7 +5,8 @@ class Ability
     if user.admin? or user.admin_role? or user.director?
       can :manage, :all
     else
-      can :read, :all
+      can :read, Event, Paper
+      can [:change_password, :update_password], User
     end
     
     # Define abilities for the passed in user here. For example:

@@ -34,13 +34,13 @@
                         <%= f.select :role, ['estudiante','admin','docente','director'], include_blank: true %>
                     </div>
                     
-                    <% if @usuario.admin? %>
+                    <% if @user.admin? %>
                         <label for="add_role">Añadir rol: </label>&emsp;
                         <label>
                             <%= f.check_box :professor_role %>
                             <span>Docente</span>
                         </label><br><br>
-                    <% elsif @usuario.docente? %>
+                    <% elsif @user.docente? %>
                         <label for="add_role">Añadir rol: </label>&emsp;
                         <label>
                             <%= f.check_box :admin_role %>

@@ -19,7 +19,12 @@
     </nav>
 
   <ul id="dropdown1" class="dropdown-content">
-      <li>
+    <li>
+        <%= link_to 'Modificar mis datos', edit_user_registration_path %>
+    </li>
+    <li><a href="/users/change_password">Cambiar contraseña</a></li>
+    <li class="divider"></li>
+    <li>
         <%= link_to destroy_user_session_path, method: :delete do %>
             Salir
             <i class="material-icons right">directions_run</i>
