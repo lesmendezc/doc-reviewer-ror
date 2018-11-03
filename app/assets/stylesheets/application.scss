@@ -87,8 +87,6 @@ tbody tr.review_edited { background-color: white; }
   padding: 0 0.5rem;
 }
 
-.link-to-text { color: black; }
-
 .paper-show th { width: 30%; }
 .paper-show tr { background-color: #F3FEFF; }
 .paper-show tr:nth-child(odd) { background-color: #DFF8F5 !important; }
@@ -120,3 +118,12 @@ tbody tr.review_edited { background-color: white; }
 #new_review .error, #new_paper .error, #new_event .error, .edit_paper .error {
   color: rgb(204, 21, 21);
 }
+
+.link-to-text { color: black; }
+.link-to-text:hover {
+  text-decoration: underline;
+}
+.title-row { width: 80%; }
+.title-assigned { width: 50%; }
+.header-row { background: rgb(235, 233, 233);  }
+tr { border: 0!important; }

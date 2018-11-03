@@ -18,7 +18,7 @@
           <div class="row">
             <div class="input-field">
               <%= form.label :title, 'Título', class: "active" %>
-              <%= form.text_field :title, type: "text", class: "validate" %>
+              <%= form.text_area :title, class: "materialize-textarea" %>
             </div>
           </div>
 
@@ -41,7 +41,7 @@
 
           <div class="row">
             <div class="input-field">
-              <%= form.label :resume, 'Resumen', class: "active" %>
+              <%= form.label :resume, 'Introducción', class: "active" %>
               <%= form.text_area :resume, :class => 'materialize-textarea' %>
             </div>
           </div>
