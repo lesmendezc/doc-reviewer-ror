@@ -16,6 +16,7 @@ class PapersController < ApplicationController
     @event = Event.find(params[:event_id])
     @paper = @event.papers.find(params[:id])
     @assingment = @paper.assingment
+    @classroom = @paper.classroom
   end
 
   # GET /papers/new

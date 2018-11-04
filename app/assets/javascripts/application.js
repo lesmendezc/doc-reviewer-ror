@@ -39,8 +39,25 @@ $(function() {
     $('select').formSelect();
 
     $('.datepicker').datepicker({
-        minDate: new Date()
+        minDate: new Date(),
+        format: 'dd mmm, yyyy',
+        i18n: {
+            cancel: 'Cancelar',
+            done: 'Aceptar',
+            months: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+            monthsShort: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+            weekdaysShort: ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'],
+            weekdaysAbbrev: ['D','L','M','M','J','V','S']
+        }
     });
+
+    $('.timepicker').timepicker({
+        i18n: {
+            cancel: 'Cancelar',
+            done: 'Aceptar'
+        }
+    });
+
     $('.materialize-textarea').trigger('autoresize');
 
     $('#new_review').validate(

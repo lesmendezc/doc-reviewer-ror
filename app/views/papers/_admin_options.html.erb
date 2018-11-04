@@ -4,7 +4,7 @@
       <th>No.</th>
       <th>Título</th>
       <th>Estudiante</th>
-      <th colspan="4"></th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
@@ -40,6 +40,17 @@
                         <i class="material-icons">group_add</i>
                     <% end %>
                 <% end %>
+          </td>
+          <td>
+            <% if paper.classroom.present? %>
+                <%= link_to edit_event_paper_classroom_path(@event, paper, paper.classroom), class: "waves-effect btn-floating btn-small grey" do %>
+                    <i class="material-icons">event_available</i>
+                <% end %>
+            <% else %>
+                <%= link_to new_event_paper_classroom_path(@event, paper, paper.classroom), class: "waves-effect btn-floating btn-small grey" do %>
+                    <i class="material-icons">event</i>
+                <% end %>
+            <% end %>
           </td>
         </tr>
       <% end %>

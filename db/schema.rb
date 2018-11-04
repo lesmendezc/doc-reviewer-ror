@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_12_005638) do
+ActiveRecord::Schema.define(version: 2018_11_03_164606) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 2018_10_12_005638) do
     t.integer "director_id"
     t.integer "tutor_id"
     t.integer "relator_id"
+    t.integer "paper_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "classrooms", force: :cascade do |t|
+    t.string "ambient"
+    t.date "defense_date"
+    t.time "defense_hour"
     t.integer "paper_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -89,5 +89,29 @@
       </tr>
     </tbody>
   </table>
+<% end %> <br>
+
+<% if @classroom.present? %>
+  <table class="striped assign-table">
+    <thead class="header-row">
+      <tr class="paper-title trib">
+        <th colspan="4">Aula para defensa</th>
+      </tr>
+      <tr>
+        <th>Nombre evento</th>
+        <th>Ambiente</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @event.name %></td>
+        <td><%= @classroom.ambient %></td>
+        <td><%= @classroom.defense_date.strftime("%d %b") %></td>
+        <td><%= @classroom.defense_hour.strftime("%I:%M %p") %></td>
+      </tr>
+    </tbody>
+  </table>
 <% end %>
 <br><br>

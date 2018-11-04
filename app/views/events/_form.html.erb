@@ -41,7 +41,7 @@
 
           <div class="input-field">
             <%= form.label :limit_date, 'Fecha límite de recepción de documentos *' %>
-            <%= form.text_field :limit_date, class: "datepicker" %>
+            <%= form.text_field :limit_date, class: "datepicker", :value => "#{form.object.limit_date.strftime("%d %b, %Y") unless form.object.new_record?}" %>
           </div>
 
           <div class="center-align">

@@ -77,10 +77,11 @@
 
           <%= form.hidden_field :user_id, value: current_user.id %>
 
-          <button class="btn-small waves-effect waves-light" type="submit" name="action">
-            <%= form.submit "Editar", class: "white-text" %>
-            <i class="material-icons right">send</i>
-          </button>
+          <div class="center-align">
+              <%= button_tag(class: "btn-small waves-effect waves-light") do %>
+                Editar
+              <% end %>
+            </div>
         <% end %>
       </div>
     </div>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :comments
       resources :reviews
       resources :assingments
+      resources :classrooms
     end
   end
 
