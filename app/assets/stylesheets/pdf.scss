@@ -1,9 +1,5 @@
 @import 'materialize';
 
-.pdf-show { font-size: 1in; }
-.pdf-header-five { font-size: 1.5in; }
-.header-title { font-size: 2in; }
-
 th.vertical-pdf div {
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
@@ -51,7 +47,7 @@ th.vertical-pdf div {
 
 thead tr.summary-header-pdf { 
   background-color: rgb(233, 231, 231); 
-  height: 16in;
+  height: 250px;
 }
 tbody tr.reviews-pdf { background-color: #E3EDE4; }
 tbody tr.reviews-pdf:nth-child(odd) { background-color: #EBF7EB !important; }
@@ -65,9 +61,7 @@ tbody tr.review_edited-pdf { background-color: white; }
 .review-edited-pdf td, .review-show-pdf td { padding-left: 50px;}
 
 .review-edited-pdf, .review-show-pdf ul:not(.browser-default) {
-    padding-left: 200px;
-    margin-top: 10px;
-    margin-bottom: 15px;
+    padding-left: 30px;
 }
 .review-edited-pdf, .review-show-pdf ul:not(.browser-default) li {
     list-style-type: initial;
@@ -82,6 +76,6 @@ tbody tr.review_edited-pdf { background-color: white; }
 .sr-pdf { background-color: #F5F5F3; }
 
 .sr-pdf th { 
-    width: 7in;
-    padding-left: 50px;
+    width: 30%;
+    padding-left: 30px;
 }
