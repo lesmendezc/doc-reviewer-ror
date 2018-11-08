@@ -47,7 +47,7 @@ th.vertical-pdf div {
 
 thead tr.summary-header-pdf { 
   background-color: rgb(233, 231, 231); 
-  height: 250px;
+  height: 260px;
 }
 tbody tr.reviews-pdf { background-color: #E3EDE4; }
 tbody tr.reviews-pdf:nth-child(odd) { background-color: #EBF7EB !important; }
@@ -58,7 +58,7 @@ tr.reviews-pdf td, tr.comments-pdf, tr.review_edited-pdf, tr.thin-row-pdf { line
 
 tbody tr.review_edited-pdf { background-color: white; }
 
-.review-edited-pdf td, .review-show-pdf td { padding-left: 50px;}
+.review-edited-pdf td, .review-show-pdf td { padding-left: 10px;}
 
 .review-edited-pdf, .review-show-pdf ul:not(.browser-default) {
     padding-left: 30px;
@@ -67,15 +67,15 @@ tbody tr.review_edited-pdf { background-color: white; }
     list-style-type: initial;
 }
 
-.review-edited-pdf ol, .review-show-pdf ol { padding-left: 200px; }
+.review-edited-pdf ol, .review-show-pdf ol { padding-left: 30px; }
 .review-edited-pdf, .review-show-pdf { page-break-inside: avoid;}
-.review_edited-pdf td, .reviews-pdf td { padding-left: 50px; }
-.review-edited-pdf th, .review-show-pdf th { padding-left: 50px; }
+.review_edited-pdf td, .reviews-pdf td { padding-left: 10px; }
+.review-edited-pdf th, .review-show-pdf th { padding-left: 10px; }
 
 .fr-pdf { background-color: #ebebeb; }
 .sr-pdf { background-color: #F5F5F3; }
 
 .sr-pdf th { 
-    width: 30%;
-    padding-left: 30px;
+    width: 20%;
+    padding-left: 10px;
 }
