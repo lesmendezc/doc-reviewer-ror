@@ -36,11 +36,9 @@
 
 <ul id="dropdown2" class="dropdown-content">
     <li>
-        <%= link_to edit_user_password_path do  %>
-            Cambiar contraseña
-            <i class="material-icons right">settings</i>
-        <%end%>
+        <%= link_to 'Modificar mis datos', edit_user_registration_path %>
     </li>
+    <li><a href="/users/change_password">Cambiar contraseña</a></li>
     <li class="divider"></li>
     <li>
       <%= link_to destroy_user_session_path, method: :delete do %>

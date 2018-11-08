@@ -19,7 +19,7 @@
 
             <div class="row">
               <div class="input-field">
-                <%= form.label :google_docs_link, 'Link archivo Google Docs' %>
+                <%= form.label :google_docs_link, 'Link archivo Google Docs *' %>
                 <%= form.text_field :google_docs_link, class: 'validate' %>
               </div>
             </div>
@@ -38,7 +38,7 @@
 
             <div class="row">
               <div class="input-field">
-                <%= form.label :resume, 'Introducción' %>
+                <%= form.label :resume, 'Introducción *' %>
                 <%= form.text_area :resume, :class => 'materialize-textarea' %>
               </div>
             </div>
@@ -61,14 +61,6 @@
               <div class="input-field">
                 <%= form.label :specific_purpose, 'Objetivos específicos *' %>
                 <%= form.text_area :specific_purpose, class: "materialize-textarea" %>
-              </div>
-            </div>
-
-
-            <div class="row">
-              <div class="input-field">
-                <%= form.label :tag_list, 'Palabras clave', class: "active" %>
-                <%= form.text_field :tag_list, placeholder: "Separar con una coma...", type: "text", class: "validate" %>
               </div>
             </div>
 

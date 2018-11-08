@@ -12,7 +12,7 @@
   </tr>
   <tr>
     <th><strong>Link Google Docs:</strong></th>
-    <td><%= @paper.google_docs_link %></td>
+    <td><a href="<%= @paper.google_docs_link %>" target="_blank" style="text-decoration: underline;"><%= @paper.google_docs_link %></a></td>
   </tr>
   <tr>
     <th><strong>Documento:</strong></th>
@@ -38,10 +38,6 @@
   <tr>
     <th><strong>Formulación del problema:</strong></th>
     <td><%= simple_format(@paper.problem_definition) %></td>
-  </tr>
-  <tr>
-    <th><strong>Palabras clave:</strong></th>
-    <td><%= @paper.tag_list %></td>
   </tr>
   <tr>
     <th><strong>Presentado:</strong></th>
