@@ -1,3 +1,21 @@
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large blue darken-2">
+    <i class="large material-icons">menu</i>
+  </a>
+  <ul>
+    <li>
+        <%= link_to event_paper_comments_path(@event, @paper, :format => :pdf), class: "btn-floating grey", target: "_blank" do %>
+            <i class="material-icons">file_download</i>
+        <% end %>
+    </li>
+    <li>
+        <%= link_to new_event_paper_review_path(@event, @paper), class: "btn-floating grey" do %>
+            <i class="material-icons">add_box</i>
+        <% end %>
+    </li>
+  </ul>
+</div>
+
 <div class="row flex">
     <div class="col s12 center-align green lighten-3"><strong>Comentario <%= comment_counter+1 %></strong></div>
     <div class="col s2 green lighten-5"><strong>Miembro tribunal:</strong></div>

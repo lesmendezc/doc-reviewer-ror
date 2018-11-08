@@ -15,6 +15,7 @@
 //= require materialize
 //= require activestorage
 //= require toastr
+//= require trix
 //= require_tree .
 
 $(function() {
@@ -37,6 +38,10 @@ $(function() {
 
     
     $('select').formSelect();
+
+    $(document).ready(function(){
+        $('.fixed-action-btn').floatingActionButton();
+      });
 
     $('.datepicker').datepicker({
         minDate: new Date(),

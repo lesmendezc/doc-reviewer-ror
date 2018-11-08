@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 2018_11_03_164606) do
     t.text "problem_definition"
     t.string "google_docs_link"
     t.integer "comments_count", default: 0
+    t.string "status"
     t.integer "user_id"
     t.integer "event_id"
     t.datetime "created_at", null: false

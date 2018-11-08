@@ -4,6 +4,11 @@ class CommentsController < ApplicationController
         @event = Event.find(params[:event_id])
         @paper = @event.papers.find(params[:paper_id])
         @comments = @paper.comments
+        @reviews = @paper.reviews
+        respond_to do |format|
+            format.html
+            format.pdf { render template: 'comments/inform', pdf: 'Informe', layout: 'pdf.html' }
+        end
     end
         
     def create

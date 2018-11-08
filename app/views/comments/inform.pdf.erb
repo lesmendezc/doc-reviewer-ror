@@ -1,0 +1,106 @@
+<h5 class="center-align header-title">ACTA</h5><br>
+<h5 class="pdf-header-five">Presentación</h5>
+<table>
+    <tr class="sr-pdf">
+        <th>Tema</th>
+        <td><%= @paper.title %></td>
+    </tr>
+    <tr class="sr-pdf">
+        <th>Estudiante</th>
+        <td><%= @paper.user.name %> <%= @paper.user.lastname %></td>
+    </tr>
+</table><br>
+
+<h5 class="pdf-header-five">Resumen de revisiones</h5>
+<table class="striped summary-pdf">
+    <thead>
+        <tr class="summary-header-pdf">
+            <th></th>
+            <th>Fecha</th>
+            <th>Revisor</th>
+            <th>Nota final</th>
+            <th class="vertical-pdf"><div>Antecedentes</div></th>
+            <th class="vertical-pdf"><div>Definición del problema</div></th>
+            <th class="vertical-pdf"><div>Definición del objetivo general</div></th>
+            <th class="vertical-pdf"><div>Definición de los objetivos esp.</div></th>
+            <th class="vertical-pdf"><div>Confidencia del revisor</div></th>
+            <th class="vertical-pdf"><div>Evaluación general</div></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @paper.reviews.each_with_index do |review, index| %>
+            <tr class="<%= review.is_edited? ? 'review_edited-pdf' : 'reviews-pdf' %>">
+                <td>
+                    <% if (review.is_new==true && review.is_edited==false) || (review.is_new==true && review.is_edited==true) %>
+                        <strong>Revisión <%= review.id %></strong>
+                    <% elsif (review.is_new==false && review.is_edited==false) %>
+                        <strong>Revisión <%= review.copy_id %></strong>
+                    <% end %>
+                </td>
+                <td><%= review.created_at.strftime("%b %d") %></td>
+                <td><%= review.user.name %> <%= review.user.lastname %></td>
+                <td><%= review.get_total() %></td>
+                <td><%= review.get_relevance() %></td>
+                <td><%= review.get_problem_def() %></td>
+                <td><%= review.get_general_def() %></td>
+                <td><%= review.get_specific_def() %></td>
+                <td><%= review.get_confidence() %></td>
+                <td><%= review.get_general_evaluation() %></td>
+            </tr>
+        <% end %>  
+    </tbody>
+</table><br>
+
+
+<% @reviews.each do |review| %>
+    <table class=" <%= review.is_edited? ? 'review-edited-pdf' : 'review-show-pdf' %>">
+        <tr class="paper-title-pdf">
+            <td colspan="2">
+                <% if (review.is_new==true && review.is_edited==false) || (review.is_new==true && review.is_edited==true) %>
+                    <strong>Revisión <%= review.id %> <%= review.is_edited? ? '(editado)' : '' %></strong>
+                <% elsif (review.is_new==false && review.is_edited==false) %>
+                    <strong>Revisión <%= review.copy_id %> <%= review.is_edited? ? '(editado)' : '' %></strong>
+                <% end %>
+            </td>
+        </tr>
+        <tr class="thin-row-pdf">
+            <th>Miembro tribunal:</th>
+            <td><%= review.user.name %> <%= review.user.lastname %></td>
+        </tr>
+        <tr class="thin-row-pdf">
+            <th>Fecha:</th>
+            <td><%= review.created_at.strftime("%b %d, %H:%M") %></td>
+        </tr>
+        <tr class="thin-row-pdf">
+            <th>Antecedentes:</th>
+            <td><%= review.relevance %></td>
+        </tr>
+        <tr class="thin-row-pdf">
+            <th>Formulación del problema:</th>
+            <td><%= review.problem_def %></td>
+        </tr>
+        <tr class="thin-row-pdf">
+            <th>Definición del objetivo general:</th>
+            <td><%= review.general_def %></td>
+        </tr>
+        <tr class="thin-row-pdf">
+            <th>Definición de los objetivos específicos:</th>
+            <td><%= review.specific_def %></td>
+        </tr>
+        <tr class="thin-row-pdf">
+            <th>Confidencia del revisor:</th>
+            <td><%= review.confidence %></td>
+        </tr>
+        <tr>
+            <th>Evaluación general:</th>
+            <td><%= review.general_evaluation %><br><br>
+                <%= sanitize review.general_evaluation_text %>
+            </td>
+        </tr>
+        <tr>
+            <th>Mensaje confidencial al profesor de la materia:</th>
+            <td><%= current_user.admin? ? simple_format(review.personal_message) : '' %></td>
+        </tr>
+    </table>
+    <br>
+<% end %>

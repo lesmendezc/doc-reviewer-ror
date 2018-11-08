@@ -60,8 +60,8 @@
 
                     <strong>Comentarios generales (*)</strong><span> - Estos comentarios aparecerán en el acta.</span><br><br>
                     <div class="input-field">
-                        <%= form.label :general_evaluation_text, 'Escriba su evaluación general aquí' %>
-                        <%= form.text_area :general_evaluation_text, class: 'materialize-textarea' %>
+                        <%= form.hidden_field :general_evaluation_text, id: :review_evaluation_text %>
+                        <trix-editor input="review_evaluation_text"></trix-editor>
                     </div><br>
                     <div class="divider"></div><br>
                     <strong>Mensaje confidencial al profesor de la materia</strong><br><br>

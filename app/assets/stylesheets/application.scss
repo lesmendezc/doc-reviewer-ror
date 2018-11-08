@@ -16,6 +16,7 @@
  *= require_self
  */
 
+ @import "trix";
  @import "materialize";
  @import "materialize/extras/nouislider";
 
@@ -119,10 +120,12 @@ tbody tr.review_edited { background-color: white; }
   color: rgb(204, 21, 21);
 }
 
-.link-to-text { color: black; }
-.link-to-text:hover {
+.link-to-text {
+  color: #1976d2;
   text-decoration: underline;
 }
+.link-to-text:hover { color: tomato; }
+
 .title-row { width: 80%; }
 .title-assigned { width: 50%; }
 .header-row { background: rgb(235, 233, 233);  }
@@ -132,3 +135,22 @@ tr { border: 0!important; }
 .datepicker-cancel { color:rgb(226, 66, 66) !important; }
 
 .timepicker-display-column .timepicker-span-hours, .timepicker-span-minutes { color: white !important; }
+
+
+trix-editor ul:not(.browser-default)>li {
+  list-style-type: disc;
+  display: list-item;
+}
+
+trix-editor ul:not(.browser-default) {
+  list-style-type: disc;
+  display: block;
+  padding-left: 40px;
+}
+
+.review-edited, .review-show ul:not(.browser-default) {
+  padding-left: 30px;
+}
+.review-edited, .review-show ul:not(.browser-default) li {
+  list-style-type: initial;
+}

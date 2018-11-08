@@ -46,8 +46,8 @@
     </tr>
     <tr>
         <th>Evaluación general:</th>
-        <td><%= review.general_evaluation %><br>
-            <%= simple_format(review.general_evaluation_text) %>
+        <td><%= review.general_evaluation %><br><br>
+            <%= sanitize review.general_evaluation_text %>
         </td>
     </tr>
     <tr>
