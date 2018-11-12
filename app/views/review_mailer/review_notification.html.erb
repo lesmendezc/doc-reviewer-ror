@@ -1,0 +1,7 @@
+<h1>Nuevas revisiones</h1>
+
+<p>
+  El usuario <%= @current_user.name %> <%= @current_user.lastname %> realizó una revisión en el siguiente documento <br><br>
+  <strong>Tema: </strong> <%= @paper.title %> <br>
+  del <strong>estudiante: </strong> <%= @paper.user.name %> <%= @paper.user.lastname %>
+</p>

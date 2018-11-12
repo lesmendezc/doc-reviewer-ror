@@ -44,6 +44,9 @@ ActiveRecord::Schema.define(version: 2018_11_03_164606) do
     t.integer "director_id"
     t.integer "tutor_id"
     t.integer "relator_id"
+    t.string "director_email"
+    t.string "tutor_email"
+    t.string "relator_email"
     t.integer "paper_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -16,6 +16,7 @@ class ReviewsController < ApplicationController
         @paper = @event.papers.find(params[:paper_id])
         @review = @paper.reviews.new(review_params)
         if @review.save
+            ReviewMailer.review_notification(current_user, @paper.assingment, @paper).deliver
             redirect_to event_paper_comments_path(@event)
         else
             render :new
