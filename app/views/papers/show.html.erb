@@ -40,6 +40,10 @@
     <td><%= simple_format(@paper.problem_definition) %></td>
   </tr>
   <tr>
+    <th><strong>Estado:</strong></th>
+    <td><%= @paper.status %></td>
+  </tr>
+  <tr>
     <th><strong>Presentado:</strong></th>
     <td><%= @paper.created_at.strftime("%b %d, %H:%M") %></td>
   </tr>

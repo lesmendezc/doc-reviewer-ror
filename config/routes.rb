@@ -21,7 +21,9 @@ Rails.application.routes.draw do
   get '/assigned_tutor' => 'papers#list_assigned_tutor'
   get '/assigned_relator' => 'papers#list_assigned_relator'
   get '/users/change_password' => 'users#change_password'
-  post '/users/update_password' => 'users#update_password'  
+  post '/users/update_password' => 'users#update_password'
+  get '/events/:event_id/papers/:id/edit_status' => 'papers#edit_status'
+  patch '/events/:event_id/papers/:id' => 'papers#update_status'   
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

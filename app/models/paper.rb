@@ -7,4 +7,10 @@ class Paper < ApplicationRecord
     has_one :classroom
     has_one_attached :pdf_file
     acts_as_taggable
+
+    after_update :send_notification
+
+    def send_notification
+        PaperMailer.status_notification(self.user, self).deliver
+    end
 end

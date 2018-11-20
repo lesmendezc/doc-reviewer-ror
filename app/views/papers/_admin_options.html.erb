@@ -4,7 +4,7 @@
       <th>No.</th>
       <th>Título</th>
       <th>Estudiante</th>
-      <th colspan="5"></th>
+      <th colspan="6"></th>
     </tr>
   </thead>
 
@@ -17,7 +17,13 @@
           <td>
             <%= link_to rails_blob_path(paper.pdf_file, disposition: "inline"), 
                 class: "waves-effect btn-floating btn-small grey", target: "_blank" do %>
-                <i class="material-icons">visibility</i>
+                    <i class="material-icons">visibility</i>
+            <%end%>
+          </td>
+          <td>
+            <%= link_to '/events/'+ @event.id.to_s + '/papers/'+ paper.id.to_s + '/edit_status', 
+                class: 'waves-effect btn-floating btn-small grey' do %>
+                    <i class="material-icons">swap_horiz</i>
             <%end%>
           </td>
           <td>

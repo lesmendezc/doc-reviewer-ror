@@ -1,6 +1,4 @@
 class PapersController < ApplicationController
-  before_action :set_paper, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
 
   # GET /papers
   # GET /papers.json
@@ -36,6 +34,7 @@ class PapersController < ApplicationController
   def create
     @event = Event.find(params[:event_id])
     @paper = @event.papers.new(paper_params)
+    @paper.status = 'en proceso'
 
     # respond_to do |format|
       if @paper.save
@@ -48,6 +47,22 @@ class PapersController < ApplicationController
         # format.json { render json: @paper.errors, status: :unprocessable_entity }
       end
     # end
+  end
+
+  def edit_status
+    @event = Event.find(params[:event_id])
+    @paper = @event.papers.find(params[:id])
+  end
+
+  def update_status
+    @event = Event.find(params[:event_id])
+    @paper = @event.papers.find(params[:id])
+    
+    if (@paper.update_attribute(:status => params[:paper][:status]))
+      redirect_to event_papers_path(@event)
+     else
+      redirect_to '/events/'+ @event.id.to_s + '/papers/' + @paper.id.to_s + '/edit_status'
+     end
   end
 
   # PATCH/PUT /papers/1

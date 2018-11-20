@@ -50,6 +50,6 @@ class AssingmentsController < ApplicationController
 
     private
     def assingment_params
-        params.require(:assingment).permit(:director_id, :tutor_id, :relator_id, :director_email, :tutor_email, :relator_email)
+        params.require(:assingment).permit(:director_id, :tutor_id, :relator_id)
     end
 end
