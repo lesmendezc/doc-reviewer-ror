@@ -13,14 +13,6 @@
         <td><%= review.user.name %> <%= review.user.lastname %></td>
     </tr>
     <tr class="thin-row">
-        <th>Documento:</th>
-        <td><%= review.paper_id %></td>
-    </tr>
-    <tr>
-        <th>Título:</th>
-        <td><%= @paper.title %></td>
-    </tr>
-    <tr class="thin-row">
         <th>Fecha:</th>
         <td><%= review.created_at.strftime("%b %d, %H:%M") %></td>
     </tr>
@@ -41,7 +33,7 @@
         <td><%= review.specific_def %></td>
     </tr>
     <tr class="thin-row">
-        <th>Confidencia del revisor:</th>
+        <th>Dominio del revisor:</th>
         <td><%= review.confidence %></td>
     </tr>
     <tr>

@@ -10,8 +10,19 @@
             <th class="vertical"><div>Definición del problema</div></th>
             <th class="vertical"><div>Definición del objetivo general</div></th>
             <th class="vertical"><div>Definición de los objetivos esp.</div></th>
-            <th class="vertical"><div>Confidencia del revisor</div></th>
             <th class="vertical"><div>Evaluación general</div></th>
+            <th></th>
+        </tr>
+        <tr class="header-two">
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th class="wb">(10)</th>
+            <th class="wb">(10)</th>
+            <th class="wb">(10)</th>
+            <th class="wb">(10)</th>
+            <th class="wb">(60)</th>
             <th></th>
         </tr>
     </thead>
@@ -32,7 +43,6 @@
                 <td><%= review.get_problem_def() %></td>
                 <td><%= review.get_general_def() %></td>
                 <td><%= review.get_specific_def() %></td>
-                <td><%= review.get_confidence() %></td>
                 <td><%= review.get_general_evaluation() %></td>
                 <td width="4%">
                     <% if review.is_edited==false && review.is_new==true && review.user_id==current_user.id %>

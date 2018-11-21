@@ -41,7 +41,7 @@
                     </div><br>
                     <div class="divider"></div><br>
                     <div>
-                        <strong>Confidencia del revisor (*)</strong> <span> - Indique cuánto conoce sobre el tema a revisar</span><br><br>
+                        <strong>Dominio del revisor (*)</strong> <span> - Indique cuánto conoce sobre el tema a revisar</span><br><br>
                         <label><%= form.radio_button :confidence, "5 (experto)", class: 'with-gap' %><span>5: experto</span></label><br>
                         <label><%= form.radio_button :confidence, "4 (alto)", class: 'with-gap' %><span>4: alto</span></label><br>
                         <label><%= form.radio_button :confidence, "3 (medio)", class: 'with-gap' %><span>3: medio</span></label><br>
@@ -58,7 +58,7 @@
                         <label><%= form.radio_button :general_evaluation, "1 (muy pobre)", class: 'with-gap' %><span>1: muy pobre</span></label>
                     </div><br>
 
-                    <strong>Comentarios generales (*)</strong><span> - Estos comentarios aparecerán en el acta.</span><br><br>
+                    <strong>Comentarios generales (*)</strong><span> - Estos comentarios aparecerán en el informe.</span><br><br>
                     <div class="input-field">
                         <%= form.hidden_field :general_evaluation_text, id: :review_evaluation_text %>
                         <trix-editor input="review_evaluation_text"></trix-editor>

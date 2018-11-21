@@ -1,4 +1,4 @@
-<h3 class="center-align">ACTA</h3><br>
+<h3 class="center-align">INFORME DE REVISIONES</h3><br>
 <h5>Presentación</h5>
 <table>
     <tr class="sr-pdf">
@@ -23,7 +23,6 @@
             <th class="vertical-pdf"><div>Definición del problema</div></th>
             <th class="vertical-pdf"><div>Definición del objetivo general</div></th>
             <th class="vertical-pdf"><div>Definición de los objetivos esp.</div></th>
-            <th class="vertical-pdf"><div>Confidencia del revisor</div></th>
             <th class="vertical-pdf"><div>Evaluación general</div></th>
         </tr>
     </thead>
@@ -44,7 +43,6 @@
                 <td><%= review.get_problem_def() %></td>
                 <td><%= review.get_general_def() %></td>
                 <td><%= review.get_specific_def() %></td>
-                <td><%= review.get_confidence() %></td>
                 <td><%= review.get_general_evaluation() %></td>
             </tr>
         <% end %>  
@@ -88,7 +86,7 @@
             <td><%= review.specific_def %></td>
         </tr>
         <tr class="thin-row-pdf">
-            <th>Confidencia del revisor:</th>
+            <th>Dominio del revisor:</th>
             <td><%= review.confidence %></td>
         </tr>
         <tr>
@@ -96,10 +94,6 @@
             <td><%= review.general_evaluation %><br><br>
                 <%= sanitize review.general_evaluation_text %>
             </td>
-        </tr>
-        <tr>
-            <th>Mensaje confidencial al profesor de la materia:</th>
-            <td><%= current_user.admin? ? simple_format(review.personal_message) : '' %></td>
         </tr>
     </table>
     <br>

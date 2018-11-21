@@ -66,6 +66,16 @@ thead tr.summary-header {
   background-color: rgb(233, 231, 231); 
   height: 250px;
 }
+
+tr.header-two {
+  background-color: rgb(233, 231, 231); 
+  line-height: 2px;
+}
+
+.wb {
+  border-top: solid 1px rgb(196, 191, 191);
+}
+
 tbody tr.reviews { background-color: #E3EDE4; }
 tbody tr.reviews:nth-child(odd) { background-color: #EBF7EB !important; }
 tbody tr.comments { background-color: #F5F8C1; }
