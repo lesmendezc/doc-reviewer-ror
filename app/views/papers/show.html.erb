@@ -19,7 +19,7 @@
     <td>
       <%= link_to rails_blob_path(@paper.pdf_file, disposition: "attachment"), 
         class: "btn-flat pdf-sm" do %>
-         <i class="material-icons">picture_as_pdf</i>
+         <i class="material-icons tooltipped" data-position='right' data-tooltip='Descargar PDF'>picture_as_pdf</i>
        <%end%>
     </td>
   </tr>

@@ -154,3 +154,9 @@ trix-editor ul:not(.browser-default) {
 .review-edited, .review-show ul:not(.browser-default) li {
   list-style-type: initial;
 }
+
+.material-tooltip {
+  font-size: 11px;
+  background-color: rgb(228, 228, 101);
+  color: #000;
+}

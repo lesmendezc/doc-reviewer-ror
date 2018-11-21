@@ -17,44 +17,44 @@
           <td>
             <%= link_to rails_blob_path(paper.pdf_file, disposition: "inline"), 
                 class: "waves-effect btn-floating btn-small grey", target: "_blank" do %>
-                    <i class="material-icons">visibility</i>
+                    <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Ver PDF'>visibility</i>
             <%end%>
           </td>
           <td>
             <%= link_to '/events/'+ @event.id.to_s + '/papers/'+ paper.id.to_s + '/edit_status', 
                 class: 'waves-effect btn-floating btn-small grey' do %>
-                    <i class="material-icons">swap_horiz</i>
+                    <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Cambiar estado'>swap_horiz</i>
             <%end%>
           </td>
           <td>
               <%= link_to event_paper_comments_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
-                  <i class="material-icons">search</i>
+                  <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Ver revisiones'>search</i>
               <% end %>
           </td>
           <td>
               <%= link_to new_event_paper_review_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
-                  <i class="material-icons">add_box</i>
+                  <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Registrar revisión'>add_box</i>
               <% end %>
           </td>
           <td>
                 <% if paper.assingment.present? %>
                     <%= link_to edit_event_paper_assingment_path(@event, paper, paper.assingment), class: "waves-effect btn-floating btn-small grey" do %>
-                        <i class="material-icons">playlist_add_check</i>
+                        <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Editar tribunal'>playlist_add_check</i>
                     <% end %>
                 <% else %>
                     <%= link_to new_event_paper_assingment_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
-                        <i class="material-icons">group_add</i>
+                        <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Asignar tribunal'>group_add</i>
                     <% end %>
                 <% end %>
           </td>
           <td>
             <% if paper.classroom.present? %>
                 <%= link_to edit_event_paper_classroom_path(@event, paper, paper.classroom), class: "waves-effect btn-floating btn-small grey" do %>
-                    <i class="material-icons">event_available</i>
+                    <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Editar aula'>event_available</i>
                 <% end %>
             <% else %>
                 <%= link_to new_event_paper_classroom_path(@event, paper, paper.classroom), class: "waves-effect btn-floating btn-small grey" do %>
-                    <i class="material-icons">event</i>
+                    <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Asignar aula'>event</i>
                 <% end %>
             <% end %>
           </td>

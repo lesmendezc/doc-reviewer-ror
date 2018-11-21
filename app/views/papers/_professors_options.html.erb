@@ -17,19 +17,19 @@
           <td>
             <%= link_to rails_blob_path(paper.pdf_file, disposition: "inline"), 
                 class: "waves-effect btn-floating btn-small grey", target: "_blank" do %>
-                <i class="material-icons">visibility</i>
+                <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Ver PDF'>visibility</i>
             <%end%>
           </td>
         <% if paper.assingment.present? %>
             <% if @current_user.id == paper.assingment.tutor_id || @current_user.id == paper.assingment.relator_id %>
                 <td>
                     <%= link_to event_paper_comments_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
-                        <i class="material-icons">search</i>
+                        <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Ver revisiones'>search</i>
                     <% end %>
                 </td>
                 <td>
                     <%= link_to new_event_paper_review_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
-                        <i class="material-icons">add_box</i>
+                        <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Registrar revisión'>add_box</i>
                     <% end %>
                 </td>
             <% end %>

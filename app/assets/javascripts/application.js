@@ -41,6 +41,8 @@ $(function() {
 
     $('.fixed-action-btn').floatingActionButton();
 
+    $('.tooltipped').tooltip();
+
     $('.datepicker').datepicker({
         minDate: new Date(),
         format: 'dd mmm, yyyy',
