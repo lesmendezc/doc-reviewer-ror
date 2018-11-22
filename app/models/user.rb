@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :papers
   has_many :comments
   has_many :reviews
+
+  paginates_per 6
   
   enum role: [:estudiante, :tutor, :relator, :docente, :admin, :director]
 

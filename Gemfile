@@ -21,6 +21,7 @@ gem 'wkhtmltopdf-binary'
 gem 'wkhtmltopdf-heroku'
 
 gem 'figaro'
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'

@@ -167,6 +167,10 @@ trix-editor ul:not(.browser-default) {
 
 .material-tooltip {
   font-size: 11px;
-  background-color: rgb(228, 228, 101);
+  background-color: #FACA32;
   color: #000;
+}
+
+.pagination li.active  a {
+  background-color: #FACA32;
 }

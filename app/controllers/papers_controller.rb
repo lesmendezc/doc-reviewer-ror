@@ -4,7 +4,7 @@ class PapersController < ApplicationController
   # GET /papers.json
   def index
     @event = Event.find(params[:event_id])
-    @papers = @event.papers
+    @papers = @event.papers.page(params[:page])
     @papers_by_user = @papers.where(:user_id => current_user.id)
   end
 
@@ -91,7 +91,7 @@ class PapersController < ApplicationController
   end
 
   def list_all
-    @papers = Paper.all
+    @papers = Paper.page(params[:page])
   end
 
   def my_documents
@@ -99,11 +99,11 @@ class PapersController < ApplicationController
   end
 
   def list_assigned_tutor
-    @papers = Paper.all
+    @papers = Paper.page(params[:page])
   end
 
   def list_assigned_relator
-    @papers = Paper.all
+    @papers = Paper.page(params[:page])
   end
 
   private
