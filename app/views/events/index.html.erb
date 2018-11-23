@@ -30,7 +30,7 @@
           <td><%= event.year %></td>
           <% if current_user.admin? %>
             <td><%= link_to edit_event_path(event), class: 'waves-effect btn-floating btn-small grey' do %>
-              <i class="material-icons">edit</i>
+              <i class="material-icons tooltipped" data-position='right' data-tooltip='Editar'>edit</i>
               <% end %>
             </td>
           <% end %>

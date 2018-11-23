@@ -42,9 +42,11 @@
             <%= sanitize review.general_evaluation_text %>
         </td>
     </tr>
-    <tr>
-        <th>Mensaje confidencial al profesor de la materia:</th>
-        <td><%= current_user.admin? ? simple_format(review.personal_message) : '' %></td>
-    </tr>
+    <% if current_user.admin? %>
+        <tr>
+            <th>Mensaje confidencial al profesor de la materia:</th>
+            <td><%= simple_format(review.personal_message) %></td>
+        </tr>
+    <% end %>
 </table>
 <br>

@@ -126,7 +126,8 @@ tbody tr.review_edited { background-color: white; }
   line-height: 0px;
 }
 
-#new_review .error, #new_paper .error, #new_event .error, .edit_paper .error {
+#new_review .error, #new_paper .error, #new_event .error, .edit_paper .error,
+.new_comment .error {
   color: rgb(204, 21, 21);
 }
 

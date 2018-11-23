@@ -27,11 +27,17 @@
                     <div class="input-field">
                         <%= f.label :phone, 'Celular' %>
                         <%= f.text_field :phone, class: 'validate' %>
-                    </div><br>
+                    </div>
 
                     <div class="input-field">
                         <%= f.label :role, 'Rol', class: 'active' %>
-                        <%= f.select :role, ['estudiante','admin','docente','director'], include_blank: true %>
+                        <% if @user.admin? %>
+                            <%= f.select :role, ['admin','docente','director'], include_blank: true %>
+                        <% elsif @user.docente? || @user.director? %>
+                            <%= f.select :role, ['docente','director'], include_blank: true %>
+                        <% else %>
+                            <%= f.select :role, ['estudiante','docente','director'], include_blank: true %>
+                        <% end %>
                     </div>
                     
                     <% if @user.admin? %>

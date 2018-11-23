@@ -11,12 +11,7 @@
               </ul>
               <!--a href="/" class="brand-logo right">Logo</a-->
               <ul id="nav-mobile" class="left hide-on-med-and-down">
-                  <li>
-                    <a href="#!" class="dropdown-trigger" data-target="events-drop">
-                        Eventos
-                        <i class="material-icons right">arrow_drop_down</i>
-                    </a>
-                  </li>
+                  <li><%= link_to "Eventos", events_path %></li>
                   <li>
                     <a href="#!" class="dropdown-trigger" data-target="users-drop">
                         Usuarios
@@ -46,9 +41,4 @@
 <ul id="users-drop" class="dropdown-content">
     <li><%= link_to "Lista de usuarios", users_path %></li>
     <li><%= link_to "Crear usuario", new_user_path %></li>
-</ul>
-
-<ul id="events-drop" class="dropdown-content">
-    <li><%= link_to "Lista de eventos", events_path %></li>
-    <li><%= link_to "Crear evento", new_event_path %></li>
 </ul>
