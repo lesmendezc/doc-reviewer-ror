@@ -6,8 +6,9 @@ class PapersController < ApplicationController
     @event = Event.find(params[:event_id])
     @papers = @event.papers.page(params[:page])
     @papers_by_user = @papers.where(:user_id => current_user.id)
+    
   end
-
+  
   # GET /papers/1
   # GET /papers/1.json
   def show
@@ -15,6 +16,10 @@ class PapersController < ApplicationController
     @paper = @event.papers.find(params[:id])
     @assingment = @paper.assingment
     @classroom = @paper.classroom
+    respond_to do |format|
+      format.html
+      format.pdf { render template: 'papers/acta', pdf: 'Acta' }
+    end
   end
 
   # GET /papers/new
