@@ -9,14 +9,12 @@
                     <% case question.answer_type %>
                     <% when "Escala" %>
                         <label>
-                            <input name="group1" class="with-gap" type="radio"/>
-                            <span><%= answer.answer_content %></span><br>
+                            <%= radio_button_tag(:answer_content, "a") %>
+                            </span><%= answer.answer_content %><span>
                         </label>
                     <% when "Texto" %>
-                        <div class="input-field col s12">
-                            <textarea id="a_text" class="materialize-textarea">
-                                <%= answer.answer_content %>
-                            </textarea>
+                        <div class="input-field">
+                            <%= text_area_tag(:answer_content) %>
                         </div>
                     <% end %>
                 <% end %>

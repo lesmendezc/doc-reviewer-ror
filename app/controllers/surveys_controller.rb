@@ -26,7 +26,7 @@ class SurveysController < ApplicationController
     end
 
     def update
-        @Survey = Survey.find(params[:id])
+        @survey = Survey.find(params[:id])
         if @survey.update(survey_params)
             redirect_to @survey
         else
