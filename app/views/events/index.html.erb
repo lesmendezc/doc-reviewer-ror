@@ -7,7 +7,7 @@
       <th>Carrera</th>
       <th>Semestre</th>
       <th>Año</th>
-      <th></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -30,8 +30,13 @@
           <td><%= event.year %></td>
           <% if current_user.admin? %>
             <td><%= link_to edit_event_path(event), class: 'waves-effect btn-floating btn-small grey' do %>
-              <i class="material-icons tooltipped" data-position='right' data-tooltip='Editar'>edit</i>
+              <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Editar'>edit</i>
               <% end %>
+            </td>
+            <td>
+                <%= link_to new_event_survey_path(event), class: "waves-effect btn-floating btn-small grey" do %>
+                    <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Crear revisión'>assignment</i>
+                <% end %>
             </td>
           <% end %>
         </tr>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
   
   resources :events do
+    resources :surveys
     resources :papers do
       resources :comments
       resources :reviews
@@ -13,7 +14,6 @@ Rails.application.routes.draw do
   end
 
   resources :users, except: [:create, :show]
-  resources :surveys
 
   post 'create_user' => 'users#create', as: :create_user
   get '/documents' => 'papers#list_all'

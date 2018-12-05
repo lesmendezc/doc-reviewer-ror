@@ -3,23 +3,23 @@
             <div class="card-panel brown lighten-5 z-depth-1">
                 <div class="row">
                     <div class="input-field col s8">
-                        <%= f.label :title, "Pregunta" %>
-                        <%= f.text_field :title, type: "text", class: "validate" %>
+                        <%= f.label :description, "Pregunta" %>
+                        <%= f.text_field :description, type: "text", class: "validate" %>
                         <%= f.hidden_field :_destroy %>
                         <%= link_to "Quitar", '#', class: "remove_fields" %>
                     </div>
                     <div class="input-field col s4" id="answer">
-                        <%= f.label :answer_type, "Tipo de respuesta", class: "active" %>
-                        <%= f.select :answer_type, ['Texto','Escala'], include_blank: true %>
+                        <%= f.label :question_type, "Tipo de respuesta", class: "active" %>
+                        <%= f.select :question_type, ['Texto','Escala'], include_blank: true %>
                     </div>
                 </div>
 
-                <%= f.fields_for :answers do |builder| %>
-                    <%= render 'answer_fields', f: builder %>
+                <%= f.fields_for :options do |builder| %>
+                    <%= render 'option_fields', f: builder %>
                 <% end %>
 
                 <div id="add_answer">
-                    <%= link_to_add_fields "Añadir respuesta", f, :answers %>
+                    <%= link_to_add_fields "Añadir opción", f, :options %>
                 </div>
             </div>
 

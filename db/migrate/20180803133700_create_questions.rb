@@ -1,10 +1,8 @@
 class CreateQuestions < ActiveRecord::Migration[5.2]
   def change
     create_table :questions do |t|
-      t.string :title
       t.string :description
-      t.string :answer_type
-
+      t.string :question_type
       t.integer :survey_id
 
       t.timestamps
