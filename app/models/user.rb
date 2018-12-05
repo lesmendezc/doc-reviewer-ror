@@ -4,7 +4,7 @@ class User < ApplicationRecord
   
   has_many :papers
   has_many :comments
-  has_many :reviews
+  has_one :review
 
   paginates_per 6
   

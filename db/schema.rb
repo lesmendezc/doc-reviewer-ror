@@ -44,9 +44,6 @@ ActiveRecord::Schema.define(version: 2018_11_03_164606) do
     t.integer "director_id"
     t.integer "tutor_id"
     t.integer "relator_id"
-    t.string "director_email"
-    t.string "tutor_email"
-    t.string "relator_email"
     t.integer "paper_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -104,20 +101,9 @@ ActiveRecord::Schema.define(version: 2018_11_03_164606) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "relevance"
-    t.string "problem_def"
-    t.string "general_def"
-    t.string "specific_def"
-    t.string "confidence"
-    t.string "general_evaluation"
-    t.text "general_evaluation_text"
-    t.text "personal_message"
-    t.boolean "is_edited", default: false
-    t.integer "counter"
-    t.integer "copy_id"
-    t.boolean "is_new", default: true
     t.integer "paper_id"
     t.integer "user_id"
+    t.integer "survey_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

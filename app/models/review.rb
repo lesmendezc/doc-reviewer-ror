@@ -1,6 +1,7 @@
 class Review < ApplicationRecord
   belongs_to :paper
   belongs_to :user
+  belongs_to :survey
 
   def get_relevance()
     return self.relevance[0].to_i * 2
