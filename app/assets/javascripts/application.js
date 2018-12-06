@@ -45,7 +45,7 @@ $(function() {
 
     $('.datepicker').datepicker({
         minDate: new Date(),
-        format: 'dd mmm, yyyy',
+        format: 'yyyy-mm-dd',
         i18n: {
             cancel: 'Cancelar',
             done: 'Aceptar',

@@ -17,7 +17,7 @@
 
           <div class="row">
             <div class="input-field">
-              <%= form.label :title, 'Título', class: "active" %>
+              <%= form.label :title, 'Título *', class: "active" %>
               <%= form.text_area :title, class: "materialize-textarea" %>
             </div>
           </div>
@@ -41,29 +41,8 @@
 
           <div class="row">
             <div class="input-field">
-              <%= form.label :resume, 'Introducción *', class: "active" %>
+              <%= form.label :resume, 'Resumen o Introducción *', class: "active" %>
               <%= form.text_area :resume, :class => 'materialize-textarea' %>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="input-field">
-              <%= form.label :problem_definition, 'Formulación del problema *', class: "active" %>
-              <%= form.text_area :problem_definition, class: "materialize-textarea" %>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="input-field">
-              <%= form.label :general_purpose, 'Objetivo general *', class: "active" %>
-              <%= form.text_area :general_purpose, :class => 'materialize-textarea' %>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="input-field">
-              <%= form.label :specific_purpose, 'Objetivos específicos *', class: "active" %>
-              <%= form.text_area :specific_purpose, class: "materialize-textarea" %>
             </div>
           </div>
 

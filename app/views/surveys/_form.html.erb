@@ -5,7 +5,7 @@
         
         <%= form_for([@event, @survey]) do |f| %>
           <div class="row">
-            <div class="input-field">
+            <div class="input-field col s12">
                 <%= f.label :name, 'Título' %>
                 <%= f.text_field :name, type: "text", class: "validate" %>
             </div>
@@ -17,9 +17,9 @@
           <%= link_to_add_fields "Añadir pregunta", f, :questions %> <br>
           
           <div class="center-align">
-            <button class="btn-flat waves-effect grey lighten-1" type="submit">
-              <%= f.submit 'Crear' %>
-            </button>
+            <%= button_tag(class: 'btn-small waves-effect waves-light') do %>
+              <% @survey.new_record? ? 'Registrar revision' : 'Editar revision' %>
+            <% end %>
           </div>
         <% end %>
       </div>

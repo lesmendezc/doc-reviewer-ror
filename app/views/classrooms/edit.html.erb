@@ -13,7 +13,7 @@
                     </div>
                     <div class="input-field">
                         <%= form.label :defense_date, 'Fecha de la defensa' %>
-                        <%= form.text_field :defense_date, class: 'datepicker', :value => "#{form.object.defense_date.strftime("%d %b, %Y")}" %>
+                        <%= form.text_field :defense_date, class: 'datepicker', :value => (I18n.localize(@classroom.defense_date, format: '%d %b, %Y')) %>
                     </div>
                     <div class="input-field">
                         <%= form.label :defense_hour, 'Hora de la defensa' %>

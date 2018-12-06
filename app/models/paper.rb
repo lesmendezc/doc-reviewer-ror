@@ -1,10 +1,10 @@
 class Paper < ApplicationRecord
     has_many :comments
+    has_many :reviews
     
     belongs_to :user
     belongs_to :event
     
-    has_one :review
     has_one :assingment
     has_one :classroom
     

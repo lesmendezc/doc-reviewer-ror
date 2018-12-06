@@ -87,9 +87,6 @@ ActiveRecord::Schema.define(version: 2018_12_05_033806) do
   create_table "papers", force: :cascade do |t|
     t.string "title"
     t.text "resume"
-    t.text "general_purpose"
-    t.text "specific_purpose"
-    t.text "problem_definition"
     t.string "google_docs_link"
     t.integer "comments_count", default: 0
     t.string "status"
@@ -102,6 +99,7 @@ ActiveRecord::Schema.define(version: 2018_12_05_033806) do
   create_table "questions", force: :cascade do |t|
     t.string "description"
     t.string "question_type"
+    t.float "max_score"
     t.integer "survey_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
