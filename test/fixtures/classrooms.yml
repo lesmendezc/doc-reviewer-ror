@@ -4,12 +4,10 @@ one:
   ambient: MyString
   defense_date: 2018-11-03
   defense_hour: 2018-11-03 12:46:06
-  event_id: 1
-  paper_id: 1
+  paper: one
 
 two:
   ambient: MyString
   defense_date: 2018-11-03
   defense_hour: 2018-11-03 12:46:06
-  event_id: 1
-  paper_id: 1
+  paper: one
