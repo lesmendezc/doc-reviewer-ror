@@ -9,8 +9,8 @@
                         <%= link_to "Quitar", '#', class: "remove_fields" %>
                     </div>
                     <div class="input-field col s3" id="answer">
-                        <%= f.label :question_type, "Tipo de respuesta", class: "active" %>
-                        <%= f.select :question_type, ['Texto','Escala'], include_blank: true %>
+                        <%= f.label :type, "Tipo de respuesta", class: "active" %>
+                        <%= f.select :type, [['Texto','Questions::Text'],['Escala', 'Questions::SelectOption']], include_blank: true %>
                     </div>
                     <div class="input-field col s2">
                         <%= f.label :max_score, 'Puntaje' %>
