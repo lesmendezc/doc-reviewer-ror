@@ -3,18 +3,18 @@
     <div class="row valign-wrapper">
       <div class="col s12">
         
-        <%= form_for([@event, @survey]) do |f| %>
+        <%= form_for([@event, @survey]) do |survey_form| %>
           <div class="row">
             <div class="input-field col s12">
-                <%= f.label :name, 'Título' %>
-                <%= f.text_field :name, type: "text", class: "validate" %>
+                <%= survey_form.label :name, 'Título' %>
+                <%= survey_form.text_field :name, type: "text", class: "validate" %>
             </div>
           </div>
-          <%= f.fields_for :questions do |builder| %>
-            <%= render "question_fields", f: builder %>
+          <%= survey_form.fields_for :questions do |question_form| %>
+            <%= render "question_fields", f: question_form %>
           <% end %>
 
-          <%= link_to_add_fields "Añadir pregunta", f, :questions %> <br>
+          <%= link_to_add_fields "Añadir pregunta", survey_form, :questions %> <br>
           
           <div class="center-align">
             <%= button_tag(class: 'btn-small waves-effect waves-light') do %>

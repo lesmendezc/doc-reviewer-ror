@@ -1,0 +1,7 @@
+<%= f.fields_for :options do |option_form| %>
+    <%= render 'option_fields', f: option_form %>
+<% end %>
+
+<div class="add_answer">
+    <%= link_to_add_fields "Añadir opción", f, :options %>
+</div>

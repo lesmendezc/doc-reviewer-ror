@@ -19,15 +19,10 @@
 //= require_tree .
 
 $(function() {
-    $("#add_answer").hide();
-    $("#answer").change(function() {
-        $(this).find("option:selected").each(function(){
-            var optVal = $(this).attr("value");
-            if(optVal=='Escala')
-                $("#add_answer").show();
-            else
-                $("#add_answer").hide();
-        })
+
+    $('select').formSelect();
+    $('.question_type').change(function() {
+        console.log(this);
     });
 
     $('.dropdown-trigger').dropdown({

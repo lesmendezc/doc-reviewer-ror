@@ -2,35 +2,28 @@
         <div class="fields">
             <div class="card-panel brown lighten-5 z-depth-1">
                 <div class="row">
-                    <div class="input-field col s7">
+                    <div class="input-field col s9">
                         <%= f.label :description, "Pregunta" %>
                         <%= f.text_field :description, type: "text", class: "validate" %>
                         <%= f.hidden_field :_destroy %>
                         <%= link_to "Quitar", '#', class: "remove_fields" %>
                     </div>
-                    <div class="input-field col s3" id="answer">
+                    <div class="input-field col s3 question_type">
                         <%= f.label :type, "Tipo de respuesta", class: "active" %>
-                        <%= f.select :type, [['Texto','Questions::Text'],['Escala', 'Questions::SelectOption']], include_blank: true %>
-                    </div>
-                    <div class="input-field col s2">
-                        <%= f.label :max_score, 'Puntaje' %>
-                        <%= f.number_field :max_score, class: :text_field, step: :any %>
+                        <%= f.select :type, [['Texto','Questions::Text'],['Escala', 'Questions::SelectOption']] %>
                     </div>
                 </div>
-
-                <%= f.fields_for :options do |builder| %>
-                    <%= render 'option_fields', f: builder %>
-                <% end %>
-
-                <div id="add_answer">
-                    <%= link_to_add_fields "Añadir opción", f, :options %>
+                <div class="question_fields">
+                <% question = f.object %>
+                    <% if question.type %>
+                        <div class="fields">
+                            <%= render fields_of_question(question), f: f %>
+                        </div>
+                    <% end %>
                 </div>
             </div>
-
         </div>
     
-
-
 <script>
     $(document).ready(function(){
         $('select').formSelect();
