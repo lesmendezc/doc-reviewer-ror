@@ -5,4 +5,8 @@ class Question < ApplicationRecord
   validates_presence_of :type
 
   accepts_nested_attributes_for :options, allow_destroy: true, reject_if: lambda { |a| a[:point].blank? }
+
+  def self.default_type
+    'Questions::SelectOption'
+  end
 end

@@ -10,16 +10,16 @@
                     </div>
                     <div class="input-field col s3 question_type">
                         <%= f.label :type, "Tipo de respuesta", class: "active" %>
-                        <%= f.select :type, [['Texto','Questions::Text'],['Escala', 'Questions::SelectOption']] %>
+                        <%= f.select :type, [['Escala', 'Questions::SelectOption'], ['Texto','Questions::Text']] %>
                     </div>
                 </div>
                 <div class="question_fields">
                 <% question = f.object %>
-                    <% if question.type %>
-                        <div class="fields">
-                            <%= render fields_of_question(question), f: f %>
-                        </div>
-                    <% end %>
+                <% if question.type %>
+                    <div class="fields">
+                        <%= render fields_of_question(question), f: f %>
+                    </div>
+                <% end %>
                 </div>
             </div>
         </div>

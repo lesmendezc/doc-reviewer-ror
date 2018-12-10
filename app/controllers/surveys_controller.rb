@@ -8,7 +8,7 @@ class SurveysController < ApplicationController
     def new
         @event = Event.find(params[:event_id])
         @survey = @event.build_survey
-        @survey.questions.build
+        @survey.questions.build(type: Question.default_type)
     end
 
     def create

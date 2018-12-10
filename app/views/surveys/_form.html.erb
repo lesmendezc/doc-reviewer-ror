@@ -14,7 +14,7 @@
             <%= render "question_fields", f: question_form %>
           <% end %>
 
-          <%= link_to_add_fields "Añadir pregunta", survey_form, :questions %> <br>
+          <%= link_to_add_fields "Añadir pregunta", survey_form, :questions, { type: Question.default_type } %> <br>
           
           <div class="center-align">
             <%= button_tag(class: 'btn-small waves-effect waves-light') do %>
