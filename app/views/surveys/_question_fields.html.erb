@@ -16,9 +16,7 @@
                 <div class="question_fields">
                 <% question = f.object %>
                 <% if question.type %>
-                    <div class="fields">
-                        <%= render fields_of_question(question), f: f %>
-                    </div>
+                    <%= render fields_of_question(question), f: f %>
                 <% end %>
                 </div>
             </div>
