@@ -6,10 +6,16 @@
           <h4 align="center">
             <i class="material-icons prefix">note_add</i>
             Nuevo Documento
-          </h4>
+          </h4><br>
 
 
           <%= form_for([@event, @paper]) do |form| %>
+            <div class="row">
+              <div class="input-field">
+                <%= form.label :doc_type, 'Tipo de documento', class: 'active' %>
+                <%= form.select :doc_type, ['Proyecto de Grado','Tesis de Grado','Pasantía','Trabajo Dirigido'] %>
+              </div>
+            </div>
             <div class="row">
               <div class="input-field">
                 <%= form.label :title, 'Título *' %>

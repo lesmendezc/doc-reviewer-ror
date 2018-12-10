@@ -17,6 +17,12 @@
 
           <div class="row">
             <div class="input-field">
+              <%= form.label :doc_type, 'Tipo de documento', class: 'active' %>
+              <%= form.select :doc_type, ['Proyecto de Grado','Tesis de Grado','Pasantía','Trabajo Dirigido'] %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field">
               <%= form.label :title, 'Título *', class: "active" %>
               <%= form.text_area :title, class: "materialize-textarea" %>
             </div>
@@ -31,7 +37,7 @@
 
           <div class="file-field input-field">
             <div class="btn blue lighten-2">
-              <span><i class="material-icons">picture_as_pdf</i></span>
+              <span><i class="material-icons white-text">picture_as_pdf</i></span>
               <%= form.file_field :pdf_file, {accept: "application/pdf" } %>
             </div>
             <div class="file-path-wrapper">

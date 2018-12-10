@@ -43,7 +43,7 @@
                     <strong><%= User.find(@assingment.relator_id).name %> <%= User.find(@assingment.relator_id).lastname %></strong> como profesor(a) Relator(a) y <strong><%= User.find(@assingment.director_id).name %> <%= User.find(@assingment.director_id).lastname %></strong> como 
                     representante del Tribunal. <br><br>
                     Luego de escuchar y evaluar el informe, que lleva por título: "<strong><%= @paper.title %></strong>" 
-                    y está inscrito en la modalidad de Proyecto de Grado el tribunal decidió 
+                    y está inscrito en la modalidad de <%=@paper.doc_type%> el tribunal decidió 
                     ________________ el trabajo y otorgar la calificación de ______ (________________________________). 
                     Asimismo, el tribunal consensuó las siguientes observaciones y recomendaciones, que deben ser 
                     atendidas para las fases siguientes del proceso de titulación: <br><br>
