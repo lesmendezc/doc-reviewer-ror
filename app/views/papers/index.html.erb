@@ -1,10 +1,6 @@
 <h3 align="center">Documentos</h3>
 
 <% if current_user.estudiante? %>
-  <%= link_to new_event_paper_path, class: "btn-small waves-effect right" do %>
-      <i class="material-icons left">add</i>
-      Añadir
-  <% end %><br><br>
   <%= render partial: 'student_options', object: @papers_by_user %>
 <% end %>
 <% if current_user.director? %>

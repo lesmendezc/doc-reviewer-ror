@@ -1,3 +1,11 @@
+<% if Date.today <= @event.limit_date %>
+  <p class="yellow lighten-3 right"><i class="material-icons">announcement</i> Fecha límite para subir documentos: <strong class="red-text"> <%= l(@event.limit_date, format: :long) %></strong></p><br><br><br>
+  <%= link_to new_event_paper_path, class: "btn-small waves-effect right" do %>
+    <i class="material-icons left">add</i>
+    Añadir
+  <% end %><br><br>
+<% end %>
+
 <table>
   <thead class="header-row">
     <tr>
