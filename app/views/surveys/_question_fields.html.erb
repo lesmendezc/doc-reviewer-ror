@@ -1,29 +1,20 @@
-
-        <div class="fields">
-            <div class="card-panel brown lighten-5 z-depth-1">
-                <div class="row">
-                    <div class="input-field col s9">
-                        <%= f.label :description, "Pregunta" %>
-                        <%= f.text_field :description, type: "text", class: "validate" %>
-                        <%= f.hidden_field :_destroy %>
-                        <%= link_to "Quitar", '#', class: "remove_fields" %>
-                    </div>
-                    <div class="input-field col s3 question_type">
-                        <%= f.label :type, "Tipo de respuesta", class: "active" %>
-                        <%= f.select :type, [['Escala', 'Questions::SelectOption'], ['Texto','Questions::Text']] %>
-                    </div>
-                </div>
-                <div class="question_fields">
-                <% question = f.object %>
-                <% if question.type %>
-                    <%= render fields_of_question(question), f: f %>
-                <% end %>
-                </div>
+<div class="fields">
+    <div class="card-panel brown lighten-5 z-depth-1">
+        <div class="row">
+            <div class="input-field col s9">
+                <%= f.label :description, "Pregunta" %>
+                <%= f.text_field :description, type: "text", class: "validate" %>
+                <%= f.hidden_field :_destroy %>
+                <%= link_to "Quitar", '#', class: "remove_fields" %>
+            </div>
+            <div class="input-field col s3 question_type">
+                <%= f.label :type, "Tipo de respuesta", class: "active" %>
+                <%= f.select :type, question_options_for_select(f) %>
             </div>
         </div>
-    
+        <%= render fields_of_question(f.object.type), f: f %>
+    </div>
+</div>
 <script>
-    $(document).ready(function(){
-        $('select').formSelect();
-    });
+    $('select').formSelect();
 </script>
