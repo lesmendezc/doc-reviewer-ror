@@ -4,7 +4,9 @@
             <%= f.fields_for :options do |option_form| %>
                 <%= render 'option_fields', f: option_form %>
             <% end %>
-            <%= link_to_add_fields "Añadir opción", f, :options %>
+            <div>
+                <%= link_to_add_association "Añadir opción", f, :options %>
+            </div>
         </div>
         <div class="input-field col s3">
             <%= f.label :max_score, 'Puntaje' %>

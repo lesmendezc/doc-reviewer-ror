@@ -16,24 +16,12 @@
 //= require activestorage
 //= require toastr
 //= require trix
+//= require cocoon
 //= require_tree .
 
 $(function() {
 
     $('select').formSelect();
-    // $('.question_type').change(function() {
-    //   $(this).find("option:selected").each(function() {
-    //       let questionFieldsOnText = $(this).attr('data-fields');
-    //       console.log(questionFieldsOnText);
-    //       let newQuestionFields = $(questionFieldsOnText);
-    //       let nestedDataField = newQuestionFields.find('a[data-fields]');
-    //       console.log(nestedDataField[0]);
-    //       newQuestionFields.removeAttr('data-fields');
-    //       console.log(nestedDataField);
-    //       let oldQuestionFields = $(this).closest('.row').next('.question_fields');
-    //       oldQuestionFields.html(newQuestionFields).attr('data-fields', nestedDataField);
-    //     });
-    // });
 
     $('.dropdown-trigger').dropdown({
         coverTrigger: false,

@@ -2,7 +2,6 @@
   <div class="card-panel grey lighten-5 z-depth-1">
     <div class="row valign-wrapper">
       <div class="col s12">
-        
         <%= form_for([@event, @survey]) do |survey_form| %>
           <div class="row">
             <div class="input-field col s12">
@@ -14,7 +13,14 @@
             <%= render "question_fields", f: question_form %>
           <% end %>
 
-          <%= link_to_add_fields "Añadir pregunta", survey_form, :questions, { type: Question.default_type } %> <br>
+          <div>
+            <%= link_to_add_association "Añadir pregunta Escala", survey_form, :questions,
+              wrap_object: Proc.new { |question| question.type = Question.default_type; question }
+            %> - 
+            <%= link_to_add_association "Añadir pregunta Texto", survey_form, :questions,
+              wrap_object: Proc.new { |question| question.type = 'Questions::Text'; question }
+            %>
+          </div>
           
           <div class="center-align">
             <%= button_tag(class: 'btn-small waves-effect waves-light') do %>
