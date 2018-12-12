@@ -21,14 +21,15 @@
 
 $(function() {
 
-    $('select').formSelect();
+    $('#survey').on('cocoon:after-insert', function(e, added_question) {
+        added_question.find('select').formSelect();
+    });
 
     $('.dropdown-trigger').dropdown({
         coverTrigger: false,
         constrainWidth: false,
         alignment: 'right'
     });
-
     
     $('select').formSelect();
 
