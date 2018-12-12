@@ -14,7 +14,7 @@
           <td><%= index+1 %></td>
           <td><%= link_to paper.title, event_paper_path(@event, paper), class: 'link-to-text' %></td>
           <td><%= paper.user.name %> <%= paper.user.lastname %></td>
-          <% if paper.classroom.present? %>
+          <% if paper.classroom.present? && paper.assingment.present? %>
             <td>
                 <%= link_to event_paper_path(@event, paper, :format => :pdf), class: "btn-small btn-floating grey", target: "_blank" do %>
                     <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Generar acta'>description</i>

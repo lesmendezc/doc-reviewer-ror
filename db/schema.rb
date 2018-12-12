@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 2018_12_06_143520) do
     t.string "google_docs_link"
     t.integer "comments_count", default: 0
     t.string "status"
+    t.string "doc_type"
     t.integer "user_id"
     t.integer "event_id"
     t.datetime "created_at", null: false
@@ -165,6 +166,7 @@ ActiveRecord::Schema.define(version: 2018_12_06_143520) do
     t.boolean "tutor_role"
     t.boolean "relator_role"
     t.boolean "professor_role"
+    t.string "professional_degree"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

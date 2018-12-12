@@ -13,7 +13,7 @@ class AssingmentsController < ApplicationController
         else
             @assingment = @paper.create_assingment(assingment_params)
             if @assingment.save
-                AssignmentMailer.tribunal_confirmation(@assingment, @paper).deliver
+                # AssignmentMailer.tribunal_confirmation(@assingment, @paper).deliver
                 redirect_to event_papers_path(@event)
             else
                 render :new

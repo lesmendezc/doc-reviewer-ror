@@ -4,7 +4,7 @@ class PapersController < ApplicationController
   # GET /papers.json
   def index
     @event = Event.find(params[:event_id])
-    @papers = @event.papers.page(params[:page])
+    @papers = @event.papers.page(params[:page]).per(6)
     @papers_by_user = @papers.where(:user_id => current_user.id)
     
   end
@@ -96,7 +96,7 @@ class PapersController < ApplicationController
   end
 
   def list_all
-    @papers = Paper.page(params[:page])
+    @papers = Paper.all.page(params[:page]).per(6)
   end
 
   def my_documents
@@ -104,11 +104,11 @@ class PapersController < ApplicationController
   end
 
   def list_assigned_tutor
-    @papers = Paper.page(params[:page])
+    @papers = Paper.all.page(params[:page]).per(8)
   end
 
   def list_assigned_relator
-    @papers = Paper.page(params[:page])
+    @papers = Paper.all.page(params[:page]).per(8)
   end
 
   private
@@ -119,6 +119,6 @@ class PapersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paper_params
-      params.require(:paper).permit(:title, :resume, :general_purpose, :specific_purpose, :problem_definition, :tag_list, :pdf_file, :user_id, :google_docs_link, :status)
+      params.require(:paper).permit(:title, :resume, :general_purpose, :specific_purpose, :problem_definition, :tag_list, :pdf_file, :user_id, :google_docs_link, :status, :doc_type)
     end
 end

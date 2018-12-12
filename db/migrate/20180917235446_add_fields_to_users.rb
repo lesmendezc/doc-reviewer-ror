@@ -11,5 +11,6 @@ class AddFieldsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :tutor_role, :boolean
     add_column :users, :relator_role, :boolean
     add_column :users, :professor_role, :boolean
+    add_column :users, :professional_degree, :string
   end
 end

@@ -25,6 +25,15 @@ $(function() {
         added_question.find('select').formSelect();
     });
 
+    $('#role_degree').change(function(){
+        var optionSelected = $(this).find("option:selected");
+        var textSelected = optionSelected.text();
+        if(textSelected=="admin" || textSelected=="docente" || textSelected=="director")
+            document.getElementById("show_degree").style.display="block";
+        else
+            document.getElementById("show_degree").style.display="none";
+    })
+
     $('.dropdown-trigger').dropdown({
         coverTrigger: false,
         constrainWidth: false,

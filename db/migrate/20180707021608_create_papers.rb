@@ -6,6 +6,7 @@ class CreatePapers < ActiveRecord::Migration[5.2]
       t.string :google_docs_link
       t.integer :comments_count, default: 0
       t.string :status
+      t.string :doc_type
 
       t.integer :user_id
       t.integer :event_id
