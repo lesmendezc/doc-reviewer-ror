@@ -21,10 +21,6 @@
 
 $(function() {
 
-    $('#survey').on('cocoon:after-insert', function(e, added_question) {
-        added_question.find('select').formSelect();
-    });
-
     $('#role_degree').change(function(){
         var optionSelected = $(this).find("option:selected");
         var textSelected = optionSelected.text();
