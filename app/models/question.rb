@@ -9,4 +9,8 @@ class Question < ApplicationRecord
   def self.default_type
     'Questions::SelectOption'
   end
+
+  def display_type
+    type ? type.constantize.display_type : 'Type not set'
+  end
 end

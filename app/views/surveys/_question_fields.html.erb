@@ -7,11 +7,12 @@
                 <%= f.hidden_field :_destroy %>
                 <%= link_to_remove_association 'Quitar', f, { wrapper_class: 'question_fields' } %>
             </div>
+            <% question = f.object %>
             <div class="input-field col s3 question_type">
                 <%= f.label :type, "Tipo de respuesta", class: "active" %>
-                <%= f.select :type, question_options_for_select(f) %>
+                <%= content_tag :p, question.display_type, class:'question_type' %>
             </div>
         </div>
-        <%= render fields_of_question(f.object.type), f: f %>
+        <%= render fields_of_question(question.type), f: f %>
     </div>
 </div>

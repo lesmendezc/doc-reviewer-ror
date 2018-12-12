@@ -5,10 +5,9 @@ module QuestionsHelper
         'questions/' + type.underscore + '_fields'
     end
 
-    def question_options_for_select(form_builder)
-        [
-            ['Escala', 'Questions::SelectOption'],
-            ['Texto','Questions::Text']
-        ]
+    def question_types_info
+        Question.subclasses.map { |question_type|
+            [question_type.display_type, question_type] 
+        }
     end
 end

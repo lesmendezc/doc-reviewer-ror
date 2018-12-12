@@ -14,13 +14,12 @@
           <% end %>
 
           <div>
-            <%= link_to_add_association "Añadir pregunta Escala", survey_form, :questions,
-              wrap_object: Proc.new { |question| question.type = Question.default_type; question }
-            %> - 
-            <%= link_to_add_association "Añadir pregunta Texto", survey_form, :questions,
-              wrap_object: Proc.new { |question| question.type = 'Questions::Text'; question }
-            %>
+            <% question_types_info.each do |display_name, type| %>
+              <%= link_to_add_association "Añadir pregunta #{display_name}", survey_form, :questions,
+                wrap_object: Proc.new { |question| question.becomes!(type); question } %> |
+            <% end %>
           </div>
+          <%= question_types_info %>
           
           <div class="center-align">
             <%= button_tag(class: 'btn-small waves-effect waves-light') do %>
