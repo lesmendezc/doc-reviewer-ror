@@ -12,23 +12,21 @@
   </thead>
 
   <tbody>
-    <% if current_user.estudiante? %>
-      <% @events_by_career.each do |event| %>
+    <% @events.each do |event| %>
+      <% if current_user.estudiante? %>
         <tr>
           <td><%= link_to event.name, event_papers_path(event), class: 'link-to-text' %></td>
           <td><%= event.career %></td>
           <td><%= event.semester %></td>
           <td><%= event.year %></td>
         </tr>
-      <% end %>
-    <% else %>
-      <% @events.each do |event| %>
+      <% else %>
         <tr>
           <td><%= link_to event.name, event_papers_path(event), class: 'link-to-text' %></td>
           <td><%= event.career %></td>
           <td><%= event.semester %></td>
           <td><%= event.year %></td>
-          <% if current_user.admin? %>
+          <% if current_user.admin? || current_user.admin_role? %>
             <td><%= link_to edit_event_path(event), class: 'waves-effect btn-floating btn-small grey' do %>
               <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Editar evento'>edit</i>
               <% end %>

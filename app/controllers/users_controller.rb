@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :authorize_admin, only: [:create, :update]
 
   def index
-    @users = User.page(params[:page])
+    @users = User.where(:career => current_user.career).page(params[:page])
   end
 
   def new
