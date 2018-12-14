@@ -16,7 +16,7 @@
           <div>
             <% question_types_info.each do |display_name, type| %>
               <%= link_to_add_association "Añadir pregunta #{display_name}", survey_form, :questions,
-                wrap_object: Proc.new { |question| question.becomes!(type); question } %> |
+                wrap_object: Proc.new { |question| quesion = question.becomes!(type); question } %> |
             <% end %>
           </div>
           
