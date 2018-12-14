@@ -10,6 +10,7 @@
             <% question = f.object %>
             <div class="input-field col s3 question_type">
                 <%= f.label :type, "Tipo de respuesta", class: "active" %>
+                <%= f.hidden_field :type%>
                 <%= content_tag :p, question.display_type, class:'question_type' %>
             </div>
         </div>
