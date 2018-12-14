@@ -2,7 +2,9 @@ class Review < ApplicationRecord
   belongs_to :paper
   belongs_to :user
   belongs_to :survey
-
+  has_many :evaluations, dependent: :destroy
+  accepts_nested_attributes_for :evaluations
+  
   def get_relevance()
     return self.relevance[0].to_i * 2
   end

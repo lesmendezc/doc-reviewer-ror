@@ -14,29 +14,32 @@
                     <%= review_form.hidden_field :survey_id, value: @survey.id %>
                     <%= review_form.hidden_field :paper_id, value: @paper.id %>
 
-                    <% @survey.questions.each do |question|%>
-                        <%# <br><div class="divider"></div> %>
-                        <div class="center-align"> * * * </div>
-                        <h5><%= question.description %> (*)</h5>
-                        <% if question.type == 'Questions::SelectOption' %>
-                            <div class="input-field col s12">
-                            <% question.options.each do |option|%>
-                                <p><label>
-                                    <%= radio_button_tag :relevance, option.show, class: 'with-gap' %>
-                                    <span><%= option.show %></span>
-                                </label></p>
+                    <% @survey.questions.each do |question| %>
+                        <% evaluation = @review.evaluations.build(question_id: question.id) %>
+                        <%= review_form.fields_for :evaluations, evaluation do |evaluation_form| %>
+                            <%= evaluation_form.hidden_field :question_id, value: question.id %>
+                            <div class="center-align"> * * * </div>
+                            <h5><%= question.description %> (*)</h5>
+                            <% if question.type == 'Questions::SelectOption' %>
+                                <div class="input-field col s12">
+                                    <% question.options.each do |option|%>
+                                        <p><label>
+                                            <%= evaluation_form.radio_button :score, option.point %>
+                                            <span><%= option.show %></span>
+                                        </label></p>
+                                    <% end %>
+                                </div>
+                            <% elsif question.type == 'Questions::Text' %>
+                                <span><%= question.title %></span><br>
+                                <div class="input-field col s12">
+                                    <trix-editor input="general_text"></trix-editor>
+                                </div>
+                                <p>o</p>
+                                <div class="input-field col s12">
+                                    <%= evaluation_form.label :description, 'Escriba la evaulación de la pregunta acá' %>
+                                    <%= evaluation_form.text_area :description, class: 'materialize-textarea' %>
+                                </div>
                             <% end %>
-                            </div>
-                        <% elsif question.type == 'Questions::Text' %>
-                            <span><%= question.title %></span><br>
-                            <div class="input-field col s12">
-                                <trix-editor input="general_text"></trix-editor>
-                            </div>
-                            <p>o</p>
-                            <div class="input-field col s12">
-                                <%= label_tag :personal_message, 'Escriba la evaulación de la pregunta acá' %>
-                                <%= text_area_tag :personal_message, '', class: 'materialize-textarea' %>
-                            </div>
                         <% end %>
                     <% end %>
 

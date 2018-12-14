@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
         @event = Event.find(params[:event_id])
         @survey = @event.survey
         @paper = @event.papers.find(params[:paper_id])
-        @review = @paper.reviews.new
+        @review = @paper.reviews.build
     end
 
     def create
@@ -47,6 +47,7 @@ class ReviewsController < ApplicationController
 
     private
     def review_params
-        params.require(:review).permit(:paper_id, :user_id, :survey_id)
+        params.require(:review).permit(:paper_id, :user_id, :survey_id,
+            evaluations_attributes: [:score, :description, :question_id])
     end
 end
