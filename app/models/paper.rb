@@ -3,6 +3,8 @@ class Paper < ApplicationRecord
     has_many :reviews
     
     belongs_to :user
+    alias_attribute :author, :user
+    
     belongs_to :event
     
     has_one :assingment

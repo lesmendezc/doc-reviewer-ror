@@ -10,8 +10,9 @@
                 <span class="card-title"><%= @survey.name %></span>
                 <%= form_for([@event, @paper, @review]) do |review_form| %>
 
-                    <%= hidden_field_tag :user_id, value: current_user.id %>
-                    <%= hidden_field_tag :survey_id, value: @survey_id %>
+                    <%= review_form.hidden_field :user_id, value: current_user.id %>
+                    <%= review_form.hidden_field :survey_id, value: @survey.id %>
+                    <%= review_form.hidden_field :paper_id, value: @paper.id %>
 
                     <% @survey.questions.each do |question|%>
                         <%# <br><div class="divider"></div> %>
@@ -40,7 +41,7 @@
                     <% end %>
 
                     <div class="center-align">
-                        <%= button_tag(class: "btn-small waves-effect waves-light") do %>
+                        <%= review_form.button class: "btn-small waves-effect waves-light" do %>
                             Realizar revisión
                         <% end %>
                     </div>
