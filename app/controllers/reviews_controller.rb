@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
 
     def new
         @event = Event.find(params[:event_id])
+        @survey = @event.survey
         @paper = @event.papers.find(params[:paper_id])
         @review = @paper.reviews.new
     end

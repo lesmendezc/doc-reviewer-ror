@@ -1,79 +1,43 @@
 <div class="row">
-    <div class="col s12 m8 offset-m2">
+    <div class="col s12 m10 offset-m1">
         <div class="card c-form">
             <div class="card-content">
-                <%= form_for([@event, @paper, @review]) do |form| %>
+                <div>
                     <% @review.errors.full_messages.each do |message| %>
                         <%= message %>
                     <%end%>
-                    
-                    <div>
-                        <strong>Antecedentes (*)</strong><br><br>
-                        <label><%= form.radio_button :relevance, "5 (excelente)", class: 'with-gap' %><span>5: excelente</span></label><br>
-                        <label><%= form.radio_button :relevance, "4 (bueno)", class: 'with-gap' %><span>4: bueno</span></label><br>
-                        <label><%= form.radio_button :relevance, "3 (satisfactorio)", class: 'with-gap' %><span>3: satisfactorio</span></label><br>
-                        <label><%= form.radio_button :relevance, "2 (pobre)", class: 'with-gap' %><span>2: pobre</span></label><br>
-                        <label><%= form.radio_button :relevance, "1 (muy pobre)", class: 'with-gap' %><span>1: muy pobre</span></label>
-                    </div><br>
-                    <div class="divider"></div><br>
-                    <div>
-                        <strong>Formulación del problema (*)</strong><br><br>
-                        <label><%= form.radio_button :problem_def, "5 (excelente)", class: 'with-gap' %><span>5: excelente</span></label><br>
-                        <label><%= form.radio_button :problem_def, "4 (bueno)", class: 'with-gap' %><span>4: bueno</span></label><br>
-                        <label><%= form.radio_button :problem_def, "3 (satisfactorio)", class: 'with-gap' %><span>3: satisfactorio</span></label><br>
-                        <label><%= form.radio_button :problem_def, "2 (pobre)", class: 'with-gap' %><span>2: pobre</span></label><br>
-                        <label><%= form.radio_button :problem_def, "1 (muy pobre)", class: 'with-gap' %><span>1: muy pobre</span></label>
-                    </div><br>
-                    <div class="divider"></div><br>
-                    <div>
-                        <strong>Definición del objetivo general (*)</strong><br><br>
-                        <label><%= form.radio_button :general_def, "5 (excelente)", class: 'with-gap' %><span>5: excelente</span></label><br>
-                        <label><%= form.radio_button :general_def, "4 (bueno)", class: 'with-gap' %><span>4: bueno</span></label><br>
-                        <label><%= form.radio_button :general_def, "3 (satisfactorio)", class: 'with-gap' %><span>3: satisfactorio</span></label><br>
-                        <label><%= form.radio_button :general_def, "2 (pobre)", class: 'with-gap' %><span>2: pobre</span></label><br>
-                        <label><%= form.radio_button :general_def, "1 (muy pobre)", class: 'with-gap' %><span>1: muy pobre</span></label>
-                    </div><br>
-                    <div class="divider"></div><br>
-                    <div>
-                        <strong>Definición de los objetivos específicos (*)</strong><br><br>
-                        <label><%= form.radio_button :specific_def, "5 (excelente)", class: 'with-gap' %><span>5: excelente</span></label><br>
-                        <label><%= form.radio_button :specific_def, "4 (bueno)", class: 'with-gap' %><span>4: bueno</span></label><br>
-                        <label><%= form.radio_button :specific_def, "3 (satisfactorio)", class: 'with-gap' %><span>3: satisfactorio</span></label><br>
-                        <label><%= form.radio_button :specific_def, "2 (pobre)", class: 'with-gap' %><span>2: pobre</span></label><br>
-                        <label><%= form.radio_button :specific_def, "1 (muy pobre)", class: 'with-gap' %><span>1: muy pobre</span></label>
-                    </div><br>
-                    <div class="divider"></div><br>
-                    <div>
-                        <strong>Dominio del revisor (*)</strong> <span> - Indique cuánto conoce sobre el tema a revisar</span><br><br>
-                        <label><%= form.radio_button :confidence, "5 (experto)", class: 'with-gap' %><span>5: experto</span></label><br>
-                        <label><%= form.radio_button :confidence, "4 (alto)", class: 'with-gap' %><span>4: alto</span></label><br>
-                        <label><%= form.radio_button :confidence, "3 (medio)", class: 'with-gap' %><span>3: medio</span></label><br>
-                        <label><%= form.radio_button :confidence, "2 (bajo)", class: 'with-gap' %><span>2: bajo</span></label><br>
-                        <label><%= form.radio_button :confidence, "1 (ninguno)", class: 'with-gap' %><span>1: ninguno</span></label>
-                    </div><br>
-                    <div class="divider"></div><br>
-                    <strong>Evaluación general (*)</strong><br><br>
-                    <div>
-                        <label><%= form.radio_button :general_evaluation, "5 (excelente)", class: 'with-gap' %><span>5: excelente</span></label><br>
-                        <label><%= form.radio_button :general_evaluation, "4 (bueno)", class: 'with-gap' %><span>4: bueno</span></label><br>
-                        <label><%= form.radio_button :general_evaluation, "3 (satisfactorio)", class: 'with-gap' %><span>3: satisfactorio</span></label><br>
-                        <label><%= form.radio_button :general_evaluation, "2 (pobre)", class: 'with-gap' %><span>2: pobre</span></label><br>
-                        <label><%= form.radio_button :general_evaluation, "1 (muy pobre)", class: 'with-gap' %><span>1: muy pobre</span></label>
-                    </div><br>
-                    
-                    <strong>Comentarios generales (*)</strong> <span> - Estos comentarios aparecerán en el informe.</span><br><br>
-                    <div class="input-field">
-                        <%= form.hidden_field :general_evaluation_text, id: :general_text %>
-                        <trix-editor input="general_text"></trix-editor>
-                    </div><br>
-                    <div class="divider"></div><br>
-                    <strong>Mensaje confidencial al profesor de la materia</strong><br><br>
-                    <div class="input-field">
-                        <%= form.label :personal_message, 'Escriba su mensaje personal aquí' %>
-                        <%= form.text_area :personal_message, class: 'materialize-textarea' %>
-                    </div><br>
+                </div>
+                <span class="card-title"><%= @survey.name %></span>
+                <%= form_for([@event, @paper, @review]) do |review_form| %>
 
-                    <%= form.hidden_field :user_id, value: current_user.id %>
+                    <%= hidden_field_tag :user_id, value: current_user.id %>
+                    <%= hidden_field_tag :survey_id, value: @survey_id %>
+
+                    <% @survey.questions.each do |question|%>
+                        <%# <br><div class="divider"></div> %>
+                        <div class="center-align"> * * * </div>
+                        <h5><%= question.description %> (*)</h5>
+                        <% if question.type == 'Questions::SelectOption' %>
+                            <div class="input-field col s12">
+                            <% question.options.each do |option|%>
+                                <p><label>
+                                    <%= radio_button_tag :relevance, option.show, class: 'with-gap' %>
+                                    <span><%= option.show %></span>
+                                </label></p>
+                            <% end %>
+                            </div>
+                        <% elsif question.type == 'Questions::Text' %>
+                            <span><%= question.title %></span><br>
+                            <div class="input-field col s12">
+                                <trix-editor input="general_text"></trix-editor>
+                            </div>
+                            <p>o</p>
+                            <div class="input-field col s12">
+                                <%= label_tag :personal_message, 'Escriba la evaulación de la pregunta acá' %>
+                                <%= text_area_tag :personal_message, '', class: 'materialize-textarea' %>
+                            </div>
+                        <% end %>
+                    <% end %>
 
                     <div class="center-align">
                         <%= button_tag(class: "btn-small waves-effect waves-light") do %>
