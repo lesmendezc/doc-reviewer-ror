@@ -1,38 +1,18 @@
-
-        <div class="fields">
-            <div class="card-panel brown lighten-5 z-depth-1">
-                <div class="row">
-                    <div class="input-field col s7">
-                        <%= f.label :description, "Pregunta" %>
-                        <%= f.text_field :description, type: "text", class: "validate" %>
-                        <%= f.hidden_field :_destroy %>
-                        <%= link_to "Quitar", '#', class: "remove_fields" %>
-                    </div>
-                    <div class="input-field col s3" id="answer">
-                        <%= f.label :question_type, "Tipo de respuesta", class: "active" %>
-                        <%= f.select :question_type, ['Texto','Escala'], include_blank: true %>
-                    </div>
-                    <div class="input-field col s2">
-                        <%= f.label :max_score, 'Puntaje' %>
-                        <%= f.number_field :max_score, class: :text_field, step: :any %>
-                    </div>
-                </div>
-
-                <%= f.fields_for :options do |builder| %>
-                    <%= render 'option_fields', f: builder %>
-                <% end %>
-
-                <div id="add_answer">
-                    <%= link_to_add_fields "Añadir opción", f, :options %>
-                </div>
+<div class="question_fields">
+    <div class="card-panel brown lighten-5 z-depth-1">
+        <div class="row">
+            <div class="input-field col s9">
+                <%= f.label :description, "Pregunta" %>
+                <%= f.text_field :description, type: "text", class: "validate" %>
+                <%= f.hidden_field :_destroy %>
+                <%= link_to_remove_association 'Quitar', f, { wrapper_class: 'question_fields' } %>
             </div>
-
+            <% question = f.object %>
+            <div class="input-field col s3 question_type">
+                <%= f.label :type, "Tipo de respuesta", class: "active" %>
+                <%= content_tag :p, question.display_type, class:'question_type' %>
+            </div>
         </div>
-    
-
-
-<script>
-    $(document).ready(function(){
-        $('select').formSelect();
-    });
-</script>
+        <%= render fields_of_question(question.type), f: f %>
+    </div>
+</div>

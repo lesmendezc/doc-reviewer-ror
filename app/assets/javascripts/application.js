@@ -16,19 +16,10 @@
 //= require activestorage
 //= require toastr
 //= require trix
+//= require cocoon
 //= require_tree .
 
 $(function() {
-    $("#add_answer").hide();
-    $("#answer").change(function() {
-        $(this).find("option:selected").each(function(){
-            var optVal = $(this).attr("value");
-            if(optVal=='Escala')
-                $("#add_answer").show();
-            else
-                $("#add_answer").hide();
-        })
-    });
 
     $('#role_degree').change(function(){
         var optionSelected = $(this).find("option:selected");
@@ -44,7 +35,6 @@ $(function() {
         constrainWidth: false,
         alignment: 'right'
     });
-
     
     $('select').formSelect();
 

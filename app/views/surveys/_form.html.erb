@@ -1,20 +1,24 @@
 <div class="col s12 m8 offset-m2 l6 offset-l3">
   <div class="card-panel grey lighten-5 z-depth-1">
     <div class="row valign-wrapper">
-      <div class="col s12">
-        
-        <%= form_for([@event, @survey]) do |f| %>
+      <div id='survey' class="col s12">
+        <%= form_for([@event, @survey]) do |survey_form| %>
           <div class="row">
             <div class="input-field col s12">
-                <%= f.label :name, 'Título' %>
-                <%= f.text_field :name, type: "text", class: "validate" %>
+                <%= survey_form.label :name, 'Título' %>
+                <%= survey_form.text_field :name, type: "text", class: "validate" %>
             </div>
           </div>
-          <%= f.fields_for :questions do |builder| %>
-            <%= render "question_fields", f: builder %>
+          <%= survey_form.fields_for :questions do |question_form| %>
+            <%= render "question_fields", f: question_form %>
           <% end %>
 
-          <%= link_to_add_fields "Añadir pregunta", f, :questions %> <br>
+          <div>
+            <% question_types_info.each do |display_name, type| %>
+              <%= link_to_add_association "Añadir pregunta #{display_name}", survey_form, :questions,
+                wrap_object: Proc.new { |question| question.becomes!(type); question } %> |
+            <% end %>
+          </div>
           
           <div class="center-align">
             <%= button_tag(class: 'btn-small waves-effect waves-light') do %>
