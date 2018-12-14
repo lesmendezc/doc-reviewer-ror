@@ -1,8 +1,8 @@
-<h3 class="align center">Editar usuario</h3>
 <div class="row">
     <div class="col s12 m8 offset-m2">
         <div class="card brown lighten-5">
             <div class="card-content">
+                <h4 class="align center">Editar usuario</h4>
                 <%= form_for @user do |f| %>
                     <div class="input-field">
                         <%= f.label :name, 'Nombre' %>
@@ -19,14 +19,16 @@
                         <%= f.text_field :username, class: 'validate' %>
                     </div>
 
-                    <div class="input-field">
-                        <%= f.label :career, 'Carrera', class: 'active' %>
-                        <%= f.select :career, ['Ing. Sistemas', 'Ing. Ambiental', 'Ing. Civil', 'Ing. Mecatronica'], include_blank: true %>
-                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <%= f.label :career, 'Carrera', class: 'active' %>
+                            <%= f.select :career, ['Ingeniería de Sistemas', 'Ingeniería de Ambiental', 'Ingeniería Civil', 'Ingeniería Mecatrónica'], include_blank: 'Elige la carrera' %>
+                        </div>
 
-                    <div class="input-field">
-                        <%= f.label :phone, 'Celular' %>
-                        <%= f.text_field :phone, class: 'validate' %>
+                        <div class="input-field col s6">
+                            <%= f.label :phone, 'Celular' %>
+                            <%= f.text_field :phone, class: 'validate' %>
+                        </div>
                     </div>
 
                     <div class="row">
