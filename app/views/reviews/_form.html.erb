@@ -15,16 +15,16 @@
                     <%= review_form.hidden_field :paper_id, value: @paper.id %>
 
                     <% @survey.questions.each do |question| %>
-                        <% evaluation = @review.evaluations.build(question_id: question.id) %>
+                        <% evaluation = @review.build_evaluation(question) %>
                         <%= review_form.fields_for :evaluations, evaluation do |evaluation_form| %>
                             <%= evaluation_form.hidden_field :question_id, value: question.id %>
-                            <div class="center-align"> * * * </div>
                             <h5><%= question.description %> (*)</h5>
                             <% if question.type == 'Questions::SelectOption' %>
                                 <div class="input-field col s12">
                                     <% question.options.each do |option|%>
                                         <p><label>
-                                            <%= evaluation_form.radio_button :score, option.point %>
+                                            <% selected_option_value = evaluation_form.object.score %>
+                                            <%= evaluation_form.radio_button :score, option.value, checked: option.value == selected_option_value %>
                                             <span><%= option.show %></span>
                                         </label></p>
                                     <% end %>
@@ -41,8 +41,9 @@
                                 </div>
                             <% end %>
                         <% end %>
+                        <div class="center-align"> * * * </div>
                     <% end %>
-
+                    <br>
                     <div class="center-align">
                         <%= review_form.button class: "btn-small waves-effect waves-light" do %>
                             Realizar revisión

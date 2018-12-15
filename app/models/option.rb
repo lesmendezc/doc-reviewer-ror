@@ -4,4 +4,8 @@ class Option < ApplicationRecord
     def show
         "(#{point}) #{description}"
     end
+
+    def value
+        point
+    end
 end

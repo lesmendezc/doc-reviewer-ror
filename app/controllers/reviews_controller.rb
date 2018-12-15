@@ -18,8 +18,8 @@ class ReviewsController < ApplicationController
         @paper = @event.papers.find(params[:paper_id])
         @review = @paper.reviews.new(review_params)
         if @review.save
-            ReviewMailer.review_notification(current_user, @paper.assingment, @paper).deliver
-            redirect_to event_paper_review_path(@review)
+            # ReviewMailer.review_notification(current_user, @paper.assingment, @paper).deliver
+            redirect_to event_paper_review_path(@event, @paper, @review)
         else
             render :new
         end
@@ -32,22 +32,27 @@ class ReviewsController < ApplicationController
 
     def edit
         @event = Event.find(params[:event_id])
-        @paper = @event.papers.find(params[:paper_id])
-        @review = @paper.reviews.find(params[:id])
+        @paper = Paper.find(params[:paper_id])
+        @review = Review.find(params[:id])
+        @survey = @review.survey
     end
-
+    
     def update
         @event = Event.find(params[:event_id])
-        @paper = @event.papers.find(params[:paper_id])
-        @review = @paper.reviews.find(params[:id])
-        @review.update(is_edited: true, copy_id: @review.id)
-        @paper.reviews.create(review_params)
-        redirect_to event_paper_comments_path(@event)
+        @paper = Paper.find(params[:paper_id])
+        @review = Review.find(params[:id])
+        @review.update(review_params)
+        if @review.save
+            # ReviewMailer.send_update_nofitication()
+            redirect_to event_paper_review_path(@event, @paper, @review)
+        else
+            render :edit
+        end
     end
 
     private
     def review_params
         params.require(:review).permit(:paper_id, :user_id, :survey_id,
-            evaluations_attributes: [:score, :description, :question_id])
+            evaluations_attributes: [:id, :score, :description, :question_id])
     end
 end
