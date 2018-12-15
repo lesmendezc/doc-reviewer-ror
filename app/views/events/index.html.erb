@@ -28,17 +28,17 @@
           <td><%= event.year %></td>
           <% if current_user.admin? || current_user.admin_role? %>
             <td><%= link_to edit_event_path(event), class: 'waves-effect btn-floating btn-small grey' do %>
-              <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Editar evento'>edit</i>
+              <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Editar Evento'>edit</i>
               <% end %>
             </td>
             <td>
               <% if event.survey.present? %>
                 <%= link_to edit_event_survey_path(event, event.survey), class: "waves-effect btn-floating btn-small grey" do %>
-                    <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Editar revisión'>assignment_turned_in</i>
+                    <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Editar Form. Revisión'>assignment_turned_in</i>
                 <% end %>
               <% else %>
                 <%= link_to new_event_survey_path(event), class: "waves-effect btn-floating btn-small grey" do %>
-                    <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Crear revisión'>assignment</i>
+                    <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Crear Form. Revisión'>assignment</i>
                 <% end %>
               <% end %>
             </td>
