@@ -179,3 +179,7 @@ trix-editor ul:not(.browser-default) {
 .nav-cato {
   background-color: #27649B;
 }
+
+::placeholder {
+  color: rgb(173, 171, 171);
+}

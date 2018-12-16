@@ -15,14 +15,14 @@
 
           <div>
             <% question_types_info.each do |display_name, type| %>
-              <%= link_to_add_association "Añadir pregunta #{display_name}", survey_form, :questions,
+              <%= link_to_add_association "Añadir sección #{display_name}", survey_form, :questions,
                 wrap_object: Proc.new { |question| quesion = question.becomes!(type); question } %> |
             <% end %>
           </div>
           
           <div class="center-align">
             <%= button_tag(class: 'btn-small waves-effect waves-light') do %>
-              <% @survey.new_record? ? 'Registrar revision' : 'Editar revision' %>
+              <% @survey.new_record? ? 'Crear formulario' : 'Editar formulario' %>
             <% end %>
           </div>
         <% end %>
