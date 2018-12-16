@@ -4,6 +4,10 @@ class Review < ApplicationRecord
   belongs_to :survey
   has_many :evaluations, dependent: :destroy
   accepts_nested_attributes_for :evaluations
+
+  def build_evaluation(question)
+    new_record? ? evaluations.build(question_id: question.id) : evaluations.find_by(question_id: question.id)
+  end
   
   def get_relevance()
     return self.relevance[0].to_i * 2
