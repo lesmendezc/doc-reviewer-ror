@@ -6,7 +6,6 @@ class PapersController < ApplicationController
     @event = Event.find(params[:event_id])
     @papers = @event.papers.page(params[:page]).per(6)
     @papers_by_user = @papers.where(:user_id => current_user.id)
-    
   end
   
   # GET /papers/1
