@@ -27,7 +27,7 @@
                     <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Cambiar Estado'>swap_horiz</i>
             <%end%>
           </td>
-          <% if @event.survey.present? %>
+          <% if @event.survey.present? && paper.assingment.present? %>
             <% if paper.reviews.find_by(paper_id: paper.id) %>
                 <td>
                     <%= link_to event_paper_reviews_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
