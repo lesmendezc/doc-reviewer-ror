@@ -41,5 +41,13 @@ describe Question do
             expect(@select_option.options.count).to be == 3
             expect(@select_option.valid?).to be_truthy
         end
+
+        it 'validates number of options before create' do
+            survey = Survey.new(name: 'letitle')
+            survey.questions.build( { type:'Questions::SelectOption', title: 'Introduction', max_score: 30,
+                options_attributes: [ { point: 1, description: 'Good'},
+                                      { point: 2, description: 'Bad'} ] } )
+            expect(survey.questions.first).to be_truthy
+        end
     end
 end

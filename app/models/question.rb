@@ -5,7 +5,6 @@ class Question < ApplicationRecord
   
   validates_presence_of :type
   validates_presence_of :title
-  validates :options, length: { minimum: 2 }
 
   accepts_nested_attributes_for :options, allow_destroy: true, reject_if: lambda { |a| a[:point].blank? }
 
