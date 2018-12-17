@@ -30,5 +30,16 @@ describe Question do
             @select_option.max_score = nil
             expect(@select_option.valid?).to be_falsy
         end
+        
+        it 'is invalid with less than two options' do
+            invalid_select_option = questions(:invalid_select_option)
+            expect(invalid_select_option.options.count).to be == 0
+            expect(invalid_select_option.valid?).to be_falsy
+        end
+        
+        it 'has at least two options' do
+            expect(@select_option.options.count).to be == 3
+            expect(@select_option.valid?).to be_truthy
+        end
     end
 end
