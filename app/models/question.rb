@@ -4,6 +4,7 @@ class Question < ApplicationRecord
   has_many :evaluations, dependent: :destroy
   
   validates_presence_of :type
+  validates_presence_of :title
 
   accepts_nested_attributes_for :options, allow_destroy: true, reject_if: lambda { |a| a[:point].blank? }
 

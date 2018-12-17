@@ -1,0 +1,10 @@
+text_one:
+  title: Introduction
+  type: Questions::Text
+  survey: one 
+
+select_option_one:
+  title: Antecedents
+  type: Questions::SelectOption
+  survey: one
+
