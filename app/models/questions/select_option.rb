@@ -10,9 +10,7 @@ class SelectOption < Question
     private
     
     def number_of_options
-        if options.size < 2
-            errors.add(:options, "should be at least 2") 
-        end
+        errors.add(:options, "should be at least 2") if options.size < 2
     end
 end
 end

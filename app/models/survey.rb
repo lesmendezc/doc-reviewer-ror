@@ -7,4 +7,11 @@ class Survey < ApplicationRecord
 
     validates_presence_of :name
     validates_associated :questions
+    validate :number_of_questions
+
+    private 
+
+    def number_of_questions
+        errors.add(:questions, "should be at least 1") if questions.size < 1
+    end
 end
