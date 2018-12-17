@@ -20,19 +20,26 @@
                   <td class="title-assigned"><%= link_to paper.title, event_paper_path(paper.event_id, paper), class: 'link-to-text' %></td>
                   <td><%= paper.user.name %> <%= paper.user.lastname %></td>
                   <td><%= paper.user.career %></td>
-                    <% if paper.reviews.find_by(user_id: current_user.id) %>
-                        <td>
-                            <%= link_to edit_event_paper_review_path(paper.event_id, paper, paper.reviews.find_by(id: paper.reviews.ids)), class: "waves-effect btn-floating btn-small grey" do %>
-                                <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Editar Revisión'>edit</i>
-                            <% end %>
-                        </td>
-                    <% else%>
-                        <td>
-                            <%= link_to new_event_paper_review_path(paper.event_id, paper), class: "waves-effect btn-floating btn-small grey" do %>
-                                <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Realizar Revisión'>add_box</i>
-                            <% end %>
-                        </td>
-                    <%end%>
+                  <% if paper.reviews.find_by(paper_id: paper.id) %>
+                    <td>
+                      <%= link_to event_paper_reviews_path(paper.event_id, paper), class: "waves-effect btn-floating btn-small grey" do %>
+                        <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Ver Revisiones'>search</i>
+                      <% end %>
+                    </td>
+                  <% end %>
+                  <% if paper.reviews.find_by(user_id: current_user.id) %>
+                    <td>
+                      <%= link_to edit_event_paper_review_path(paper.event_id, paper, paper.reviews.find_by(id: paper.reviews.ids)), class: "waves-effect btn-floating btn-small grey" do %>
+                        <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Editar Revisión'>edit</i>
+                      <% end %>
+                    </td>
+                  <% else%>
+                    <td>
+                      <%= link_to new_event_paper_review_path(paper.event_id, paper), class: "waves-effect btn-floating btn-small grey" do %>
+                        <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Realizar Revisión'>add_box</i>
+                      <% end %>
+                    </td>
+                  <%end%>
                 </tr>
             <% end %>
           <% end %>

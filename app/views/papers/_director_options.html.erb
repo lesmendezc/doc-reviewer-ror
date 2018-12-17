@@ -21,6 +21,13 @@
             <%end%>
           </td>
           <% if @event.survey.present? %>
+            <% if paper.reviews.find_by(paper_id: paper.id) %>
+              <td>
+                <%= link_to event_paper_reviews_path(@event, paper), class: "waves-effect btn-floating btn-small grey" do %>
+                  <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Ver Revisiones'>search</i>
+                <% end %>
+              </td>
+            <% end %>
             <% if paper.reviews.find_by(user_id: current_user.id) %>
                 <td>
                     <%= link_to edit_event_paper_review_path(@event, paper, paper.reviews.find_by(id: paper.reviews.ids)), class: "waves-effect btn-floating btn-small grey" do %>
