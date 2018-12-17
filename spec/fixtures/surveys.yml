@@ -1,0 +1,7 @@
+one:
+  name: FirstProfileRevision
+  event: one
+
+twi:
+  name: SecondProfileRevision
+  event: two
