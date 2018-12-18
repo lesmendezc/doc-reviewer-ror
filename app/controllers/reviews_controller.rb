@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
     def index
         @event = Event.find(params[:event_id])
-        @paper = @event.papers.find(params[:paper_id])
+        @paper = Paper.find(params[:paper_id])
+        @survey = @event.survey
         @reviews = @paper.reviews
     end
 
@@ -19,7 +20,7 @@ class ReviewsController < ApplicationController
         @review = @paper.reviews.new(review_params)
         if @review.save
             # ReviewMailer.review_notification(current_user, @paper.assingment, @paper).deliver
-            redirect_to event_paper_review_path(@event, @paper, @review)
+            redirect_to event_paper_reviews_url(@event, @paper)
         else
             render :new
         end
@@ -44,7 +45,7 @@ class ReviewsController < ApplicationController
         @review.update(review_params)
         if @review.save
             # ReviewMailer.send_update_nofitication()
-            redirect_to event_paper_review_path(@event, @paper, @review)
+            redirect_to event_paper_reviews_url(@event, @paper)
         else
             render :edit
         end
