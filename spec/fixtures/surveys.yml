@@ -2,6 +2,6 @@ one:
   name: FirstProfileRevision
   event: one
 
-twi:
-  name: SecondProfileRevision
+two:
+  name: InvalidSurvey
   event: two
