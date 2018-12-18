@@ -1,5 +1,5 @@
 class Survey < ApplicationRecord
-    has_many :questions
+    has_many :questions, dependent: :destroy
     has_many :reviews
     belongs_to :event
     
@@ -15,7 +15,7 @@ class Survey < ApplicationRecord
     end
     
     def maximum_score
-        questions.sum(:max_score)
+        quantitative_questions.map{ |question| question.max_score }.sum
     end
 
     private 
@@ -25,6 +25,6 @@ class Survey < ApplicationRecord
     end
 
     def maximum_score_is_hundred
-        errors.add(:questions, "maximum scores should sum 100") if questions.sum(:max_score) != 100
+        errors.add(:questions, "maximum scores should sum 100") if maximum_score != 100
     end
 end
