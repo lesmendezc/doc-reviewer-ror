@@ -1,4 +1,31 @@
-funciona?
-<% @paper.reviews.each_with_index do |review, index| %>
-    <%= index+1 %>
-<% end %>
+<div class='row'>
+    <div class="col s12 m10 offset-m1">
+        <h4 class="center-align">Revisiones del documento</h5>
+        <%= render 'paper_info' %>
+    </div>
+</div>
+<div class='row'>
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large blue darken-2">
+            <i class="large material-icons">menu</i>
+        </a>
+        <ul>
+            <li>
+                <%= link_to event_paper_comments_path(@event, @paper, :format => :pdf), class: "btn-floating grey", target: "_blank" do %>
+                    <i class="material-icons tooltipped" data-position='left' data-tooltip='Generar informe'>file_download</i>
+                <% end %>
+            </li>
+            <li>
+                <%= link_to new_event_paper_review_path(@event, @paper), class: "btn-floating grey" do %>
+                    <i class="material-icons tooltipped" data-position='left' data-tooltip='Registrar revisión'>add_box</i>
+                <% end %>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <%= render 'papers/submission', paper: @paper %>
+    <%= render 'reviews/scores' %><br>
+    <%= render 'reviews/clarifications' %><br>
+    <%= render @paper.comments %><br>
+    <%= render 'comments/form' %>
+</div>

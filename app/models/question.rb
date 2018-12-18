@@ -15,4 +15,8 @@ class Question < ApplicationRecord
   def display_type
     type ? type.constantize.display_type : 'Type not set'
   end
+
+  def is_quantitative?
+    max_score
+  end
 end

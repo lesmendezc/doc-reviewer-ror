@@ -9,6 +9,10 @@ class Survey < ApplicationRecord
     validates_associated :questions
     validate :number_of_questions
 
+    def quantitative_questions
+        questions.select { |question| question.is_quantitative? }
+    end
+
     private 
 
     def number_of_questions
