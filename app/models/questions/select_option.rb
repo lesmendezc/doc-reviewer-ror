@@ -6,6 +6,10 @@ class SelectOption < Question
     def self.display_type
         'Escala'
     end
+
+    def is_quantitative?
+        true
+    end
     
     private
     

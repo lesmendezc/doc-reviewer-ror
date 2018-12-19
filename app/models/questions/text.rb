@@ -5,5 +5,9 @@ class Text < Question
     def self.display_type
         'Texto'
     end
+
+    def is_quantitative?
+        false
+    end
 end
 end
