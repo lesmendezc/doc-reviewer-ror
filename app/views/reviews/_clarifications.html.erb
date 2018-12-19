@@ -6,14 +6,14 @@
             </td>
         </tr>
         <% review.qualitative_evaluations.each do |evaluation| %>
-            <tr class="thin-row">
+            <tr>
                 <th><%= evaluation.question.title %></th>
                 <td><%= sanitize evaluation.description %></td>
             </tr>
         <% end %>
         <tr class="thin-row">
             <th>Fecha:</th>
-            <td><%= review.created_at.strftime("%b %d, %H:%M") %></td>
+            <td><%= l(review.created_at, format: "%b %d, %Y - %H:%M") %></td>
         </tr>
     </table>
     <br>

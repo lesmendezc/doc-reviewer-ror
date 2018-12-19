@@ -26,24 +26,16 @@ th.vertical-pdf div {
 .review-show-pdf tr:nth-child(odd) { background-color: #DDE4F3 !important; }
 .review-show-pdf tr:first-child { 
   background-color: #E4E3E2 !important;
-  line-height: 1;
+  line-height: 0;
 }
 
-.review-edited-pdf th { width: 35%; }
-.review-edited-pdf tr { background-color: white; }
-.review-edited-pdf tr:first-child { 
-  background-color: #E4E3E2 !important; 
-  line-height: 1;
-}
-
-.summary-pdf, .review-show-pdf, .review-edited-pdf { border-collapse: collapse; }
-.summary-pdf tr, .review-show-pdf tr, .review-edited-pdf tr { border: none; }
-.summary-pdf th, .summary-pdf td, .review-show-pdf th, .review-show-pdf td, 
-.review-edited-pdf th, .review-edited-pdf td {
+.summary-pdf, .review-show-pdf { border-collapse: collapse; }
+.summary-pdf tr, .review-show-pdf tr { border: none; }
+.summary-pdf th, .summary-pdf td, .review-show-pdf th, .review-show-pdf td {
   border-right: solid 1px rgb(196, 191, 191); 
   border-left: solid 1px rgb(196, 191, 191);
 }
-.review-edited-pdf, { border-bottom: solid 1px rgb(196, 191, 191); }
+
 
 thead tr.summary-header-pdf { 
   background-color: rgb(233, 231, 231); 
@@ -54,28 +46,30 @@ tbody tr.reviews-pdf:nth-child(odd) { background-color: #EBF7EB !important; }
 tbody tr.comments-pdf { background-color: #F5F8C1; }
 tbody tr.comments-pdf:nth-child(odd) { background-color: #F7FCDE !important;}
 
-tr.reviews-pdf td, tr.comments-pdf, tr.review_edited-pdf, tr.thin-row-pdf { line-height: 1;}
+tr.reviews-pdf td, tr.comments-pdf, tr.thin-row-pdf { line-height: 0;}
 
-tbody tr.review_edited-pdf { background-color: white; }
+.review-show-pdf td { padding-left: 10px;}
 
-.review-edited-pdf td, .review-show-pdf td { padding-left: 10px;}
-
-.review-edited-pdf, .review-show-pdf ul:not(.browser-default) {
+.review-show-pdf ul:not(.browser-default) {
     padding-left: 30px;
 }
-.review-edited-pdf, .review-show-pdf ul:not(.browser-default) li {
+.review-show-pdf ul:not(.browser-default) li {
     list-style-type: initial;
 }
 
-.review-edited-pdf ol, .review-show-pdf ol { padding-left: 30px; }
-.review-edited-pdf, .review-show-pdf { page-break-inside: avoid;}
-.review_edited-pdf td, .reviews-pdf td { padding-left: 10px; }
-.review-edited-pdf th, .review-show-pdf th { padding-left: 10px; }
+.review-show-pdf ol { padding-left: 30px; }
+.review-show-pdf { page-break-inside: avoid;}
+.reviews-pdf td { padding-left: 10px; }
+.review-show-pdf th { padding-left: 10px; }
 
 .fr-pdf { background-color: #ebebeb; }
 .sr-pdf { background-color: #F5F5F3; }
 
-.sr-pdf th { 
-    width: 20%;
-    padding-left: 10px;
+.wb-pdf {
+  border-top: solid 1px rgb(196, 191, 191);
+}
+
+tr.header-two-pdf {
+  background-color: rgb(233, 231, 231); 
+  line-height: 2px;
 }

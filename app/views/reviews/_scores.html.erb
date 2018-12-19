@@ -27,7 +27,7 @@
             <tr class="reviews">
                 <td><strong>Revisión <%= review.id %></strong></td>
                 <td><%= review.user.complete_name %></td>
-                <td><%= review.created_at.strftime("%b %d") %></td>
+                <td><%= l(review.created_at, format: "%b %d") %></td>
                 <% review.quantitative_evaluations.each do |evaluation| %>
                     <td><%= evaluation.score %></td>
                 <% end %>
@@ -45,7 +45,7 @@
             <tr class="comments">
                 <td>Comentario <%= index+1 %></td>
                 <td><%= comment.user.complete_name %></td>
-                <td><%= comment.created_at.strftime("%b %d") %></td>
+                <td><%= l(comment.created_at, format: "%b %d") %></td>
                 <td colspan="8"></td>
             </tr>
         <% end %>    

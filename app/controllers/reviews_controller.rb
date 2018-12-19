@@ -4,6 +4,10 @@ class ReviewsController < ApplicationController
         @paper = Paper.find(params[:paper_id])
         @survey = @event.survey
         @reviews = @paper.reviews
+        respond_to do |format|
+            format.html
+            format.pdf { render template: 'reviews/inform', pdf: 'Informe', layout: 'pdf.html' }
+        end
     end
 
     def new
