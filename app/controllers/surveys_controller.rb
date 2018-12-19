@@ -21,21 +21,6 @@ class SurveysController < ApplicationController
         end
     end
 
-    def edit
-        @event = Event.find(params[:event_id])
-        @survey = Survey.find(params[:id])
-    end
-
-    def update
-        @event = Event.find(params[:event_id])
-        @survey = Survey.find(params[:id])
-        if @survey.update(survey_params)
-            redirect_to events_path
-        else
-            render :edit
-        end
-    end
-
     def destroy
         @survey = Survey.find(params[:id]).destroy
         redirect_to surveys_path

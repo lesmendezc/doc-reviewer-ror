@@ -33,8 +33,8 @@
             </td>
             <td>
               <% if event.survey.present? %>
-                <%= link_to edit_event_survey_path(event, event.survey), class: "waves-effect btn-floating btn-small grey" do %>
-                    <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Editar Form. Revisión'>assignment_turned_in</i>
+                <%= link_to event_survey_path(event, event.survey), class: "waves-effect btn-floating btn-small grey" do %>
+                    <i class="material-icons tooltipped" data-position='bottom' data-tooltip='Ver Form. Revisión'>view_list</i>
                 <% end %>
               <% else %>
                 <%= link_to new_event_survey_path(event), class: "waves-effect btn-floating btn-small grey" do %>
