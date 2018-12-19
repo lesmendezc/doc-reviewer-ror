@@ -30,9 +30,18 @@
           </div>
           
           <div class="center-align">
-            <%= button_tag(class: 'btn-small waves-effect waves-light') do %>
-              <% @survey.new_record? ? 'Crear formulario' : 'Editar formulario' %>
-            <% end %>
+            <%= link_to 'Crear Formulario', '#confirmation-modal', class: 'modal-trigger btn-small waves-effect waves-light' %>
+          </div>
+          <div id="confirmation-modal" class="modal">
+            <div class="modal-content">
+              <h4>Confirmación</h4>
+              <p>Una vez creado el formulario, los usuarios podrán registrar revisiones, debido a esto, este formulario no se podrá modificar.</p>
+              <p>¿Deseas guardar el formulario?</p>
+            </div>
+            <div class="modal-footer">
+              <%= link_to 'Cancelar', '#confirmation-modal', class: 'modal-close btn-small btn-flat' %>
+              <%= survey_form.submit 'Crear Formulario', class: 'text-white btn-small' %>
+            </div>
           </div>
         <% end %>
       </div>
