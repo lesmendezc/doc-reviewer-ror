@@ -6,16 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create([{name: 'Juan Pablo', lastname: 'Sandoval Alcocer', role: 'admin', email: 'sandoval@ucb.edu.bo', career: 'Ingeniería de Sistemas', password: '.sandoval.', username: 'sandoval', professor_role: true},
-             {name: 'Tatiana', lastname: 'Aparicio', role: 'docente', email: 'aparicio@ucb.edu.bo', career: 'Ingeniería de Sistemas', password: 'password', username: 'tatiana', professor_role: true},
-             {name: 'Javier', lastname: 'Vildozo', role: 'estudiante', email: 'javier@vildozo.bo', career: 'Ingeniería de Sistemas', password: 'password', username: 'javier', professor_role: false}])
+User.create([{name: 'Juan Pablo', lastname: 'Sandoval Alcocer', professional_degree: 'Dr.', role: 'admin', email: 'sandoval@ucb.edu.bo', career: 'Ingeniería de Sistemas', password: '.sandoval.', username: 'sandoval', professor_role: true},
+             {name: 'Tatiana', lastname: 'Aparicio', professional_degree: 'Mgr.', role: 'docente', email: 'aparicio@ucb.edu.bo', career: 'Ingeniería de Sistemas', password: 'password', username: 'tatiana'},
+             {name: 'Javier', lastname: 'Vildozo', professional_degree: 'Mgr.', role: 'estudiante', email: 'javier@vildozo.bo', career: 'Ingeniería de Sistemas', password: 'password', username: 'javier'}])
 
-event = Event.create({name: 'Primera Revisión Perfil', year: '2018', career: 'Ingeniería de Sistemas', limit_date: Date.new(2018,12,18)})
+event = Event.create({name: 'Primera Revisión Perfil', year: '2018', semester: 'Segundo', career: 'Ingeniería de Sistemas', limit_date: Date.new(2018,12,18)})
 survey = Survey.create({name: 'Perfil en fase #1', event_id: event.id})
-selectOptionQuestion = Questions::SelectOption.create({ description: 'Introducción', survey_id: survey.id,
-    options_attributes: [ { point: 1, description: 'Bueno' },
-        { point: 2, description: 'Regular'},
-        { point: 3, description: 'Malo'} ]})
-textQuestion = Questions::Text.create({description: 'Antecedentes', title: 'Se debe redactar con el estándar APA', survey_id: survey.id})
+selectOptionQuestion = Questions::SelectOption.create({ title: 'Introducción', survey_id: survey.id, max_score: 40,
+    options_attributes: [ { point: 40, description: 'Bueno' },
+        { point: 28, description: 'Regular'},
+        { point: 14, description: 'Malo'} ]})
+textQuestion = Questions::Text.create({title: 'Antecedentes', description: 'Se debe redactar con el estándar APA', survey_id: survey.id})
 
-event = Event.create({name: 'Segunda Revisión Perfil', year: '2018', career: 'Ingeniería de Sistemas', limit_date: Date.new(2018,12,27)})
+event = Event.create({name: 'Segunda Revisión Perfil', year: '2018', semester: 'Segundo', career: 'Ingeniería de Sistemas', limit_date: Date.new(2018,12,27)})
