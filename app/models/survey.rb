@@ -18,6 +18,10 @@ class Survey < ApplicationRecord
         quantitative_questions.map{ |question| question.max_score }.sum
     end
 
+    def safe_to_remove?
+        reviews.count == 0
+    end
+
     private 
 
     def at_least_one_question

@@ -23,7 +23,7 @@ class SurveysController < ApplicationController
 
     def destroy
         @survey = Survey.find(params[:id]).destroy
-        redirect_to surveys_path
+        redirect_to events_path
     end
 
     private
