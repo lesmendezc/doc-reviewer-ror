@@ -23,7 +23,7 @@
         <div class="row">
           <div class="input-field col s6">
             <%= form.label :semester, 'Semestre *', class: 'active' %>
-            <%= form.select :semester, ['Primer','Segundo'], include_blank: 'Elige el semestre' %>
+            <%= form.select :semester, ['Primer','Segundo'], include_blank: 'Elige el semestre', required:"" %>
           </div>
 
           <div class="input-field col s6">
@@ -39,7 +39,7 @@
           </div>
           <div class="input-field col s6">
             <%= form.label :career, 'Carrera *', class: 'active' %>
-            <%= form.select :career, ['Ingeniería de Sistemas', 'Ingeniería de Ambiental', 'Ingeniería Civil', 'Ingeniería Mecatrónica'], include_blank: 'Elige la carrera' %>
+            <%= form.select :career, ['Ingeniería de Sistemas', 'Ingeniería Ambiental', 'Ingeniería Civil', 'Ingeniería Mecatrónica'], include_blank: 'Elige la carrera' %>
           </div>
         </div>
 
