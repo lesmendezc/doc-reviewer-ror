@@ -95,52 +95,6 @@ $(function() {
             }
         });
 
-    $('#new_paper').validate({
-        rules: {
-            'paper[title]': 'required',
-            'paper[google_docs_link]': 'required',
-            'paper[resume]': 'required',
-            'paper[problem_definition]': 'required',
-            'paper[general_purpose]': 'required',
-            'paper[specific_purpose]': 'required'
-        },
-        messages: {
-            'paper[title]': { required: 'Campo obligatorio'},
-            'paper[google_docs_link]': { required: 'Campo obligatorio'},
-            'paper[resume]': { required: 'Campo obligatorio'},
-            'paper[problem_definition]': {required: 'Campo obligatorio'},
-            'paper[general_purpose]': {required:'Campo obligatorio'},
-            'paper[specific_purpose]': {required:'Campo obligatorio'}
-        },
-        errorElement : 'div',
-        errorPlacement: function(error, element) {
-            error.insertAfter(element);
-        }
-    });
-
-    $('.edit_paper').validate({
-        rules: {
-            'paper[title]': 'required',
-            'paper[google_docs_link]': 'required',
-            'paper[resume]': 'required',
-            'paper[problem_definition]': 'required',
-            'paper[general_purpose]': 'required',
-            'paper[specific_purpose]': 'required'
-        },
-        messages: {
-            'paper[title]': { required: 'Campo obligatorio'},
-            'paper[google_docs_link]': { required: 'Campo obligatorio'},
-            'paper[resume]': { required: 'Campo obligatorio'},
-            'paper[problem_definition]': {required: 'Campo obligatorio'},
-            'paper[general_purpose]': {required:'Campo obligatorio'},
-            'paper[specific_purpose]': {required:'Campo obligatorio'}
-        },
-        errorElement : 'div',
-        errorPlacement: function(error, element) {
-            error.insertAfter(element);
-        }
-    });
-
     $('.new_comment').validate({
         rules: { 'comment[commentary]': 'required' },
         messages: { 'comment[commentary]': { required: 'El comentario no puede estar vacío'} },
