@@ -10,6 +10,7 @@ gem 'materialize-sass', '~> 1.0.0.rc2'
 gem 'material_icons'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'cocoon'
+gem 'jquery-validation-rails'
 
 gem 'devise'
 gem 'cancancan', '~> 2.0'

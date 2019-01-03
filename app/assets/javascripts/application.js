@@ -17,6 +17,8 @@
 //= require toastr
 //= require trix
 //= require cocoon
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 //= require_tree .
 
 $(function() {
