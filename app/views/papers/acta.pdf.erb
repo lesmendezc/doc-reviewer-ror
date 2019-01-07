@@ -13,22 +13,24 @@
             }
             .centro { 
                 text-align: center; 
-                padding-left: 35px;
+                padding-left: 120px;
+                line-height: 2em;
+                text-transform: uppercase;
             }
-            .parrafo { text-align: justify; }
+            .parrafo { text-align: justify; line-height: 1.5em;}
             .firma { height: 120px; }
-            .est td { text-align: center; padding-left: 200px; }
+            .est td { text-align: center; padding-left: 300px; }
             .trib td { 
                 text-align: center;
-                padding-left: 40px;
+                padding-left: 100px;
             }
         </style>
     </head>
     <body>
             <table>
                 <tr>
-                    <td><%= wicked_pdf_image_tag "logo_ucb.jpg", width: "80", height: "120" %></td>
-                    <td><div class="row centro"><strong>UNIVERSIDAD CATÓLICA BOLIVIANA "SAN PABLO" <br>Carrera de <%= @event.career %></strong></div></td>
+                    <td><%= wicked_pdf_image_tag "logo_ucb.jpg", width: "90", height: "140" %></td>
+                    <td><div class="row centro"><strong>universidad  católica  boliviana  "san  pablo" <br>Carrera de <%= @event.career %></strong></div></td>
                 </tr>
             </table><br>
 
@@ -46,16 +48,16 @@
                     ________________ el trabajo y otorgar la calificación de ______ (________________________________). 
                     Asimismo, el tribunal consensuó las siguientes observaciones y recomendaciones, que deben ser 
                     atendidas para las fases siguientes del proceso de titulación: <br><br>
-                    1. _________________________________________________________________________ <br><br>
-                    2. _________________________________________________________________________ <br><br>
-                    3. _________________________________________________________________________ <br><br>
-                    4. _________________________________________________________________________ <br><br>
-                    5. _________________________________________________________________________ <br><br>
-                    6. _________________________________________________________________________ <br><br>
-                    7. _________________________________________________________________________ <br><br>
-                    8. _________________________________________________________________________ <br><br>
+                    1. _________________________________________________________________________________________ <br>
+                    2. _________________________________________________________________________________________ <br>
+                    3. _________________________________________________________________________________________ <br>
+                    4. _________________________________________________________________________________________ <br>
+                    5. _________________________________________________________________________________________ <br>
+                    6. _________________________________________________________________________________________ <br>
+                    7. _________________________________________________________________________________________ <br>
+                    8. _________________________________________________________________________________________ <br>
                 </p>
-                <br><br>
+                <br><br><br>
                 <table class="trib">
                     <tr>
                         <td>__________________________<br> Profesor(a) Guía</td>
