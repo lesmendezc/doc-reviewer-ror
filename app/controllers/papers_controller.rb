@@ -17,7 +17,7 @@ class PapersController < ApplicationController
     @classroom = @paper.classroom
     respond_to do |format|
       format.html
-      format.pdf { render template: 'papers/acta', pdf: 'Acta' }
+      format.pdf { render template: 'papers/acta', pdf: 'Acta UCB', layout: 'acta.html' }
     end
   end
 

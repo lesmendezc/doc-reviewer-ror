@@ -32,7 +32,7 @@ Rails.application.configure do
   config.assets.digest = true
   config.serve_static_assets = true
 
-  config.assets.precompile += ['pdf.scss']
+  config.assets.precompile += ['pdf.scss', 'acta.scss']
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 

@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
         @reviews = @paper.reviews
         respond_to do |format|
             format.html
-            format.pdf { render template: 'reviews/inform', pdf: 'Informe', layout: 'pdf.html' }
+            format.pdf { render template: 'reviews/inform', pdf: 'Informe de Revisiones', layout: 'pdf.html' }
         end
     end
 
