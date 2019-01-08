@@ -23,8 +23,8 @@ class ReviewsController < ApplicationController
         @paper = @event.papers.find(params[:paper_id])
         @review = @paper.reviews.new(review_params)
         if @review.save
-            # ReviewMailer.review_notification(current_user, @paper.assingment, @paper).deliver
-            redirect_to event_paper_reviews_url(@event, @paper)
+            ReviewMailer.review_notification(current_user, @paper.assingment, @paper).deliver
+            redirect_to event_paper_reviews_url(@event, @paper), alert: 'Se envió un correo de notificación'
         else
             render :new
         end
@@ -48,8 +48,8 @@ class ReviewsController < ApplicationController
         @review = Review.find(params[:id])
         @review.update(review_params)
         if @review.save
-            # ReviewMailer.send_update_nofitication()
-            redirect_to event_paper_reviews_url(@event, @paper)
+            ReviewMailer.review_notification(current_user, @paper.assingment, @paper).deliver
+            redirect_to event_paper_reviews_url(@event, @paper), alert: 'Se envió un correo de notificación'
         else
             render :edit
         end

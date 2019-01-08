@@ -15,7 +15,7 @@ class Paper < ApplicationRecord
 
     # paginates_per 6
 
-    # after_update :send_notification
+    after_update :send_notification
 
     def send_notification
         PaperMailer.status_notification(self.user, self).deliver
