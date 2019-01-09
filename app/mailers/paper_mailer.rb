@@ -5,6 +5,8 @@ class PaperMailer < ApplicationMailer
   #
   #   en.paper_mailer.status_notification.subject
   #
+  default from: 'Sistema de Revisión de Documentos <doc.reviewer.app@gmail.com>'
+
   def status_notification(paper_user, paper)
     @paper_email = paper_user.email
     @paper = paper

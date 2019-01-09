@@ -5,6 +5,8 @@ class AssignmentMailer < ApplicationMailer
   #
   #   en.assignment_mailer.tribunal_confirmation.subject
   #
+  default from: 'Sistema de Revisión de Documentos <doc.reviewer.app@gmail.com>'
+
   def tribunal_confirmation(assignment, paper)
     @tutor_email = User.find(assignment.tutor_id).email
     @relator_email = User.find(assignment.relator_id).email

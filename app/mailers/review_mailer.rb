@@ -5,6 +5,8 @@ class ReviewMailer < ApplicationMailer
   #
   #   en.review_mailer.review_notification.subject
   #
+  default from: 'Sistema de Revisión de Documentos <doc.reviewer.app@gmail.com>'
+
   def review_notification(current_user, paper_assignment, paper)
     @current_user = current_user
     @paper = paper
