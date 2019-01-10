@@ -16,6 +16,8 @@
 //= require activestorage
 //= require toastr
 //= require trix
+//= require quill.min
+//= require quill.global
 //= require cocoon
 //= require jquery.validate
 //= require jquery.validate.additional-methods

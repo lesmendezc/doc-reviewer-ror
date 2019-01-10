@@ -18,6 +18,8 @@ gem 'cancancan', '~> 2.0'
 gem "aws-sdk-s3", require: false
 
 gem "trix"
+gem 'quilljs-rails'
+
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'wkhtmltopdf-heroku'

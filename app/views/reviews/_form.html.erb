@@ -33,8 +33,7 @@
                             <% elsif question.type == 'Questions::Text' %>
                                 <span>- <%= question.description %></span><br><br>
                                 <div class="input-field col s12">
-                                    <%= evaluation_form.hidden_field :description, id: :description_text %>
-                                    <trix-editor input="description_text"></trix-editor>
+                                    <%= evaluation_form.text_area :description, class: 'quill_container' %>
                                 </div>
                             <% end %>
                         <% end %>
