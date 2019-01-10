@@ -10,6 +10,7 @@ class PaperMailer < ApplicationMailer
   def status_notification(paper_user, paper)
     @paper_email = paper_user.email
     @paper = paper
+    attachments.inline["ucb_valores.png"] = File.read("#{Rails.root}/app/assets/images/ucb_valores.png")
 
     mail(to: @paper_email, subject: 'Cambio de estado')
   end

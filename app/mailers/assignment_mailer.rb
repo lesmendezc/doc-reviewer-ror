@@ -11,6 +11,9 @@ class AssignmentMailer < ApplicationMailer
     @tutor_email = User.find(assignment.tutor_id).email
     @relator_email = User.find(assignment.relator_id).email
     @paper = paper
+    @tutor = User.find(assignment.tutor_id)
+    @relator = User.find(assignment.relator_id)
+    attachments.inline["ucb_valores.png"] = File.read("#{Rails.root}/app/assets/images/ucb_valores.png")
 
     mail(to: [@tutor_email, @relator_email], subject: 'Tribunal asignado')
   end

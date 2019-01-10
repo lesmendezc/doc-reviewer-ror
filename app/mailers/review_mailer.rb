@@ -13,6 +13,7 @@ class ReviewMailer < ApplicationMailer
     @tutor_email = User.find(paper_assignment.tutor_id).email
     @relator_email = User.find(paper_assignment.relator_id).email
     @director_email = User.find(paper_assignment.director_id).email
+    attachments.inline["ucb_valores.png"] = File.read("#{Rails.root}/app/assets/images/ucb_valores.png")
 
     mail(to: [@tutor_email, @relator_email, @director_email], subject: 'Nueva Revisión')
   end

@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
         @review = @paper.reviews.new(review_params)
         if @review.save
             ReviewMailer.review_notification(current_user, @paper.assingment, @paper).deliver
-            redirect_to event_paper_reviews_url(@event, @paper), alert: 'Se envió un correo de notificación'
+            redirect_to event_paper_reviews_url(@event, @paper), alert: 'Se envió una notificación por correo'
         else
             render :new
         end
@@ -49,7 +49,7 @@ class ReviewsController < ApplicationController
         @review.update(review_params)
         if @review.save
             ReviewMailer.review_notification(current_user, @paper.assingment, @paper).deliver
-            redirect_to event_paper_reviews_url(@event, @paper), alert: 'Se envió un correo de notificación'
+            redirect_to event_paper_reviews_url(@event, @paper), alert: 'Se envió una notificación por correo'
         else
             render :edit
         end
