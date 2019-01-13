@@ -69,42 +69,4 @@ $(function() {
     });
 
     $('.materialize-textarea').trigger('autoresize');
-
-    $('#new_review').validate(
-        {
-            rules: {
-                'review[relevance]': "required",
-                'review[problem_def]': "required",
-                'review[general_def]': "required",
-                'review[specific_def]': "required",
-                'review[confidence]': "required",
-                'review[general_evaluation]': "required",
-                'review[general_evaluation_text]': "required"
-            },
-            messages: {
-                'review[relevance]': { required: "Debe elegir una opción <br/>" },
-                'review[problem_def]': { required: "Debe elegir una opción <br/>" },
-                'review[general_def]': { required: "Debe elegir una opción <br/>" },
-                'review[specific_def]': { required: "Debe elegir una opción <br/>" },
-                'review[confidence]': { required: "Debe elegir una opción <br/>" },
-                'review[general_evaluation]': { required: "Debe elegir una opción <br/>" },
-                'review[general_evaluation_text]': { required: "Campo obligatorio <br/>" }
-            },
-            errorPlacement: function(error, element) {
-                if (element.attr("type") == "radio") {
-                    error.prependTo(element.parent());
-                }else{
-                    error.insertBefore(element.parent());
-                }
-            }
-        });
-
-    $('.new_comment').validate({
-        rules: { 'comment[commentary]': 'required' },
-        messages: { 'comment[commentary]': { required: 'El comentario no puede estar vacío'} },
-        errorElement : 'div',
-        errorPlacement: function(error, element) {
-            error.insertAfter(element);
-        }
-    });
 })

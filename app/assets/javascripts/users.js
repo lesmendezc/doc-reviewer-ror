@@ -35,4 +35,25 @@ $(function(){
             error.insertAfter(element);
         }
     })
+
+    $('.edit_user').validate({
+        rules: {
+            'user[name]': 'required',
+            'user[lastname]': 'required',
+            'user[username]': 'required',
+            'user[career]': 'required',
+            'user[email]': 'required'
+        },
+        messages: {
+            'user[name]': 'El nombre no puede estar vacío',
+            'user[lastname]': 'Los apellidos no pueden estar vacío',
+            'user[username]': 'El nombre de usuario no puede estar vacío',
+            'user[career]': 'Debe elegir una carrera',
+            'user[email]': 'El correo no puede estar vacío'
+        },
+        errorElement: 'div',
+        errorPlacement: function(error, element){
+            error.insertAfter(element);
+        }
+    })
 })
