@@ -17,7 +17,7 @@
       <% if User.find_by(id: @tutor.id) %>
         Hola <%= @tutor.complete_name %>, <br>
         Has sido asignado como <strong>tutor </strong>
-      <% else %> 
+      <% elsif User.find_by(id: @relator.id) %> 
         Hola <%= @relator.complete_name %>, <br>
         Has sido asignado como <strong>relator </strong>
       <%end %>
