@@ -192,3 +192,12 @@ trix-editor ul:not(.browser-default) {
   vertical-align: bottom;
   font-size: 20px !important;
 }
+
+.input-field label {
+  color: rgb(99, 93, 93);
+}
+
+.required-alert {
+  font-size: 9pt;
+  color: rgb(99, 93, 93)
+}
