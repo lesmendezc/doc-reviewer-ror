@@ -10,12 +10,12 @@
                 <%= link_to_remove_association content_tag(:p, 'Quitar Sección', class:'red-text'), f, { wrapper_class: 'question_fields' } %>
             </div>
             <div class="input-field col s8">
-                <%= f.label :title, "Sección", class: 'active' %>
+                <%= f.label :title, "Sección *", class: 'active' %>
                 <%= f.text_field :title, placeholder: 'Ingrese la sección a revisar del documento. Ejemplo: Antecedentes', type: "text", class: "validate" %>
             </div>
             <% if question.display_type=='Escala' %>
                 <div class="input-field col s2">
-                    <%= f.label :max_score, 'Puntaje máximo' %>
+                    <%= f.label :max_score, 'Puntaje máximo *' %>
                     <%= f.number_field :max_score, class: :text_field, step: :any %>
                 </div>
             <% end %>

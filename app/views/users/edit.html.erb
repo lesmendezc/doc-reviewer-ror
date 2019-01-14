@@ -5,23 +5,23 @@
                 <h4 class="align center">Editar usuario</h4>
                 <%= form_for @user do |f| %>
                     <div class="input-field">
-                        <%= f.label :name, 'Nombre' %>
+                        <%= f.label :name, 'Nombre(s) *' %>
                         <%= f.text_field :name, class: 'validate' %>
                     </div>
 
                     <div class="input-field">
-                        <%= f.label :lastname, 'Apellidos' %>
+                        <%= f.label :lastname, 'Apellidos *' %>
                         <%= f.text_field :lastname, class: 'validate' %>
                     </div>
 
                     <div class="input-field">
-                        <%= f.label :username, 'Nombre de usuario' %>
+                        <%= f.label :username, 'Nombre de usuario *' %>
                         <%= f.text_field :username, class: 'validate' %>
                     </div>
 
                     <div class="row">
                         <div class="input-field col s6">
-                            <%= f.label :career, 'Carrera', class: 'active' %>
+                            <%= f.label :career, 'Carrera *', class: 'active' %>
                             <%= f.select :career, ['Ingeniería de Sistemas', 'Ingeniería Ambiental', 'Ingeniería Civil', 'Ingeniería Mecatrónica'], include_blank: 'Elige la carrera' %>
                         </div>
 
@@ -34,29 +34,29 @@
                     <div class="row">
                         <% if @user.admin? %>
                             <div class="input-field col s6">
-                                <%= f.label :role, 'Rol', class: 'active' %>
+                                <%= f.label :role, 'Rol *', class: 'active' %>
                                 <%= f.select :role, ['admin','docente','director'], include_blank: true %>
                             </div>
                             <div class="input-field col s6">
-                                <%= f.label :professional_degree, 'Grado profesional', class: 'active' %>
+                                <%= f.label :professional_degree, 'Grado profesional *', class: 'active' %>
                                 <%= f.select :professional_degree, ['Ing.','Mgr.','Dr.'] %>
                             </div>
                         <% elsif @user.docente? || @user.director? %>
                             <div class="input-field col s6">
-                                <%= f.label :role, 'Rol', class: 'active' %>
+                                <%= f.label :role, 'Rol *', class: 'active' %>
                                 <%= f.select :role, ['docente','director'], include_blank: true %>
                             </div>
                             <div class="input-field col s6">
-                                <%= f.label :professional_degree, 'Grado profesional', class: 'active' %>
+                                <%= f.label :professional_degree, 'Grado profesional *', class: 'active' %>
                                 <%= f.select :professional_degree, ['Ing.','Mgr.','Dr.'] %>
                             </div>
                         <% else %>
                             <div class="input-field col s6" id="role_degree" >
-                                <%= f.label :role, 'Rol', class: 'active' %>
+                                <%= f.label :role, 'Rol *', class: 'active' %>
                                 <%= f.select :role, ['estudiante','docente','director'], include_blank: true %>
                             </div>
                             <div class="input-field col s6" id="show_degree" style="display:none">
-                                <%= f.label :professional_degree, 'Grado profesional', class: 'active' %>
+                                <%= f.label :professional_degree, 'Grado profesional *', class: 'active' %>
                                 <%= f.select :professional_degree, ['Ing.','Mgr.','Dr.'] %>
                             </div>
                         <% end %>
@@ -77,8 +77,11 @@
                     <% end %>
 
                     <div class="input-field">
-                        <%= f.label :email, 'Correo electrónico' %>
+                        <%= f.label :email, 'Correo electrónico *' %>
                         <%= f.text_field :email, class: 'validate' %>
+                    </div>
+                    <div>
+                        <p class="required-alert">Los campos marcados con * son obligatorios.</p><br>
                     </div>
                     
                     <div class="align center">

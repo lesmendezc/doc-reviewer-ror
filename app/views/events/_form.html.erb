@@ -48,6 +48,9 @@
             <%= form.label :limit_date, 'Fecha límite de recepción de documentos *' %>
             <%= form.text_field :limit_date, class: "datepicker", :value => (I18n.localize(event.limit_date, format: '%d %b, %Y') if event.limit_date.present?) %>
           </div>
+          <div>
+            <p class="required-alert">Los campos marcados con * son obligatorios.</p><br>
+          </div>
 
           <div class="center-align">
             <%= button_tag(class: 'btn-small waves-effect waves-light') do %>

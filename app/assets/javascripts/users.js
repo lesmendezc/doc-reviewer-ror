@@ -17,7 +17,7 @@ $(function(){
         },
         messages: {
             'user[name]': 'El nombre no puede estar vacío',
-            'user[lastname]': 'Los apellidos no pueden estar vacío',
+            'user[lastname]': 'Los apellidos no pueden estar vacíos',
             'user[username]': 'El nombre de usuario no puede estar vacío',
             'user[career]': 'Debe elegir una carrera',
             'user[password]': {
@@ -46,7 +46,7 @@ $(function(){
         },
         messages: {
             'user[name]': 'El nombre no puede estar vacío',
-            'user[lastname]': 'Los apellidos no pueden estar vacío',
+            'user[lastname]': 'Los apellidos no pueden estar vacíos',
             'user[username]': 'El nombre de usuario no puede estar vacío',
             'user[career]': 'Debe elegir una carrera',
             'user[email]': 'El correo no puede estar vacío'

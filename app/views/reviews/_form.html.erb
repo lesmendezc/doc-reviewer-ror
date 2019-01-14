@@ -31,7 +31,7 @@
                                     <% end %>
                                 </div>
                             <% elsif question.type == 'Questions::Text' %>
-                                <span>- <%= question.description %></span><br><br>
+                                <span>- <%= question.description %></span><br>
                                 <div class="input-field col s12">
                                     <%= evaluation_form.text_area :description, class: 'quill_container' %>
                                 </div>
@@ -39,9 +39,12 @@
                         <% end %>
                     <% end %>
                     <br>
+                    <div>
+                        <p class="required-alert">Los campos marcados con (*) son obligatorios.</p><br>
+                    </div>
                     <div class="center-align">
                         <%= review_form.button class: "btn-small waves-effect waves-light" do %>
-                            Realizar revisión
+                            <% @review.new_record? ? 'Realizar revisión' : 'Editar revisión' %>
                         <% end %>
                     </div>
                 <% end %>

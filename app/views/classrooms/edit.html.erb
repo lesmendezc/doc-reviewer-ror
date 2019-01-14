@@ -8,16 +8,19 @@
                         <%= @event.name %>
                     </div>
                     <div class="input-field">
-                        <%= form.label :ambient, 'Ambiente' %>
+                        <%= form.label :ambient, 'Ambiente *' %>
                         <%= form.text_field :ambient, class: 'validate' %>
                     </div>
                     <div class="input-field">
-                        <%= form.label :defense_date, 'Fecha de la defensa' %>
+                        <%= form.label :defense_date, 'Fecha de la defensa *' %>
                         <%= form.text_field :defense_date, class: 'datepicker', :value => (I18n.localize(@classroom.defense_date, format: '%d %b, %Y')) %>
                     </div>
                     <div class="input-field">
-                        <%= form.label :defense_hour, 'Hora de la defensa' %>
+                        <%= form.label :defense_hour, 'Hora de la defensa *' %>
                         <%= form.text_field :defense_hour, class: 'timepicker', :value => "#{form.object.defense_hour.strftime("%I:%M %p")}" %>
+                    </div>
+                    <div>
+                        <p class="required-alert">Los campos marcados con * son obligatorios.</p><br>
                     </div>
 
                     <div class="center-align">

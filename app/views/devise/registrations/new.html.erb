@@ -55,6 +55,9 @@
             <%= f.label :password_confirmation, 'Repetir contraseña *' %>
             <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
           </div><br>
+          <div>
+              <p class="required-alert">Los campos marcados con * son obligatorios.</p><br>
+          </div>
 
           <div class="center-align">
             <%= button_tag(class: 'btn-small waves-effect waves-light') do %>
