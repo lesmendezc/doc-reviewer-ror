@@ -5,18 +5,18 @@
                 <h3 class="center-align">Asignar Tribunal</h3>
                 <%= form_for([@event, @paper, @assingment]) do |form| %>
                     <div class="input-field col s12">
-                        <%= form.label :director_id, 'Director *' %>
-                        <%= form.collection_select :director_id, User.all.select{|u| u.role=='director'} , :id, :complete_name, include_blank: true %>
+                        <%= form.label :director_id, 'Director *', class: 'active' %>
+                        <%= form.collection_select :director_id, User.all.select{|u| u.role=='director'} , :id, :complete_name, include_blank: 'Elige el director' %>
                     </div>
                     <div class="input-field col s12">
-                        <%= form.label :tutor_id, 'Tutor *' %>
-                        <%= form.collection_select :tutor_id, User.all.select{|u| u.role=='docente' or u.professor_role==true} , :id, :complete_name, include_blank: true %>
+                        <%= form.label :tutor_id, 'Tutor *', class: 'active' %>
+                        <%= form.collection_select :tutor_id, User.all.select{|u| u.role=='docente' or u.professor_role==true} , :id, :complete_name, include_blank: 'Elige el tutor' %>
                     </div>
                     <div class="input-field col s12">
-                        <%= form.label :relator_id, 'Relator *' %>
-                        <%= form.collection_select :relator_id, User.all.select{|u| u.role=='docente' or u.professor_role==true} , :id, :complete_name, include_blank: true %>
+                        <%= form.label :relator_id, 'Relator *', class: 'active' %>
+                        <%= form.collection_select :relator_id, User.all.select{|u| u.role=='docente' or u.professor_role==true} , :id, :complete_name, include_blank: 'Elige el relator' %>
                     </div><br>
-                    <div>
+                    <div class="col s12">
                         <p class="required-alert">Los campos marcados con * son obligatorios.</p><br>
                     </div>
 

@@ -16,7 +16,7 @@
                         <%= form.label :relator_id, 'Relator *', class: 'active' %>
                         <%= form.collection_select :relator_id, User.all.select{|u| u.role=='docente' or u.professor_role==true} , :id, :complete_name, include_blank: true %>
                     </div><br>
-                    <div>
+                    <div class="col s12">
                         <p class="required-alert">Los campos marcados con * son obligatorios.</p><br>
                     </div>
 
