@@ -2,11 +2,6 @@
     <div class="col s12 m10 offset-m1">
         <div class="card brown lighten-5">
             <div class="card-content">
-                <div>
-                    <% @review.errors.full_messages.each do |message| %>
-                        <%= message %>
-                    <%end%>
-                </div>
                 <h5 class="center-align"><%= @survey.name %></h5>
                 <%= form_for([@event, @paper, @review]) do |review_form| %>
 
@@ -25,7 +20,7 @@
                                     <% question.options.each do |option|%>
                                         <p><label>
                                             <% selected_option_value = evaluation_form.object.score %>
-                                            <%= evaluation_form.radio_button :score, option.value, checked: option.value == selected_option_value %>
+                                            <%= evaluation_form.radio_button :score, option.value, checked: option.value == selected_option_value, required: true %>
                                             <span id="miLabel"><%= option.show %></span>
                                         </label></p>
                                     <% end %>
@@ -33,7 +28,7 @@
                             <% elsif question.type == 'Questions::Text' %>
                                 <span id="miLabel">- <%= question.description %></span><br>
                                 <div class="input-field col s12">
-                                    <%= evaluation_form.text_area :description, class: 'quill_container' %>
+                                    <%= evaluation_form.text_area :description, class: 'quill_container', required: true %>
                                 </div>
                             <% end %>
                         <% end %>

@@ -4,10 +4,9 @@
             <div class="card-content">
                 <%= form_for([@event, @paper, @paper.comments.build]) do |form| %>
                     <div class="row">
-                        <div class="input-field">
-                            <i class="material-icons prefix">message</i>
-                            <%= form.text_area :commentary, class: "materialize-textarea", id: "textarea1" %>
-                            <label for="textarea1">Deja tu comentario aquí</label>
+                        <div class="input-field col s12">
+                            <%= form.label :commentary, 'Deja tu comentario aquí *' %> <br><br>
+                            <%= form.text_area :commentary, class: "quill_container", required: true %>
                         </div>
                     </div>
 
