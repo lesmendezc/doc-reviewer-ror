@@ -54,10 +54,11 @@ th.vertical {
   width: 3em;
 }
 
-.summary, .paper-show, .review-show, .review-edited, .assign-table { border-collapse: collapse; }
-.summary tr, .paper-show tr, .review-show tr, .review-edited tr, .assign-table tr { border: none; }
+.summary, .paper-show, .review-show, .review-edited, .assign-table, .comment-show { border-collapse: collapse; }
+.summary tr, .paper-show tr, .review-show tr, .review-edited tr, .assign-table tr, .comment-show tr { border: none; }
 .summary th, .summary td, .paper-show th, .paper-show td, .review-show th, .review-show td, 
-.review-edited th, .review-edited td, .assign-table th, .assign-table td {
+.review-edited th, .review-edited td, .assign-table th, .assign-table td,
+.comment-show th, .comment-show td {
   border-right: solid 1px rgb(196, 191, 191); 
   border-left: solid 1px rgb(196, 191, 191);
 }
@@ -106,6 +107,14 @@ tbody tr.review_edited { background-color: white; }
 
 .paper-title td { text-align: center; }
 .paper-title th { text-align: center; }
+.comment-title { 
+  th { text-align: center; }
+  td { text-align: center; }
+  background-color: #a5d6a7;
+  line-height: 0; 
+}
+.comment-show th { width: 17%; }
+.comment-info { background-color: #e8f5e9; }
 
 .review-show th { width: 35%; }
 .review-show tr { background-color: #E6EDFA; }
@@ -163,12 +172,10 @@ trix-editor ul:not(.browser-default) {
   padding-left: 40px;
 }
 
-.review-edited, .review-show ul:not(.browser-default) {
-  padding-left: 30px;
-}
-.review-edited, .review-show ul:not(.browser-default) li {
-  list-style-type: initial;
-}
+.review-show ul:not(.browser-default) { padding-left: 30px; }
+.review-show ul:not(.browser-default) li { list-style-type: initial; }
+.comment-show ul:not(.browser-default) { padding-left: 30px; }
+.comment-show ul:not(.browser-default) li { list-style-type: initial; }
 
 .material-tooltip {
   font-size: 11px;

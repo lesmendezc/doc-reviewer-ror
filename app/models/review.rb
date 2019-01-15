@@ -5,8 +5,6 @@ class Review < ApplicationRecord
   has_many :evaluations, dependent: :destroy
   accepts_nested_attributes_for :evaluations
 
-  validates_associated :evaluations
-
   def build_evaluation(question)
     new_record? ? evaluations.build(question_id: question.id) : evaluations.find_by(question_id: question.id)
   end
