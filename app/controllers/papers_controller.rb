@@ -74,6 +74,7 @@ class PapersController < ApplicationController
   def update
     @event = Event.find(params[:event_id])
     @paper = @event.papers.find(params[:id])
+    @paper.status = 'en proceso'
     # respond_to do |format|
       if @paper.update(paper_params)
         redirect_to event_papers_path(@event)
