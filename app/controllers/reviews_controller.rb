@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+    load_and_authorize_resource
+    
     def index
         @event = Event.find(params[:event_id])
         @paper = Paper.find(params[:paper_id])

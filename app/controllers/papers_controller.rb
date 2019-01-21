@@ -1,4 +1,5 @@
 class PapersController < ApplicationController
+  load_and_authorize_resource except: [:list_all, :list_assigned_tutor, :list_assigned_relator]
 
   # GET /papers
   # GET /papers.json

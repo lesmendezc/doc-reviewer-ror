@@ -1,4 +1,6 @@
 class ClassroomsController < ApplicationController
+    load_and_authorize_resource
+    
     def new
         @event = Event.find(params[:event_id])
         @paper = @event.papers.find(params[:paper_id])
