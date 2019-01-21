@@ -32,16 +32,7 @@
                     </div>
 
                     <div class="row">
-                        <% if @user.admin? %>
-                            <div class="input-field col s6">
-                                <%= f.label :role, 'Rol *', class: 'active' %>
-                                <%= f.select :role, ['admin','docente','director'], include_blank: true %>
-                            </div>
-                            <div class="input-field col s6">
-                                <%= f.label :professional_degree, 'Grado profesional *', class: 'active' %>
-                                <%= f.select :professional_degree, ['Ing.','Mgr.','Dr.'] %>
-                            </div>
-                        <% elsif @user.docente? || @user.director? %>
+                        <% if @user.docente? || @user.director? %>
                             <div class="input-field col s6">
                                 <%= f.label :role, 'Rol *', class: 'active' %>
                                 <%= f.select :role, ['docente','director'], include_blank: true %>
@@ -53,7 +44,7 @@
                         <% else %>
                             <div class="input-field col s6" id="role_degree" >
                                 <%= f.label :role, 'Rol *', class: 'active' %>
-                                <%= f.select :role, ['estudiante','docente','director'], include_blank: true %>
+                                <%= f.select :role, ['estudiante','docente'], include_blank: true %>
                             </div>
                             <div class="input-field col s6" id="show_degree" style="display:none">
                                 <%= f.label :professional_degree, 'Grado profesional *', class: 'active' %>
@@ -62,7 +53,7 @@
                         <% end %>
                     </div>
                     
-                    <% if @user.admin? %>
+                    <% if @user.director? %>
                         <label for="add_role">Añadir rol: </label>&emsp;
                         <label>
                             <%= f.check_box :professor_role %>

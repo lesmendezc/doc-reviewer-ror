@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   paginates_per 6
   
-  enum role: [:estudiante, :tutor, :relator, :docente, :admin, :director]
+  enum role: [:estudiante, :docente, :director]
 
 
   def login

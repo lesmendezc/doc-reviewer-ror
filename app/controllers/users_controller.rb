@@ -66,8 +66,8 @@ class UsersController < ApplicationController
 
   private
   def authorize_admin
-    return unless !current_user.admin? && !current_user.present?
-    redirect_to root_path, alert: 'Solo Admins!'
+    return unless !current_user.director? && !current_user.present?
+    redirect_to root_path, alert: 'Solo Directores!'
   end
 
   def user_params

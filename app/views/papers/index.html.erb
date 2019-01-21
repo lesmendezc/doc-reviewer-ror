@@ -6,7 +6,7 @@
 <% if current_user.director? %>
   <%= render partial: 'director_options', object: @papers %>
 <% end %>
-<% if current_user.admin? || current_user.admin_role? %>
+<% if current_user.professor_role? || current_user.admin_role? %>
   <%= render partial: 'admin_options', object: @papers %>
 <% elsif current_user.docente? %>
   <%= render partial: 'professors_options', object: @papers %>
