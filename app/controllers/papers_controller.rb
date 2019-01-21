@@ -1,5 +1,6 @@
 class PapersController < ApplicationController
-  load_and_authorize_resource except: [:list_all, :list_assigned_tutor, :list_assigned_relator]
+  load_and_authorize_resource :event
+  load_and_authorize_resource :paper, through: :event, except: [:list_all, :list_assigned_tutor, :list_assigned_relator, :my_documents]
 
   # GET /papers
   # GET /papers.json

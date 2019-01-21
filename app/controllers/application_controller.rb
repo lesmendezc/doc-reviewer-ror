@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
 
     rescue_from CanCan::AccessDenied do |exception|
         exception.default_message = "No estás autorizado para acceder a esta página."
-        flash[:error] = exception.message
-        redirect_to root_url
+        # flash[:error] = exception.message
+        redirect_to root_url, :alert => exception.message
     end
 
     protected

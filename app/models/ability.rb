@@ -2,26 +2,19 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user.director?
-      can :manage, User
+    if user.present?
       can :manage, Review, user_id: user.id
-    else
       can :read, [Event, Paper, Review]
       can [:change_password, :update_password], User
+
+      can :manage, User if user.director?
+      can :manage, Paper, user_id: user.id if user.estudiante?
+
+      if user.professor_role? or user.admin_role?
+        can :manage, [Event, Paper, Survey, Assingment, Classroom]
+      end
     end
 
-    if user.professor_role? or user.admin_role?
-      can :manage, [Event, Paper, Survey, Assingment, Classroom]
-      can :manage, Review, user_id: user.id
-    end
-
-    if user.docente?
-      can :manage, Review, user_id: user.id
-    end
-
-    if user.estudiante?
-      can :manage, Paper, user_id: user.id
-    end
     
     # Define abilities for the passed in user here. For example:
     #

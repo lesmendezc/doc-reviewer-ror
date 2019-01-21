@@ -1,5 +1,6 @@
 class SurveysController < ApplicationController
-    load_and_authorize_resource
+    load_and_authorize_resource :event
+    load_and_authorize_resource :survey, through: :event, singleton: true
 
     def show
         @event = Event.find(params[:event_id])

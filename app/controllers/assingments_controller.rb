@@ -1,5 +1,6 @@
 class AssingmentsController < ApplicationController
-    load_and_authorize_resource
+    load_and_authorize_resource :paper
+    load_and_authorize_resource :assingment, through: :paper, singleton: true
 
     def new
         @event = Event.find(params[:event_id])
