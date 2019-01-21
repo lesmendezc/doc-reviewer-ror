@@ -13,8 +13,3 @@
 #Gmail Credentials
 GMAIL_USERNAME: 'doc.reviewer.app@gmail.com'
 GMAIL_PASSWORD: 'doc-reviewer-app'
-
-#Amazon Credentials
-AWS_ACCESS_KEY_ID: 'AKIAIJEDZUQ7P5F5JAOA'
-AWS_SECRET_ACCESS_KEY: '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'
-AWS_BUCKET: 'reviewer-bucket'
