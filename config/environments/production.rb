@@ -46,6 +46,7 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local_server
 
+  config.action_mailer.default_url_options = { host: '192.168.28.91', port: 80 }
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {

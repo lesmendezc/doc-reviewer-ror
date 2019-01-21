@@ -20,7 +20,9 @@
 
       Por favor revise estos datos en el sistema. <br><br>
 
-      Sistema de Revisión y Evaluación de Documentos Académicos. <br>
+      Sistema de Revisión y Evaluación de Documentos Académicos.
+      <%= link_to 'Haga clic aquí', event_paper_reviews_url(@event, @paper) %> <br><br>
+
       <%= image_tag(attachments['ucb_valores.png'].url, :size=>"200x80") %> <br><br>
 
       <strong class="confidencialidad">nota</strong><br><br>

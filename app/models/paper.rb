@@ -18,6 +18,6 @@ class Paper < ApplicationRecord
     after_update :send_notification
 
     def send_notification
-        PaperMailer.status_notification(self.user, self).deliver
+        PaperMailer.status_notification(self.user, self, self.event).deliver
     end
 end

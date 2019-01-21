@@ -7,10 +7,11 @@ class AssignmentMailer < ApplicationMailer
   #
   default from: 'Sistema de Revisión de Documentos <doc.reviewer.app@gmail.com>'
 
-  def tribunal_confirmation(assignment, paper)
+  def tribunal_confirmation(assignment, paper, event)
     @tutor_email = User.find(assignment.tutor_id).email
     @relator_email = User.find(assignment.relator_id).email
     @paper = paper
+    @event = event
     @tutor = User.find(assignment.tutor_id)
     @relator = User.find(assignment.relator_id)
     attachments.inline["ucb_valores.png"] = File.read("#{Rails.root}/app/assets/images/ucb_valores.png")

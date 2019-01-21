@@ -16,7 +16,7 @@ class AssingmentsController < ApplicationController
         else
             @assingment = @paper.create_assingment(assingment_params)
             if @assingment.save
-                AssignmentMailer.tribunal_confirmation(@assingment, @paper).deliver
+                AssignmentMailer.tribunal_confirmation(@assingment, @paper, @event).deliver
                 redirect_to event_papers_path(@event), alert: 'Se envió una notificación por correo'
             else
                 render :new
@@ -38,7 +38,7 @@ class AssingmentsController < ApplicationController
         else
             @assingment = Assingment.find(params[:id])
             if @assingment.update(assingment_params)
-                AssignmentMailer.tribunal_confirmation(@assingment, @paper).deliver
+                AssignmentMailer.tribunal_confirmation(@assingment, @paper, @event).deliver
                 redirect_to event_papers_path(@event), alert: 'Se envió una notificación por correo'
             else
                 render :edit

@@ -7,9 +7,10 @@ class PaperMailer < ApplicationMailer
   #
   default from: 'Sistema de Revisión de Documentos <doc.reviewer.app@gmail.com>'
 
-  def status_notification(paper_user, paper)
+  def status_notification(paper_user, paper, event)
     @paper_email = paper_user.email
     @paper = paper
+    @event = event
     attachments.inline["ucb_valores.png"] = File.read("#{Rails.root}/app/assets/images/ucb_valores.png")
 
     mail(to: @paper_email, subject: 'Cambio de estado')
