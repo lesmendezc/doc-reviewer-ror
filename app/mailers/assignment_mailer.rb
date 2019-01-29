@@ -10,12 +10,11 @@ class AssignmentMailer < ApplicationMailer
   def tribunal_confirmation(assignment, paper, event)
     @tutor_email = User.find(assignment.tutor_id).email
     @relator_email = User.find(assignment.relator_id).email
+    @director_email = User.find(assignment.director_id).email
     @paper = paper
     @event = event
-    @tutor = User.find(assignment.tutor_id)
-    @relator = User.find(assignment.relator_id)
     attachments.inline["ucb_valores.png"] = File.read("#{Rails.root}/app/assets/images/ucb_valores.png")
 
-    mail(to: [@tutor_email, @relator_email], subject: 'Tribunal asignado')
+    mail(to: [@tutor_email, @relator_email, @director_email], subject: 'Tribunal asignado')
   end
 end

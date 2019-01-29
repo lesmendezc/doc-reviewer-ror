@@ -14,13 +14,8 @@
     <h1>Asignación de tribunal</h1>
 
     <p class="mensaje">
-      <% if User.find_by(id: @tutor.id) %>
-        Hola <%= @tutor.complete_name %>, <br>
-        Has sido asignado como <strong>tutor </strong>
-      <% elsif User.find_by(id: @relator.id) %> 
-        Hola <%= @relator.complete_name %>, <br>
-        Has sido asignado como <strong>relator </strong>
-      <%end %>
+      Hola, <br>
+      Has sido asignado como miembro del tribunal <br>
       del siguiente documento de la Universidad Católica Boliviana "San Pablo" Regional Cochabamba.
     </p>
 
