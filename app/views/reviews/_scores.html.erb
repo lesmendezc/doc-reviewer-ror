@@ -6,7 +6,7 @@
             <th>Revisor</th>
             <th>Fecha</th>
             <% @survey.quantitative_questions.each do |question| %>
-                <th class="vertical"><div><%= question.title %></div></th>
+                <th class="vertical"><div><%= truncate(question.title, length: 30) %></div></th>
             <% end %>
             <th class="vertical"><div>Nota final</div></th>
             <th></th>
