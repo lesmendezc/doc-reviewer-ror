@@ -6,7 +6,7 @@
                 <%= form_for([@event, @paper, @assingment]) do |form| %>
                     <div class="input-field col s12">
                         <%= form.label :director_id, 'Director *', class: 'active' %>
-                        <%= form.collection_select :director_id, User.all.select{|u| u.role=='director'} , :id, :complete_name, include_blank: true %>
+                        <%= form.collection_select :director_id, User.all.select{|u| u.role=='director' and u.career==current_user.career} , :id, :complete_name, include_blank: true %>
                     </div>
                     <div class="input-field col s12">
                         <%= form.label :tutor_id, 'Tutor *', class: 'active' %>
