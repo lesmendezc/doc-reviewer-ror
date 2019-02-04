@@ -4,7 +4,7 @@
             <div class="card-content">
                 <%= form_for([@event, @paper, @paper.comments.build]) do |form| %>
                     <div class="row">
-                        <span class="col s12" id="miLabel">Deja tu comentario aquí *</span><br>
+                        <span class="col s12" id="miLabel">Debate tu revisión aquí *</span><br>
                         <div class="input-field col s12">
                             <%= form.text_area :commentary, class: "quill_container", required: true %>
                         </div>
