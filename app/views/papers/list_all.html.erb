@@ -11,7 +11,8 @@
   </thead>
 
   <tbody>
-      <% @papers.each_with_index do |paper, index| %>
+    <% @papers.each_with_index do |paper, index| %>
+      <% if current_user.career == paper.user.career %>
         <tr>
           <td><%= index+1 %></td>
           <td><%= link_to paper.title, event_paper_path(paper.event_id, paper), class: 'link-to-text' %></td>
@@ -19,6 +20,7 @@
           <td><%= paper.user.career %></td>
         </tr>
       <% end %>
+    <% end %>
   </tbody>
 </table>
 
