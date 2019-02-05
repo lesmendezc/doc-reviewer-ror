@@ -7,7 +7,7 @@
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
           <div class="input-field">
-            <%= f.label :name, 'Nombre *' %>
+            <%= f.label :name, 'Nombre(s) *' %>
             <%= f.text_field :name, type: "text", class: "validate", autofocus: true %>
           </div>
 
@@ -24,12 +24,12 @@
           <div class="row">
             <div class="input-field col s6">
               <%= f.label :ci, 'CI' %>
-              <%= f.text_field :ci, type: "text", class: "validate" %>
+              <%= f.number_field :ci, class: "validate" %>
             </div>
 
             <div class="input-field col s6">
               <%= f.label :phone, 'Celular' %>
-              <%= f.text_field :phone, type: "text", class: "validate" %>
+              <%= f.number_field :phone, class: "validate" %>
             </div>
           </div>
 
