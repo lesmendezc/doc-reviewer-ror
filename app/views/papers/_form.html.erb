@@ -42,11 +42,13 @@
               <p class="required-alert">Los campos marcados con * son obligatorios.</p><br>
             </div>
 
-            <div class="center-align">
-              <%= button_tag(class: "btn-small waves-effect waves-light") do %>
-                Registrar
-              <% end %>
-            </div>
+            <% if Date.today <= @event.limit_date %>
+              <div class="center-align">
+                <%= button_tag(class: "btn-small waves-effect waves-light") do %>
+                  Registrar
+                <% end %>
+              </div>
+            <%end%>  
           <% end %>
         </div>
       </div>
